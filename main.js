@@ -110,6 +110,14 @@ document.addEventListener('DOMContentLoaded', () =>
       }
     });
 
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 2) 
+    {
+      if (sections.length > 0) 
+      {
+        current = sections[sections.length - 1].getAttribute('id');
+      }
+    }
+
     navLinks.forEach(link => 
     {
       link.classList.remove('active-link');
