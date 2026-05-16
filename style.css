@@ -50,15 +50,14 @@ nav
   display: flex; align-items: center; gap: 12px;
   text-decoration: none;
 }
-.nav-logo-icon 
+
+.nav-logo-img 
 {
-  width: 42px; height: 42px;
-  background: linear-gradient(135deg, var(--blue), var(--gold));
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-family: 'Playfair Display', serif;
-  font-size: 18px; font-weight: 900; color: #fff;
+  width: 44px; 
+  height: 44px;
+  object-fit: contain;
 }
+
 .nav-logo-text 
 {
   font-family: 'Playfair Display', serif;
@@ -90,8 +89,16 @@ nav
   transform: scaleX(0); transform-origin: left;
   transition: transform var(--transition);
 }
-.nav-links a:hover { color: var(--gold-light); }
-.nav-links a:hover::after { transform: scaleX(1); }
+.nav-links a:hover,
+.nav-links a.active-link 
+{ 
+  color: var(--gold-light); 
+}
+.nav-links a:hover::after,
+.nav-links a.active-link::after 
+{
+  transform: scaleX(1); 
+}
 
 .nav-right { display: flex; align-items: center; gap: 16px; }
 
@@ -717,8 +724,7 @@ footer a   { color: var(--gold); text-decoration: none; }
   .news-card.featured { grid-row: auto; grid-column: 1 / -1; }
 }
 
-@media (max-width: 768px) 
-{
+@media (max-width: 768px) {
   nav { padding: 0 4%; }
   .nav-links { display: none; }
   .nav-links.open {
