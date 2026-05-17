@@ -508,17 +508,23 @@ section { padding: 100px 5%; }
 }
 .team-card:hover { border-color: var(--gold); box-shadow: 0 8px 32px rgba(0,0,0,0.08); }
 
-.team-avatar 
-{
-  width: 120px; height: 120px;
+.team-avatar {
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--blue), var(--blue-bright));
-  margin: 0 auto 20px;
-  display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, var(--navy), #1a365d); /* Темно-синій градієнт */
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: 'Playfair Display', serif;
-  font-size: 36px;
-  font-weight: 700; color: var(--white);
+  font-size: 42px;
+  font-weight: 700;
+  margin: 40px auto 20px;
+  box-shadow: 0 8px 24px rgba(13, 27, 42, 0.12);
+  transition: transform var(--transition);
   position: relative;
+  z-index: 1;
 }
 .team-avatar::after 
 {
@@ -527,7 +533,6 @@ section { padding: 100px 5%; }
   border: 3px solid transparent;
   background: linear-gradient(135deg, var(--gold), transparent) border-box;
   
-  /* Стандартне маскування */
   -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
   mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
   
@@ -774,4 +779,286 @@ footer a   { color: var(--gold); text-decoration: none; }
   .reports-grid     { grid-template-columns: 1fr; }
   .news-grid        { grid-template-columns: 1fr; }
   .hero-ctas        { flex-direction: column; }
+}
+
+
+
+/* ============================================================
+   ПОВНИЙ СКЛАД РАДИ(team.html)
+   ============================================================ */
+
+.page-header 
+{
+  background: var(--navy);
+  padding: 160px 5% 80px;
+  text-align: center;
+  color: var(--white);
+  position: relative;
+}
+.page-header h1 
+{
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+.page-header p 
+{
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.team-page-container 
+{
+  padding: 60px 5% 100px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.full-team-grid 
+{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.member-card 
+{
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: transform var(--transition), box-shadow var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+.member-card:hover 
+{
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.member-photo 
+{
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background: #eee;
+}
+.member-photo img 
+{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.member-card:hover .member-photo img 
+{
+  transform: scale(1.05);
+}
+.member-badge 
+{
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: var(--gold);
+  color: var(--navy);
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.member-info 
+{
+  padding: 24px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+.member-info h3 
+{
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+.member-degree 
+{
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 16px;
+}
+
+.member-tags 
+{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.tag 
+{
+  background: rgba(13, 27, 42, 0.05);
+  color: var(--navy);
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 4px;
+}
+
+.member-email 
+{
+  margin-top: auto;
+  font-size: 14px;
+  color: var(--gold);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color var(--transition);
+}
+.member-email:hover 
+{
+  color: var(--navy);
+}
+
+@keyframes pageFadeIn 
+{
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.page-header 
+{
+  background: var(--navy);
+  padding: 160px 5% 80px;
+  text-align: center;
+  color: var(--white);
+  position: relative;
+  animation: pageFadeIn 0.8s ease-out forwards;
+}
+
+.team-page-container 
+{
+  padding: 60px 5% 100px;
+  max-width: 1400px;
+  margin: 0 auto;
+  animation: pageFadeIn 0.8s 0.2s ease-out both;
+}
+
+.team-card 
+{
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  text-align: center;
+}
+.team-card:hover 
+{
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.team-photo 
+{
+  position: relative;
+  width: 100%;
+  padding-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.team-photo img 
+{
+  width: 140px; 
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 8px 24px rgba(13, 27, 42, 0.12);
+  transition: transform 0.5s ease;
+}
+.team-card:hover .team-photo img 
+{
+  transform: scale(1.05);
+}
+
+.team-card:hover .team-avatar 
+{
+  transform: scale(1.05);
+}
+
+.team-badge 
+{
+  position: absolute; 
+  top: 15px; 
+  right: 15px;
+  background: var(--gold); 
+  color: var(--navy);
+  padding: 6px 12px; 
+  font-size: 12px; 
+  font-weight: 700;
+  border-radius: 4px; 
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+.team-info 
+{ 
+  padding: 24px; 
+  flex-grow: 1; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center;
+}
+.team-info h3 
+{ 
+  font-family: 'Playfair Display', serif; 
+  font-size: 20px; 
+  color: var(--navy); 
+  margin-bottom: 6px; 
+}
+.team-degree 
+{
+  font-size: 14px; 
+  color: #666; 
+  margin-bottom: 16px; 
+}
+
+.team-tags 
+{
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: center;
+  gap: 8px; 
+  margin-bottom: 20px; 
+}
+.tag 
+{
+  background: rgba(13, 27, 42, 0.05);
+  color: var(--navy);
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 4px;
+}
+
+.team-email 
+{ 
+  margin-top: auto; 
+  font-size: 14px; 
+  color: var(--gold); 
+  font-weight: 600; 
+  text-decoration: none; 
+  transition: color var(--transition); 
+}
+.team-email:hover 
+{
+  color: var(--navy); 
 }
