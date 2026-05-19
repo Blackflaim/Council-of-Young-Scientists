@@ -1281,6 +1281,13 @@ footer a   { color: var(--gold); text-decoration: none; }
   {
     flex-direction: column;
   }
+  
+  .featured-img 
+  {
+    width: 100%;
+    min-height: 250px;
+  }
+  
   .featured-content 
   {
     padding: 24px;
