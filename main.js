@@ -45,6 +45,7 @@ document.addEventListener('DOMContentLoaded', () =>
     '.program-card',
     '.news-card',
     '.article-card',
+    '.project-card',
     '.team-card',
     '.report-item',
     '.partner-logo'
