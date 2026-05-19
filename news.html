@@ -9,12 +9,121 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; background: #f5f0e8; text-align: center; padding: 20px;">
+<body>
 
-  <h1 style="font-size: 56px; color: #0d1b2a; margin-bottom: 20px;">Тут буде архів усіх Новин</h1>
-  <p style="color: #6b7280; font-size: 20px; margin-bottom: 40px;">Сторінка знаходиться в процесі розробки.</p>
-  
-  <a href="index.html" class="btn-primary">Повернутися на головну</a>
+   <!-- ── НОВИНИ ── -->
+    <nav id="navbar">
+    <a href="index.html" class="nav-logo">
+      <img src="icons/logo.jpg" alt="Лого РМВ" class="nav-logo-img">
+      <div class="nav-logo-text">
+        Рада молодих вчених
+        <span>Університет · Регіон</span>
+      </div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html#about">Головна</a></li>
+      <li><a href="index.html#programs">Програми</a></li>
+      <li><a href="index.html#news">Новини</a></li>
+      <li><a href="team.html" class="active-link">Склад</a></li>
+      <li><a href="index.html#contacts">Контакти</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="nav-lang">
+        <button class="active">UA</button>
+        <button>EN</button>
+      </div>
+      <div class="nav-hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
 
+  <!-- ── ШАПКА СТОРІНКИ ── -->
+  <header class="page-header">
+    <div class="page-header-content">
+      <h1>Новини та Події</h1>
+      <p>Слідкуйте за останніми досягненнями, анонсами та життям Ради</p>
+    </div>
+  </header>
+
+  <!-- ── ОСНОВНИЙ КОНТЕНТ ── -->
+  <main class="news-page-container">
+    
+    <!-- Головна новина -->
+    <article class="featured-news">
+      <div class="featured-img">
+        <img src="https://via.placeholder.com/800x500" alt="Головна новина">
+      </div>
+      <div class="featured-content">
+        <!-- 🟢 Змінено класи тут -->
+        <div class="article-meta">
+          <span class="article-date">17 Травня 2026</span>
+          <span class="article-category tag">Важливе</span>
+        </div>
+        <h2><a href="#">Всеукраїнський форум молодих науковців: підсумки та перспективи</a></h2>
+        <p>У столиці відбувся щорічний форум, який зібрав понад 500 учасників з усієї країни. Обговорили ключові проблеми фінансування стартапів та грантові програми на наступний рік.</p>
+        <a href="#" class="read-more">Читати повністю &rarr;</a>
+      </div>
+    </article>
+
+    <div class="articles-grid" id="newsContainer">
+      
+      <article class="article-card">
+        <div class="article-img">
+          <img src="https://via.placeholder.com/400x250" alt="Новина 1">
+        </div>
+        <div class="article-content">
+          <div class="article-meta">
+            <span class="article-date">15 Травня 2026</span>
+          </div>
+          <h3><a href="#">Відкрито прийом заявок на конкурс "Молодий інноватор"</a></h3>
+          <p>Запрошуємо аспірантів та студентів подавати свої проєкти...</p>
+          <a href="#" class="read-more">Читати &rarr;</a>
+        </div>
+      </article>
+
+      <article class="article-card">
+        <div class="article-img">
+          <img src="https://via.placeholder.com/400x250" alt="Новина 2">
+        </div>
+        <div class="article-content">
+          <div class="article-meta">
+            <span class="article-date">10 Травня 2026</span>
+          </div>
+          <h3><a href="#">Нові правила публікації в міжнародних виданнях</a></h3>
+          <p>Міністерство оновило вимоги до публікацій у Scopus та Web of Science...</p>
+          <a href="#" class="read-more">Читати &rarr;</a>
+        </div>
+      </article>
+
+      <article class="article-card">
+        <div class="article-img">
+          <img src="https://via.placeholder.com/400x250" alt="Новина 3">
+        </div>
+        <div class="article-content">
+          <div class="article-meta">
+            <span class="article-date">05 Травня 2026</span>
+          </div>
+          <h3><a href="#">Зустріч з міжнародними партнерами</a></h3>
+          <p>Рада молодих вчених підписала меморандум про співпрацю з європейськими колегами...</p>
+          <a href="#" class="read-more">Читати &rarr;</a>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="pagination-container">
+      <button class="btn-load-more">Показати ще</button>
+    </div>
+
+  </main>
+
+  <!-- ── ФУТЕР ── -->
+<footer>
+  <p>© 2026 Рада молодих вчених. Усі права захищено.</p>
+  <p>Розроблено в рамках виробничої практики·</p>
+</footer>
+
+  <script src="main.js"></script>
 </body>
 </html>
