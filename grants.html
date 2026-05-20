@@ -3,18 +3,145 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Гранти та стажування</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <title>Гранти та стажування | Рада молодих вчених</title>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; background: #f5f0e8; text-align: center; padding: 20px;">
+<body>
 
-  <h1 style="font-size: 56px; color: #0d1b2a; margin-bottom: 20px;">Тут будуть Гранти та стажування</h1>
-  <p style="color: #6b7280; font-size: 20px; margin-bottom: 40px;">Сторінка знаходиться в процесі розробки.</p>
-  
-  <a href="index.html" class="btn-primary">Повернутися на головну</a>
+  <!-- ── НАВІГАЦІЯ ── -->
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo">
+      <img src="icons/logo.jpg" alt="Лого РМВ" class="nav-logo-img">
+      <div class="nav-logo-text">
+        Рада молодих вчених
+        <span>Університет · Регіон</span>
+      </div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html#about">Головна</a></li>
+      <li><a href="projects.html">Проєкти</a></li>
+      <li><a href="news.html">Новини</a></li>
+      <li><a href="team.html">Склад</a></li>
+      <li><a href="index.html#contacts">Контакти</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="nav-lang">
+        <button class="active">UA</button>
+        <button>EN</button>
+      </div>
+      <div class="nav-hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
 
+  <header class="page-header">
+    <div class="page-header-content">
+      <h1>Гранти та Стажування</h1>
+      <p>Фінансова підтримка досліджень та можливості міжнародного наукового обміну</p>
+    </div>
+  </header>
+
+  <main class="grant-page-container">
+
+    <div class="grant-grid" id="grantContainer">
+      
+      <article class="grant-card">
+        <div class="grant-header-graphic graphic-emerald">
+          <div class="grant-icon">💰</div>
+        </div>
+        <div class="grant-body">
+          <span class="grant-type">Дослідницький Грант</span>
+          <h3><a href="#">Грант на закупівлю лабораторного обладнання</a></h3>
+          <p>Мікрофінансування для молодих вчених на придбання реактивів та дрібного обладнання для поточних досліджень.</p>
+          
+          <div class="grant-details">
+            <div class="detail-item">
+              <span class="detail-label">Бюджет:</span>
+              <span class="detail-value">До 50 000 грн</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">Тривалість:</span>
+              <span class="detail-value">6 місяців</span>
+            </div>
+          </div>
+        </div>
+        <div class="grant-footer">
+          <div class="grant-deadline">
+            <span class="deadline-label">Дедлайн:</span>
+            <span class="deadline-date">20 Листопада 2026</span> 
+          </div>
+          <a href="#" class="btn-apply">Подати заявку &rarr;</a>
+        </div>
+      </article>
+
+      <article class="grant-card">
+        <div class="grant-header-graphic graphic-blue">
+          <div class="grant-icon">🌍</div>
+        </div>
+        <div class="grant-body">
+          <span class="grant-type">Міжнародне стажування</span>
+          <h3><a href="#">Програма обміну з Варшавським Університетом</a></h3>
+          <p>Повністю фінансоване стажування на базі факультету точних наук. Покриває переліт, проживання та добові.</p>
+          
+          <div class="grant-details">
+            <div class="detail-item">
+              <span class="detail-label">Локація:</span>
+              <span class="detail-value">Варшава, Польща</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">Тривалість:</span>
+              <span class="detail-value">3 місяці</span>
+            </div>
+          </div>
+        </div>
+        <div class="grant-footer">
+          <div class="grant-deadline">
+            <span class="deadline-label">Дедлайн:</span>
+            <span class="deadline-date">01 Грудня 2026</span>
+          </div>
+          <a href="#" class="btn-apply">Подати заявку &rarr;</a>
+        </div>
+      </article>
+
+      <article class="grant-card">
+        <div class="grant-header-graphic graphic-teal">
+          <div class="grant-icon">✈️</div>
+        </div>
+        <div class="grant-body">
+          <span class="grant-type">Тревел-грант</span>
+          <h3><a href="#">Фінансування участі у міжнародних конференціях</a></h3>
+          <p>Компенсація організаційного внеску та транспортних витрат для молодих науковців, чиї тези прийняті до публікації.</p>
+          
+          <div class="grant-details">
+            <div class="detail-item">
+              <span class="detail-label">Бюджет:</span>
+              <span class="detail-value">До 20 000 грн</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">Прийом заявок:</span>
+              <span class="detail-value">Постійно</span>
+            </div>
+          </div>
+        </div>
+        <div class="grant-footer">
+          <div class="grant-deadline">
+            <span class="deadline-label">Найближча хвиля:</span>
+            <span class="deadline-date">10 Жовтня 2026</span>
+          </div>
+          <a href="#" class="read-rules">Умови &rarr;</a>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+      <!-- ── ФУТЕР ── -->
+<footer>
+  <p>© 2026 Рада молодих вчених. Усі права захищено.</p>
+  <p>Розроблено в рамках виробничої практики·</p>
+</footer>
+  <script src="main.js"></script>
 </body>
 </html>

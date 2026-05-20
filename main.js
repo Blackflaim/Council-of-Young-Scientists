@@ -49,7 +49,8 @@ document.addEventListener('DOMContentLoaded', () =>
     '.team-card',
     '.report-item',
     '.partner-logo',
-    '.comp-card'
+    '.comp-card',
+    '.grant-card'
   ].join(', ');
 
   const elements = document.querySelectorAll(SELECTORS);
