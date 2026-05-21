@@ -1717,3 +1717,208 @@ footer a   { color: var(--gold); text-decoration: none; }
   font-weight: 700;
   color: var(--navy);
 }
+
+
+
+/* ============================================================
+   СТОРІНКА: ШКОЛА МОЛОДОГО ЛІДЕРА
+   ============================================================ */
+
+.school-page-container {
+  padding: 60px 5% 100px;
+  max-width: 1200px;
+  margin: 0 auto;
+  animation: pageFadeIn 0.8s 0.2s ease-out both;
+}
+
+/* --- Секція: Про школу (Інтро + Статистика) --- */
+.school-intro {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+  margin-bottom: 80px;
+  background: var(--white);
+  padding: 40px;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+}
+.school-intro-text {
+  flex: 1;
+}
+.school-intro-text h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  color: var(--navy);
+  margin-bottom: 20px;
+}
+.school-intro-text p {
+  color: #555;
+  font-size: 16px;
+  line-height: 1.8;
+}
+.school-stats {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+.stat-item {
+  display: flex;
+  flex-direction: column;
+}
+.stat-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.stat-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--navy);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* --- Секція: Програма (Модулі) --- */
+.school-curriculum {
+  margin-bottom: 80px;
+}
+.school-curriculum .section-title {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  color: var(--navy);
+  margin-bottom: 50px;
+}
+.modules-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
+}
+
+/* Картка модуля */
+.module-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 40px 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition), box-shadow var(--transition);
+  border-left: 4px solid var(--gold);
+}
+.module-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Фонова велика цифра */
+.module-number {
+  position: absolute;
+  top: -20px;
+  right: -10px;
+  font-family: 'Playfair Display', serif;
+  font-size: 120px;
+  font-weight: 800;
+  color: rgba(13, 27, 42, 0.03); /* Дуже прозорий темно-синій */
+  line-height: 1;
+  z-index: 1;
+  transition: color var(--transition);
+}
+.module-card:hover .module-number {
+  color: rgba(212, 175, 55, 0.1); /* Стає прозоро-золотим при наведенні */
+}
+
+/* Контент модуля */
+.module-content {
+  position: relative;
+  z-index: 2;
+}
+.module-tag {
+  display: inline-block;
+  background: var(--navy);
+  color: var(--white);
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+.module-content h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  color: var(--navy);
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+.module-content p {
+  color: #666;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* --- Секція: Заклик до дії (CTA) --- */
+.school-cta {
+  background: linear-gradient(135deg, var(--navy), #1a365d);
+  border-radius: var(--radius);
+  padding: 60px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  color: var(--white);
+  box-shadow: 0 10px 40px rgba(13, 27, 42, 0.2);
+}
+.cta-content h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+.cta-content p {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.8);
+}
+.btn-cta {
+  background: var(--gold);
+  color: var(--navy);
+  padding: 16px 40px;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all var(--transition);
+  white-space: nowrap; /* Щоб кнопка не ламалася на два рядки */
+}
+.btn-cta:hover {
+  background: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+}
+
+/* --- Адаптивність для Школи --- */
+@media (max-width: 900px) {
+  .school-intro {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .school-cta {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+@media (max-width: 600px) {
+  .school-stats {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .school-intro {
+    padding: 30px 20px;
+  }
+}
