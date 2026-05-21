@@ -50,7 +50,8 @@ document.addEventListener('DOMContentLoaded', () =>
     '.report-item',
     '.partner-logo',
     '.comp-card',
-    '.grant-card'
+    '.grant-card',
+    '.module-card'
   ].join(', ');
 
   const elements = document.querySelectorAll(SELECTORS);
