@@ -97,43 +97,38 @@ document.addEventListener('DOMContentLoaded', () =>
   });
 }());
 
-(function initActiveSection() 
-{
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-links a');
-
-  const onScroll = () => 
-  {
+// Підсвічування активного розділу в меню під час скролу
+function initActiveSection() {
+  const onScroll = () => {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
     let current = '';
 
-    sections.forEach(section => 
-    {
-      if (window.scrollY >= section.offsetTop - 100) 
-      {
+    sections.forEach(section => {
+      if (window.scrollY >= section.offsetTop - 100) {
         current = section.getAttribute('id');
       }
     });
 
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 2) 
-    {
-      if (sections.length > 0) 
-      {
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 2) {
+      if (sections.length > 0) {
         current = sections[sections.length - 1].getAttribute('id');
       }
     }
 
-    navLinks.forEach(link => 
-    {
+    navLinks.forEach(link => {
       link.classList.remove('active-link');
-      if (link.getAttribute('href') === '#' + current) 
-      {
+      if (link.getAttribute('href') === 'index.html#' + current || link.getAttribute('href') === '#' + current) {
         link.classList.add('active-link');
       }
     });
   };
 
   window.addEventListener('scroll', onScroll, { passive: true });
-}());
+  
+  // Викликаємо функцію відразу один раз, щоб підсвітити меню при відкритті сторінки
+  onScroll();
+}
 
 document.addEventListener('DOMContentLoaded', () => 
 {
@@ -153,7 +148,8 @@ document.addEventListener('DOMContentLoaded', () =>
   });
 });
 
-async function loadComponent(id, file) {
+async function loadComponent(id, file) 
+{
 
     const response = await fetch(file);
 
@@ -194,25 +190,29 @@ window.setLanguage = function(lang)
   location.reload();
 };
 
-// Завантажуємо компоненти асинхронно
+//завантаження хедера/футера
 async function initComponents() {
     await loadComponent("header", "/src/components/header.html");
     await loadComponent("footer", "/src/components/footer.html");
     
-    // 1. Запускаємо переклад для нових елементів (хедера і футера), які щойно з'явилися
     translatePage(currentLang);
     
-    // 2. Шукаємо кнопку поточної мови і робимо її активною (сірою)
+    // Встановлюємо активний клас для обраної мови
     const activeBtn = document.querySelector(`.nav-lang button[data-lang="${currentLang}"]`);
     if (activeBtn) {
         activeBtn.classList.add("active");
     }
+
+    initActiveSection();
 }
 
 // Запускаємо функцію
 initComponents();
 
 
+/* ============================================================
+   ПІДКЛЮЧЕННЯ БАЗИ ДАНИХ
+   ============================================================ */
 loadComponent(
     "header",
     "/src/components/header.html"

@@ -1,4 +1,5 @@
-/* ── CSS Змінні ── */
+/*── CSS Змінні ──*/
+/*Визначення глобальної палітри кольорів, радіусу та параметрів анімації для легкого перевикористання*/
 :root 
 {
   --navy:        #0d1b2a;
@@ -13,29 +14,31 @@
   --gray-light:  #e8ecf0;
   --text:        #1a2333;
   --radius:      4px;
-  --transition:  0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition:  0.3s cubic-bezier(0.4, 0, 0.2, 1); /*Плавна функція часу для анімацій*/
 }
 
-/* ── Скидання стилів ── */
+/*── Скидання стилів ──*/
+/*Зміна блокової моделі, щоб padding та border не збільшували загальні розміри елементів*/
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+/*Плавна прокрутка сторінки при кліку на якірні посилання*/
 html { scroll-behavior: smooth; }
 body 
 {
   font-family: 'Manrope', sans-serif;
   background: var(--white);
   color: var(--text);
-  overflow-x: hidden;
+  overflow-x: hidden; /*Запобігає появі горизонтальної прокрутки*/
 }
 
-/* ── Типографіка ── */
+/*── Типографіка ──*/
 h1, h2, h3, h4 { font-family: 'Playfair Display', serif; line-height: 1.2; }
 
-/* ============================================================
+/*============================================================
    НАВІГАЦІЯ
-   ============================================================ */
+   ============================================================*/
 nav 
 {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000; /*Фіксація меню поверх усього контенту*/
   background: rgba(13, 27, 42, 0.96);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(201, 168, 76, 0.2);
@@ -55,7 +58,7 @@ nav
 {
   width: 44px; 
   height: 44px;
-  object-fit: contain;
+  object-fit: contain; /*Пропорційне масштабування логотипу без обрізання*/
 }
 
 .nav-logo-text 
@@ -82,11 +85,12 @@ nav
   transition: color var(--transition);
   position: relative;
 }
+/*Анімована лінія підкреслення під посиланнями меню*/
 .nav-links a::after 
 {
   content: ''; position: absolute; bottom: -4px; left: 0; right: 0;
   height: 1px; background: var(--gold);
-  transform: scaleX(0); transform-origin: left;
+  transform: scaleX(0); transform-origin: left; /*Спочатку ширина лінії 0*/
   transition: transform var(--transition);
 }
 .nav-links a:hover,
@@ -97,11 +101,12 @@ nav
 .nav-links a:hover::after,
 .nav-links a.active-link::after 
 {
-  transform: scaleX(1); 
+  transform: scaleX(1); /*При наведенні лінія розгортається до 100% ширини*/
 }
 
 .nav-right { display: flex; align-items: center; gap: 16px; }
 
+/*Перемикач мови*/
 .nav-lang { display: flex; gap: 8px; }
 .nav-lang button 
 {
@@ -116,6 +121,7 @@ nav
   background: var(--gold); border-color: var(--gold); color: var(--navy);
 }
 
+/*Іконка мобільного меню*/
 .nav-hamburger 
 {
   display: none; flex-direction: column; gap: 5px; cursor: pointer;
@@ -125,9 +131,9 @@ nav
   width: 24px; height: 2px; background: #fff; transition: var(--transition);
 }
 
-/* ============================================================
+/*============================================================
    ГОЛОВНИЙ ЕКРАН
-   ============================================================ */
+   ============================================================*/
 #hero 
 {
   min-height: 100vh;
@@ -135,6 +141,7 @@ nav
   position: relative; overflow: hidden;
   display: flex; align-items: center;
 }
+/*градієнтний фон*/
 .hero-bg 
 {
   position: absolute; inset: 0;
@@ -142,18 +149,19 @@ nav
     radial-gradient(ellipse 80% 60% at 70% 50%, rgba(26,77,140,0.35) 0%, transparent 70%),
     radial-gradient(ellipse 50% 80% at 10% 80%, rgba(201,168,76,0.12) 0%, transparent 60%);
 }
+/*Патерн у вигляді сітки поверх градієнту*/
 .hero-grid 
 {
   position: absolute; inset: 0;
   background-image:
     linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-  background-size: 60px 60px;
+  background-size: 60px 60px; /*Крок сітки*/
 }
 
 .hero-content 
 {
-  position: relative; z-index: 2;
+  position: relative; z-index: 2; /*Розміщення тексту поверх фону та сітки*/
   padding: 120px 5% 80px;
   max-width: 780px;
 }
@@ -175,6 +183,7 @@ nav
 
 .hero-title 
 {
+  /*clamp робить шрифт адаптивним*/
   font-size: clamp(38px, 6vw, 72px);
   font-weight: 900; color: var(--white);
   line-height: 1.05; margin-bottom: 20px;
@@ -190,9 +199,9 @@ nav
 
 .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
 
-/* ============================================================
+/*============================================================
    ГЛОБАЛЬНІ КНОПКИ
-   ============================================================ */
+   ============================================================*/
 .btn-primary 
 {
   background: linear-gradient(135deg, var(--gold), var(--gold-light));
@@ -206,8 +215,8 @@ nav
 }
 .btn-primary:hover 
 {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(201,168,76,0.5);
+  transform: translateY(-2px); /*Легке підняття кнопки*/
+  box-shadow: 0 8px 30px rgba(201,168,76,0.5); /*Посилення тіні при наведенні*/
 }
 .btn-outline 
 {
@@ -231,9 +240,9 @@ nav
   border-color: var(--gold);
 }
 
-/* ============================================================
+/*============================================================
    БАЗОВІ СТИЛІ СЕКЦІЙ
-   ============================================================ */
+   ============================================================*/
 section { padding: 100px 5%; }
 
 .section-label 
@@ -242,6 +251,7 @@ section { padding: 100px 5%; }
   text-transform: uppercase; color: var(--gold);
   margin-bottom: 12px; display: flex; align-items: center; gap: 10px;
 }
+/*Декоративна лінія перед лейблом*/
 .section-label::before { content: ''; width: 30px; height: 1px; background: var(--gold); }
 
 .section-title 
@@ -261,9 +271,9 @@ section { padding: 100px 5%; }
 
 .section-desc.light { color: rgba(255,255,255,0.6); }
 
-/* ============================================================
+/*============================================================
    ПРО ОРГАНІЗАЦІЮ
-   ============================================================ */
+   ============================================================*/
 #about { background: var(--cream); }
 .about-inner 
 {
@@ -282,6 +292,7 @@ section { padding: 100px 5%; }
   transition: var(--transition);
   position: relative; overflow: hidden;
 }
+/*Анімована градієнтна лінія зверху картки при наведенні*/
 .about-card::before 
 {
   content: ''; position: absolute; top: 0; left: 0; right: 0;
@@ -314,9 +325,9 @@ section { padding: 100px 5%; }
 }
 .about-card strong { color: var(--blue); }
 
-/* ============================================================
+/*============================================================
    ПРОГРАМИ
-   ============================================================ */
+   ============================================================*/
 #programs { background: var(--navy); }
 .programs-header 
 {
@@ -338,6 +349,7 @@ section { padding: 100px 5%; }
   transition: var(--transition);
   position: relative; overflow: hidden;
 }
+/*Градієнт, який плавно з'являється при наведенні (через opacity)*/
 .program-card::after 
 {
   content: ''; position: absolute; inset: 0;
@@ -347,6 +359,7 @@ section { padding: 100px 5%; }
 .program-card:hover { border-color: rgba(201,168,76,0.3); transform: translateY(-4px); }
 .program-card:hover::after { opacity: 1; }
 
+/*Велика напівпрозора цифра на фоні картки*/
 .program-num 
 {
   font-family: 'Playfair Display', serif;
@@ -354,6 +367,7 @@ section { padding: 100px 5%; }
   font-weight: 900; color: rgba(255,255,255,0.05);
   position: absolute; top: 16px; right: 24px; line-height: 1;
 }
+/*z-index: 1 гарантує, що контент буде поверх фонових декорацій*/
 .program-icon 
 { 
   font-size: 36px;
@@ -385,6 +399,7 @@ section { padding: 100px 5%; }
 }
 .card-link:hover { gap: 12px; }
 
+/*Динамічний ефект ліхтаря, що слідує за мишкою*/
 .spotlight {
   position: absolute;
   width: 300px;
@@ -393,7 +408,7 @@ section { padding: 100px 5%; }
   background: radial-gradient(circle, rgba(201, 168, 76, 0.15) 0%, transparent 70%);
   transform: translate(-50%, -50%);
   opacity: 0;
-  pointer-events: none;
+  pointer-events: none; /*Забороняємо ліхтарю перехоплювати кліки мишки*/
   transition: opacity 0.3s ease;
   z-index: 0; 
 }
@@ -402,36 +417,48 @@ section { padding: 100px 5%; }
   opacity: 1;
 }
 
-/* ============================================================
+/*============================================================
    НОВИНИ
-   ============================================================ */
+   ============================================================*/
 #news { background: var(--white); }
 .news-header 
 {
   display: flex; align-items: flex-end; justify-content: space-between;
   margin-bottom: 56px;
 }
-.news-grid 
+.news-grid
 {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  grid-template-rows: auto auto;
-  gap: 20px;
+    display:grid;
+    /*Автоматичне створення колонок з мінімальною шириною*/
+    grid-template-columns: repeat(auto-fit,minmax(380px,1fr));
+    gap:32px;
+    align-items:start;
 }
-.news-card 
+.news-card
 {
-  background: var(--cream);
-  border-radius: 8px; overflow: hidden;
-  transition: var(--transition); cursor: pointer;
+    background:#f5f0e8;
+    border-radius:8px;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    height:100%;
+}
+.news-card img
+{
+    width:100%;
+    height:260px;
+    object-fit:cover; /*Обрізає зображення, якщо воно не відповідає пропорціям*/
+    display:block;
 }
 .news-card:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.12); transform: translateY(-3px); }
+/*Головна новина займає 2 рядки*/
 .news-card.featured { grid-row: 1 / 3; }
 
-.news-img 
-{
-  width: 100%; aspect-ratio: 16/9;
-  background: linear-gradient(135deg, var(--blue), var(--navy));
-  position: relative; overflow: hidden;
+.news-img img {
+  width: 100%;
+  height: 100%;        /* Примушуємо картинку зайняти всю висоту контейнера */
+  object-fit: cover;   /* Зберігає пропорції, обрізаючи зайве, щоб не було порожніх місць */
+  display: block;      /* Перетворює картинку на блок, прибираючи ту саму щілину знизу */
 }
 .news-card.featured .news-img { aspect-ratio: unset; height: 320px; }
 .news-img-placeholder 
@@ -440,6 +467,7 @@ section { padding: 100px 5%; }
   display: flex; align-items: center; justify-content: center;
   font-size: 36px; opacity: 0.3;
 }
+/*Затемінення нижньої частини фото*/
 .news-img-overlay 
 {
   position: absolute; inset: 0;
@@ -452,19 +480,30 @@ section { padding: 100px 5%; }
   font-size: 10px; font-weight: 700; letter-spacing: 0.1em;
   text-transform: uppercase; padding: 4px 10px; border-radius: 2px;
 }
-.news-body { padding: 20px; }
-.news-card.featured .news-body { padding: 24px; }
-.news-body h3 
+.news-body
 {
-  font-family: 'Manrope', sans-serif;
-  font-size: 15px; font-weight: 700; color: var(--navy);
-  line-height: 1.4; margin-bottom: 8px;
+    padding:28px;
+    display:flex;
+    flex-direction:column;
+    flex-grow:1; /*Тіло розтягується, притискаючи кнопку "Читати далі" донизу*/
+}
+.news-card.featured .news-body { padding: 24px; }
+.news-body h3
+{
+    margin-bottom:18px;
+    line-height:1.35;
 }
 .news-card.featured .news-body h3 
 {
   font-family: 'Playfair Display', serif; font-size: 22px;
 }
-.news-body p { font-size: 13px; color: var(--gray); line-height: 1.6; }
+.news-body p
+{
+    color:#6b7280;
+    line-height:1.8;
+    flex-grow:1;
+    margin-bottom:22px;
+}
 .news-read-more 
 {
   display: inline-flex; align-items: center; gap: 6px;
@@ -475,9 +514,9 @@ section { padding: 100px 5%; }
 }
 .news-read-more:hover { gap: 10px; }
 
-/* ============================================================
+/*============================================================
    КОМАНДА
-   ============================================================ */
+   ============================================================*/
 #team { background: var(--cream); }
 .team-header 
 {
@@ -494,7 +533,7 @@ section { padding: 100px 5%; }
 
 .team-grid 
 {
-  display: grid; grid-template-columns: repeat(5, 1fr); 
+  display: grid; grid-template-columns: repeat(5, 1fr); /*5 колонок однакової ширини*/
   gap: 24px;
   margin-top: 56px;
 }
@@ -508,6 +547,7 @@ section { padding: 100px 5%; }
 }
 .team-card:hover { border-color: var(--gold); box-shadow: 0 8px 32px rgba(0,0,0,0.08); }
 
+/*Контейнер аватара зі складною рамкою*/
 .team-avatar {
   width: 150px;
   height: 150px;
@@ -526,6 +566,7 @@ section { padding: 100px 5%; }
   position: relative;
   z-index: 1;
 }
+/*mask для створення градієнтної рамки з відступом*/
 .team-avatar::after 
 {
   content: ''; position: absolute; inset: -4px;
@@ -536,8 +577,35 @@ section { padding: 100px 5%; }
   -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
   mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
   
+  /*destination-out виключає внутрішню частину, залишаючи лише рамку*/
   -webkit-mask-composite: destination-out;
   mask-composite: exclude;
+}
+
+.team-avatar img
+{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:50%;
+}
+
+.team-photo-container {
+  width: 100%;
+  max-width: 180px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  overflow: hidden; /*обрізає все, що вилазить за коло*/
+  display: block;
+  margin: 0 auto 18px;
+  border: 3px solid var(--gold-light);
+}
+
+.team-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .team-card h4 
@@ -567,9 +635,9 @@ section { padding: 100px 5%; }
   text-align: center;
 }
 
-/* ============================================================
+/*============================================================
    ДОКУМЕНТИ
-   ============================================================ */
+   ============================================================*/
 #reports { background: var(--white); }
 .reports-grid 
 {
@@ -590,6 +658,7 @@ section { padding: 100px 5%; }
   box-shadow: 0 8px 24px rgba(0,0,0,0.06);
   transform: translateY(-2px);
 }
+/*flex-shrink: 0 запобігає стисненню іконки, якщо текст занадто довгий*/
 .report-icon { font-size: 28px; flex-shrink: 0; }
 
 .report-info h4 
@@ -598,11 +667,12 @@ section { padding: 100px 5%; }
   font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 4px;
 }
 .report-info p  { font-size: 12px; color: var(--gray); }
+/*margin-left: auto відштовхує стрілку максимально вправо*/
 .report-arrow   { margin-left: auto; color: var(--blue); font-size: 16px; }
 
-/* ============================================================
+/*============================================================
    ПАРТНЕРИ
-   ============================================================ */
+   ============================================================*/
 #partners { background: var(--navy-mid); }
 .partners-heading { text-align: center; }
 .partners-row 
@@ -613,9 +683,10 @@ section { padding: 100px 5%; }
 .partner-logo 
 {
   height: 60px; display: flex; align-items: center; justify-content: center;
-  opacity: 0.6; filter: grayscale(1);
+  opacity: 0.6; filter: grayscale(1); /*Логотипи спочатку сірі та напівпрозорі*/
   transition: var(--transition); text-decoration: none;
 }
+/*Повернення кольору та яскравості при наведенні*/
 .partner-logo:hover { opacity: 1; filter: grayscale(0); }
 .partner-logo-inner 
 {
@@ -632,9 +703,9 @@ section { padding: 100px 5%; }
   color: var(--gold);
 }
 
-/* ============================================================
+/*============================================================
    КОНТАКТИ
-   ============================================================ */
+   ============================================================*/
 #contacts { background: var(--navy); }
 .contacts-inner 
 {
@@ -676,24 +747,9 @@ section { padding: 100px 5%; }
 }
 .social-btn:hover { background: var(--gold); border-color: var(--gold); }
 
-.contact-map 
-{
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 12px; overflow: hidden; height: 320px;
-  display: flex; align-items: center; justify-content: center;
-}
-.map-placeholder 
-{
-  display: flex; flex-direction: column; align-items: center; gap: 12px;
-  color: rgba(255,255,255,0.3);
-}
-.map-placeholder span { font-size: 40px; }
-.map-placeholder p    { font-size: 13px; }
-
-/* ============================================================
+/*============================================================
    КАРТА (КОНТАКТИ)
-   ============================================================ */
+   ============================================================*/
 .contact-map 
 {
   width: 100%;
@@ -712,12 +768,12 @@ section { padding: 100px 5%; }
   width: 100%;
   height: 100%;
   display: block; 
-  filter: contrast(85%) brightness(90%);
+  filter: contrast(85%) brightness(90%); /*Зниження яскравості карти*/
 }
 
-/* ============================================================
+/*============================================================
    ФУТЕР
-   ============================================================ */
+   ============================================================*/
 footer 
 {
   background: #080f18;
@@ -728,65 +784,109 @@ footer
 footer p   { font-size: 12px; color: rgba(255,255,255,0.25); }
 footer a   { color: var(--gold); text-decoration: none; }
 
-/* ============================================================
+/*============================================================
    АНІМАЦІЇ
-   ============================================================ */
+   ============================================================*/
+/*Анімація появи елементів знизу вгору зі зміною прозорості*/
 @keyframes fadeUp 
 {
   from { opacity: 0; transform: translateY(30px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+/*Класи для поетапної появи контенту (з різною затримкою)*/
 .fade-up   { animation: fadeUp 0.7s ease forwards; }
 .fade-up-2 { animation: fadeUp 0.7s 0.15s ease both; }
 .fade-up-3 { animation: fadeUp 0.7s 0.30s ease both; }
 .fade-up-4 { animation: fadeUp 0.7s 0.45s ease both; }
 
-/* ============================================================
+/*Анімація плавного завантаження цілої сторінки*/
+@keyframes pageFadeIn 
+{
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/*============================================================
    АДАПТИВНІСТЬ
-   ============================================================ */
+   ============================================================*/
+/*Планшети (до 1024px)*/
 @media (max-width: 1024px) 
 {
   .programs-grid   { grid-template-columns: 1fr 1fr; }
   .team-grid       { grid-template-columns: repeat(3, 1fr); }
   .reports-grid    { grid-template-columns: 1fr 1fr; }
-  .news-grid       { grid-template-columns: 1fr 1fr; }
-  .news-card.featured { grid-row: auto; grid-column: 1 / -1; }
 }
 
-@media (max-width: 768px) {
+/*Великі телефони та портретні планшети (до 768px)*/
+@media (max-width: 768px) 
+{
   nav { padding: 0 4%; }
-  .nav-links { display: none; }
+  .nav-links { display: none; } /*Приховуємо стандартне меню*/
+  
+  /*Стилі для відкритого мобільного меню*/
   .nav-links.open {
     display: flex; flex-direction: column;
     position: fixed; top: 70px; left: 0; right: 0;
     background: rgba(13,27,42,0.98); padding: 24px 5%;
     border-top: 1px solid rgba(201,168,76,0.2); gap: 20px;
   }
-  .nav-hamburger    { display: flex; }
+  .nav-hamburger    { display: flex; } /*Показуємо кнопку бургер-меню*/
   .about-inner      { grid-template-columns: 1fr; gap: 40px; }
   .about-cards      { grid-template-columns: 1fr 1fr; }
   .programs-grid    { grid-template-columns: 1fr; }
   .team-grid        { grid-template-columns: repeat(2, 1fr); }
   .contacts-inner   { grid-template-columns: 1fr; gap: 40px; }
   .hero-content     { padding-top: 100px; }
+  
+  .featured-img 
+  {
+    width: 100%;
+    min-height: 250px;
+  }
+  
+  .featured-content 
+  {
+    padding: 24px;
+  }
 }
 
+@media (max-width: 900px) 
+{
+  .school-intro {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .school-cta {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) 
+{
+  .school-stats {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .school-intro {
+    padding: 30px 20px;
+  }
+}
+
+/*Телефони (до 480px)*/
 @media (max-width: 480px) 
 {
   section           { padding: 70px 5%; }
-  .about-cards      { grid-template-columns: 1fr; }
+  .about-cards      { grid-template-columns: 1fr; } /*Одна картка в ряд*/
   .team-grid        { grid-template-columns: 1fr 1fr; }
   .reports-grid     { grid-template-columns: 1fr; }
-  .news-grid        { grid-template-columns: 1fr; }
-  .hero-ctas        { flex-direction: column; }
+  .hero-ctas        { flex-direction: column; } /*Кнопки стають одна під одною*/
 }
 
 
-
-/* ============================================================
+/*============================================================
    ПОВНИЙ СКЛАД РАДИ(team.html)
-   ============================================================ */
-
+   ============================================================*/
 .page-header 
 {
   background: var(--navy);
@@ -794,6 +894,7 @@ footer a   { color: var(--gold); text-decoration: none; }
   text-align: center;
   color: var(--white);
   position: relative;
+  animation: pageFadeIn 0.8s ease-out forwards;
 }
 .page-header h1 
 {
@@ -815,8 +916,10 @@ footer a   { color: var(--gold); text-decoration: none; }
   padding: 60px 5% 100px;
   max-width: 1400px;
   margin: 0 auto;
+  animation: pageFadeIn 0.8s 0.2s ease-out both;
 }
 
+/*Сітка карток команди: адаптивно від 280px*/
 .full-team-grid 
 {
   display: grid;
@@ -844,7 +947,7 @@ footer a   { color: var(--gold); text-decoration: none; }
 {
   position: relative;
   width: 100%;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 3 / 4; /*Портретне співвідношення фото*/
   overflow: hidden;
   background: #eee;
 }
@@ -855,10 +958,13 @@ footer a   { color: var(--gold); text-decoration: none; }
   object-fit: cover;
   transition: transform 0.5s ease;
 }
+/*Ефект легкого зуму фотографії при наведенні на картку*/
 .member-card:hover .member-photo img 
 {
   transform: scale(1.05);
 }
+
+/*Бейдж із роллю або посадою поверх фото*/
 .member-badge 
 {
   position: absolute;
@@ -911,6 +1017,7 @@ footer a   { color: var(--gold); text-decoration: none; }
   border-radius: 4px;
 }
 
+/*Відштовхуємо email вниз картки*/
 .member-email 
 {
   margin-top: auto;
@@ -923,30 +1030,6 @@ footer a   { color: var(--gold); text-decoration: none; }
 .member-email:hover 
 {
   color: var(--navy);
-}
-
-@keyframes pageFadeIn 
-{
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-.page-header 
-{
-  background: var(--navy);
-  padding: 160px 5% 80px;
-  text-align: center;
-  color: var(--white);
-  position: relative;
-  animation: pageFadeIn 0.8s ease-out forwards;
-}
-
-.team-page-container 
-{
-  padding: 60px 5% 100px;
-  max-width: 1400px;
-  margin: 0 auto;
-  animation: pageFadeIn 0.8s 0.2s ease-out both;
 }
 
 .team-card 
@@ -981,6 +1064,7 @@ footer a   { color: var(--gold); text-decoration: none; }
   height: 140px;
   border-radius: 50%;
   object-fit: cover;
+  object-position: top center; /*Центруємо фотографію по верхній частині (зазвичай обличчя)*/
   box-shadow: 0 8px 24px rgba(13, 27, 42, 0.12);
   transition: transform 0.5s ease;
 }
@@ -1039,15 +1123,6 @@ footer a   { color: var(--gold); text-decoration: none; }
   gap: 8px; 
   margin-bottom: 20px; 
 }
-.tag 
-{
-  background: rgba(13, 27, 42, 0.05);
-  color: var(--navy);
-  padding: 4px 10px;
-  font-size: 12px;
-  font-weight: 600;
-  border-radius: 4px;
-}
 
 .team-email 
 { 
@@ -1063,10 +1138,9 @@ footer a   { color: var(--gold); text-decoration: none; }
   color: var(--navy); 
 }
 
-/* ============================================================
+/*============================================================
    СТОРІНКА: УСІ НОВИНИ
-   ============================================================ */
-
+   ============================================================*/
 .news-page-container 
 {
   padding: 60px 5% 100px;
@@ -1075,6 +1149,7 @@ footer a   { color: var(--gold); text-decoration: none; }
   animation: pageFadeIn 0.8s 0.2s ease-out both;
 }
 
+/*Блок головної новини*/
 .featured-news 
 {
   display: flex;
@@ -1091,6 +1166,7 @@ footer a   { color: var(--gold); text-decoration: none; }
   transform: translateY(-5px);
 }
 
+/*flex: 1 дозволяє зображенню та тексту ділити простір. min-width: 40% не дає картинці стискатись занадто сильно*/
 .featured-img 
 {
   flex: 1;
@@ -1142,6 +1218,7 @@ footer a   { color: var(--gold); text-decoration: none; }
   line-height: 1.6;
 }
 
+/*Сітка для решти статей*/
 .articles-grid 
 {
   display: grid;
@@ -1233,6 +1310,41 @@ footer a   { color: var(--gold); text-decoration: none; }
   line-height: 1.6;
 }
 
+/*Окрема сторінка читання статті*/
+.article-page
+{
+    max-width: 900px;
+    margin: 80px auto;
+    padding: 0 20px;
+}
+
+.article-page h1
+{
+    margin-bottom: 35px;
+    text-align:center;
+}
+
+.article-image
+{
+    width:100%;
+    max-height:500px; /*Захист від занадто високих вертикальних зображень*/
+    object-fit:cover;
+    border-radius:12px;
+    display:block;
+    margin:0 auto 40px;
+}
+
+.article-content
+{
+    font-size:1.1rem;
+    line-height:1.9; /*Збільшений міжрядковий інтервал для комфортного читання довгих текстів*/
+}
+
+.article-content p
+{
+    margin-bottom:24px;
+}
+
 .read-more 
 {
   margin-top: auto;
@@ -1275,30 +1387,10 @@ footer a   { color: var(--gold); text-decoration: none; }
   color: var(--white);
 }
 
-@media (max-width: 768px) 
-{
-  .featured-news 
-  {
-    flex-direction: column;
-  }
-  
-  .featured-img 
-  {
-    width: 100%;
-    min-height: 250px;
-  }
-  
-  .featured-content 
-  {
-    padding: 24px;
-  }
-}
 
-
-/* ============================================================
+/*============================================================
    СТОРІНКА: ПОРТФОЛІО ПРОЄКТІВ
-   ============================================================ */
-
+   ============================================================*/
 .projects-page-container 
 {
   padding: 60px 5% 100px;
@@ -1307,6 +1399,7 @@ footer a   { color: var(--gold); text-decoration: none; }
   animation: pageFadeIn 0.8s 0.2s ease-out both;
 }
 
+/*Фільтрація проєктів*/
 .project-filters 
 {
   display: flex;
@@ -1321,7 +1414,7 @@ footer a   { color: var(--gold); text-decoration: none; }
   border: 1px solid #ddd;
   color: var(--navy);
   padding: 10px 24px;
-  border-radius: 30px; /* Круглі "таблетки" */
+  border-radius: 30px;
   font-family: inherit;
   font-size: 15px;
   font-weight: 600;
@@ -1379,6 +1472,7 @@ footer a   { color: var(--gold); text-decoration: none; }
   transform: scale(1.05);
 }
 
+/*Бейдж статусу поверх картинки*/
 .project-status 
 {
   position: absolute;
@@ -1451,7 +1545,7 @@ footer a   { color: var(--gold); text-decoration: none; }
   justify-content: space-between;
   align-items: center;
   padding-top: 16px;
-  border-top: 1px solid #f1f5f9;
+  border-top: 1px solid #f1f5f9; /*Лінія-віддільник перед роком*/
 }
 .project-year 
 {
@@ -1460,25 +1554,27 @@ footer a   { color: var(--gold); text-decoration: none; }
   color: #94a3b8;
 }
 
-/* ============================================================
+/*============================================================
    СТОРІНКА: КОНКУРСИ
-   ============================================================ */
-
-.comp-page-container {
+   ============================================================*/
+.comp-page-container 
+{
   padding: 60px 5% 100px;
   max-width: 1200px;
   margin: 0 auto;
   animation: pageFadeIn 0.8s 0.2s ease-out both;
 }
 
-/* Сітка */
-.comp-grid {
+/*Сітка*/
+.comp-grid 
+{
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
   gap: 30px;
 }
 
-.comp-card {
+.comp-card 
+{
   background: var(--white);
   border-radius: var(--radius);
   overflow: hidden;
@@ -1486,14 +1582,17 @@ footer a   { color: var(--gold); text-decoration: none; }
   display: flex;
   flex-direction: column;
   transition: transform var(--transition), box-shadow var(--transition);
-  border-top: 4px solid var(--navy);
+  border-top: 4px solid var(--navy); /*Акцентна верхня лінія картки*/
 }
-.comp-card:hover {
+.comp-card:hover 
+{
   transform: translateY(-5px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-.comp-header-graphic {
+/*Графічний заголовок картки замість фото*/
+.comp-header-graphic 
+{
   width: 100%;
   height: 100px;
   background: linear-gradient(135deg, var(--navy), #1a365d);
@@ -1501,19 +1600,23 @@ footer a   { color: var(--gold); text-decoration: none; }
   align-items: center;
   justify-content: center;
 }
+/*Варіації кольорів графічного заголовка*/
 .graphic-purple { background: linear-gradient(135deg, #6b21a8, #9333ea); }
 .graphic-amber  { background: linear-gradient(135deg, #b45309, #f59e0b); }
 
-.comp-icon {
+.comp-icon 
+{
   font-size: 40px;
   opacity: 0.8;
 }
 
-.comp-body {
+.comp-body 
+{
   padding: 24px;
   flex-grow: 1;
 }
-.comp-type {
+.comp-type 
+{
   font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
@@ -1521,27 +1624,32 @@ footer a   { color: var(--gold); text-decoration: none; }
   margin-bottom: 8px;
   display: block;
 }
-.comp-body h3 {
+.comp-body h3 
+{
   font-family: 'Playfair Display', serif;
   font-size: 20px;
   line-height: 1.3;
   margin-bottom: 12px;
 }
-.comp-body h3 a {
+.comp-body h3 a 
+{
   color: var(--navy);
   text-decoration: none;
   transition: color var(--transition);
 }
-.comp-body h3 a:hover {
+.comp-body h3 a:hover 
+{
   color: var(--gold);
 }
-.comp-body p {
+.comp-body p 
+{
   color: #666;
   font-size: 14px;
   margin-bottom: 20px;
 }
 
-.comp-footer {
+.comp-footer 
+{
   padding: 0 24px 24px;
   display: flex;
   justify-content: space-between;
@@ -1549,22 +1657,26 @@ footer a   { color: var(--gold); text-decoration: none; }
   margin-top: auto;
 }
 
-.comp-deadline {
+.comp-deadline 
+{
   display: flex;
   flex-direction: column;
 }
-.deadline-label {
+.deadline-label 
+{
   font-size: 11px;
   color: #888;
   text-transform: uppercase;
 }
-.deadline-date {
+.deadline-date 
+{
   font-size: 16px;
   font-weight: 700;
   color: var(--navy); 
 }
 
-.btn-apply, .read-rules {
+.btn-apply, .read-rules 
+{
   font-size: 13px;
   font-weight: 700;
   text-decoration: none;
@@ -1572,40 +1684,44 @@ footer a   { color: var(--gold); text-decoration: none; }
   letter-spacing: 0.05em;
   transition: color var(--transition);
 }
-.btn-apply {
+.btn-apply 
+{
   color: var(--gold);
 }
-.btn-apply:hover {
+.btn-apply:hover 
+{
   color: var(--navy);
 }
-.read-rules {
+.read-rules 
+{
   color: var(--navy);
   opacity: 0.8;
 }
-.read-rules:hover {
+.read-rules:hover 
+{
   opacity: 1;
 }
 
-
-
-/* ============================================================
+/*============================================================
    СТОРІНКА: ГРАНТИ ТА СТАЖУВАННЯ
-   ============================================================ */
-
-.grant-page-container {
+   ============================================================*/
+.grant-page-container 
+{
   padding: 60px 5% 100px;
   max-width: 1200px;
   margin: 0 auto;
   animation: pageFadeIn 0.8s 0.2s ease-out both;
 }
 
-.grant-grid {
+.grant-grid 
+{
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
   gap: 30px;
 }
 
-.grant-card {
+.grant-card 
+{
   background: var(--white);
   border-radius: var(--radius);
   overflow: hidden;
@@ -1615,12 +1731,14 @@ footer a   { color: var(--gold); text-decoration: none; }
   transition: transform var(--transition), box-shadow var(--transition);
   border-top: 4px solid var(--navy);
 }
-.grant-card:hover {
+.grant-card:hover 
+{
   transform: translateY(-5px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-.grant-header-graphic {
+.grant-header-graphic 
+{
   width: 100%;
   height: 100px;
   background: linear-gradient(135deg, var(--navy), #1a365d);
@@ -1628,22 +1746,26 @@ footer a   { color: var(--gold); text-decoration: none; }
   align-items: center;
   justify-content: center;
 }
+/*Кольорові теми для грантів*/
 .graphic-emerald { background: linear-gradient(135deg, #059669, #10b981); }
 .graphic-blue    { background: linear-gradient(135deg, #2563eb, #3b82f6); }
 .graphic-teal    { background: linear-gradient(135deg, #0d9488, #14b8a6); }
 
-.grant-icon {
+.grant-icon 
+{
   font-size: 40px;
   opacity: 0.9;
 }
 
-.grant-body {
+.grant-body 
+{
   padding: 24px;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
 }
-.grant-type {
+.grant-type 
+{
   font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
@@ -1651,18 +1773,21 @@ footer a   { color: var(--gold); text-decoration: none; }
   margin-bottom: 8px;
   display: block;
 }
-.grant-body h3 {
+.grant-body h3 
+{
   font-family: 'Playfair Display', serif;
   font-size: 20px;
   line-height: 1.3;
   margin-bottom: 12px;
 }
-.grant-body h3 a {
+.grant-body h3 a 
+{
   color: var(--navy);
   text-decoration: none;
   transition: color var(--transition);
 }
-.grant-body h3 a:hover {
+.grant-body h3 a:hover 
+{
   color: var(--gold);
 }
 .grant-body p {
@@ -1671,7 +1796,8 @@ footer a   { color: var(--gold); text-decoration: none; }
   margin-bottom: 20px;
 }
 
-.grant-details {
+.grant-details 
+{
   margin-top: auto;
   background: rgba(13, 27, 42, 0.03);
   border-radius: 6px;
@@ -1680,22 +1806,26 @@ footer a   { color: var(--gold); text-decoration: none; }
   flex-direction: column;
   gap: 8px;
 }
-.detail-item {
+.detail-item 
+{
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 13px;
 }
-.detail-label {
+.detail-label 
+{
   color: #666;
   font-weight: 500;
 }
-.detail-value {
+.detail-value 
+{
   color: var(--navy);
   font-weight: 700;
 }
 
-.grant-footer {
+.grant-footer 
+{
   padding: 24px;
   display: flex;
   justify-content: space-between;
@@ -1703,36 +1833,38 @@ footer a   { color: var(--gold); text-decoration: none; }
   border-top: 1px solid #f1f5f9;
 }
 
-.grant-deadline {
+.grant-deadline 
+{
   display: flex;
   flex-direction: column;
 }
-.deadline-label {
+.deadline-label 
+{
   font-size: 11px;
   color: #888;
   text-transform: uppercase;
 }
-.deadline-date {
+.deadline-date 
+{
   font-size: 16px;
   font-weight: 700;
   color: var(--navy);
 }
 
-
-
-/* ============================================================
+/*============================================================
    СТОРІНКА: ШКОЛА МОЛОДОГО ЛІДЕРА
-   ============================================================ */
-
-.school-page-container {
+   ============================================================*/
+.school-page-container 
+{
   padding: 60px 5% 100px;
   max-width: 1200px;
   margin: 0 auto;
   animation: pageFadeIn 0.8s 0.2s ease-out both;
 }
 
-/* --- Секція: Про школу (Інтро + Статистика) --- */
-.school-intro {
+/*--- Секція: Про школу ---*/
+.school-intro 
+{
   display: flex;
   gap: 60px;
   align-items: center;
@@ -1742,31 +1874,37 @@ footer a   { color: var(--gold); text-decoration: none; }
   border-radius: var(--radius);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
 }
-.school-intro-text {
+.school-intro-text 
+{
   flex: 1;
 }
-.school-intro-text h2 {
+.school-intro-text h2 
+{
   font-family: 'Playfair Display', serif;
   font-size: 32px;
   color: var(--navy);
   margin-bottom: 20px;
 }
-.school-intro-text p {
+.school-intro-text p 
+{
   color: #555;
   font-size: 16px;
   line-height: 1.8;
 }
-.school-stats {
+.school-stats 
+{
   flex: 1;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 30px;
 }
-.stat-item {
+.stat-item 
+{
   display: flex;
   flex-direction: column;
 }
-.stat-number {
+.stat-number 
+{
   font-family: 'Playfair Display', serif;
   font-size: 48px;
   font-weight: 700;
@@ -1774,7 +1912,8 @@ footer a   { color: var(--gold); text-decoration: none; }
   line-height: 1;
   margin-bottom: 8px;
 }
-.stat-label {
+.stat-label 
+{
   font-size: 14px;
   font-weight: 700;
   color: var(--navy);
@@ -1782,24 +1921,28 @@ footer a   { color: var(--gold); text-decoration: none; }
   letter-spacing: 0.05em;
 }
 
-/* --- Секція: Програма --- */
-.school-curriculum {
+/*--- Секція: Програма ---*/
+.school-curriculum 
+{
   margin-bottom: 80px;
 }
-.school-curriculum .section-title {
+.school-curriculum .section-title 
+{
   text-align: center;
   font-family: 'Playfair Display', serif;
   font-size: 36px;
   color: var(--navy);
   margin-bottom: 50px;
 }
-.modules-grid {
+.modules-grid 
+{
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: 30px;
 }
 
-.module-card {
+.module-card 
+{
   background: var(--white);
   border-radius: var(--radius);
   padding: 40px 30px;
@@ -1807,14 +1950,17 @@ footer a   { color: var(--gold); text-decoration: none; }
   position: relative;
   overflow: hidden;
   transition: transform var(--transition), box-shadow var(--transition);
-  border-left: 4px solid var(--gold);
+  border-left: 4px solid var(--gold); /*Декоративна смужка зліва картки*/
 }
-.module-card:hover {
+.module-card:hover 
+{
   transform: translateY(-5px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-.module-number {
+/*Велика водяна цифра модуля у куті*/
+.module-number 
+{
   position: absolute;
   top: -20px;
   right: -10px;
@@ -1826,15 +1972,19 @@ footer a   { color: var(--gold); text-decoration: none; }
   z-index: 1;
   transition: color var(--transition);
 }
-.module-card:hover .module-number {
-  color: rgba(212, 175, 55, 0.1);
+.module-card:hover .module-number 
+{
+  color: rgba(212, 175, 55, 0.1); /*Зміна кольору цифри при наведенні*/
 }
 
-.module-content {
+/*z-index: 2 гарантує, що текст буде поверх водяної цифри*/
+.module-content 
+{
   position: relative;
   z-index: 2;
 }
-.module-tag {
+.module-tag 
+{
   display: inline-block;
   background: var(--navy);
   color: var(--white);
@@ -1845,19 +1995,22 @@ footer a   { color: var(--gold); text-decoration: none; }
   border-radius: 4px;
   margin-bottom: 16px;
 }
-.module-content h3 {
+.module-content h3 
+{
   font-family: 'Playfair Display', serif;
   font-size: 22px;
   color: var(--navy);
   margin-bottom: 12px;
   line-height: 1.3;
 }
-.module-content p {
+.module-content p 
+{
   color: #666;
   font-size: 15px;
   line-height: 1.6;
 }
 
+/*Блок заклику до дії (Call to Action) у школі лідерів*/
 .school-cta {
   background: linear-gradient(135deg, var(--navy), #1a365d);
   border-radius: var(--radius);
@@ -1869,17 +2022,20 @@ footer a   { color: var(--gold); text-decoration: none; }
   color: var(--white);
   box-shadow: 0 10px 40px rgba(13, 27, 42, 0.2);
 }
-.cta-content h2 {
+.cta-content h2 
+{
   font-family: 'Playfair Display', serif;
   font-size: 32px;
   color: var(--gold);
   margin-bottom: 12px;
 }
-.cta-content p {
+.cta-content p 
+{
   font-size: 16px;
   color: rgba(255, 255, 255, 0.8);
 }
-.btn-cta {
+.btn-cta 
+{
   background: var(--gold);
   color: var(--navy);
   padding: 16px 40px;
@@ -1890,30 +2046,11 @@ footer a   { color: var(--gold); text-decoration: none; }
   text-transform: uppercase;
   letter-spacing: 0.05em;
   transition: all var(--transition);
-  white-space: nowrap;
+  white-space: nowrap; /*Кнопка не переносить текст на новий рядок*/
 }
-.btn-cta:hover {
+.btn-cta:hover 
+{
   background: #fff;
   transform: translateY(-2px);
   box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
-}
-
-@media (max-width: 900px) {
-  .school-intro {
-    flex-direction: column;
-    gap: 40px;
-  }
-  .school-cta {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-@media (max-width: 600px) {
-  .school-stats {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-  .school-intro {
-    padding: 30px 20px;
-  }
 }

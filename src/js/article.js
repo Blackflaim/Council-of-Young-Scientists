@@ -68,6 +68,7 @@ article.image
 ?
 `
 <img
+class="article-image"
 src="${article.image}"
 alt="${article.title}">
 `

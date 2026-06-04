@@ -1,86 +1,43 @@
-import { db }
-from "./firebase.js";
+import { db } from "./firebase.js";
+import { collection, getDocs, query, limit } from "firebase/firestore"; // Не забудь додати query та limit сюди
 
-import {
+const container = document.getElementById("newsContainer");
+const newsCollection = collection(db, "news");
 
-collection,
-getDocs
+async function loadNews() {
+    if(!container) return;
 
-}
-from "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js";
+    container.innerHTML = '';
 
-const container =
-document.getElementById(
-"newsContainer"
-);
+    // Створюємо запит: взяти колекцію "news", але завантажити 4 штуки
+    const q = query(newsCollection, limit(5));
+    const snapshot = await getDocs(q);
 
-const newsCollection =
-collection(
-db,
-"news"
-);
+    let index = 0; 
 
-async function loadNews()
-{
+    snapshot.forEach(docItem => {
+        const item = docItem.data();
+        
+        // Перша новина (index === 0) отримує клас featured
+        const featuredClass = index === 0 ? "featured" : ""; 
 
-if(!container)
-return;
-
-container.innerHTML='';
-
-const snapshot =
-await getDocs(
-newsCollection
-);
-
-snapshot.forEach(docItem =>
-{
-
-const item =
-docItem.data();
-
-container.innerHTML += `
-
-<article class="news-card">
-
-${
-item.image
-?
-`
-<img
-src="${item.image}"
-alt="${item.title}">
-`
-:
-''
-}
-
-<div class="news-body">
-
-<h3>
-${item.title}
-</h3>
-
-<p>
-${item.description}
-</p>
-
-<a
-href="/news.html?id=${docItem.id}"
-class="news-read-more">
-
-Читати далі →
-
-</a>
-
-</div>
-
-</article>
-
-`;
-
-});
-
+        container.innerHTML += `
+        <article class="news-card ${featuredClass}">
+            ${
+                item.image && item.image !== "none"
+                ? `<div class="news-img"><img src="${item.image}" alt="${item.title}"></div>`
+                : ''
+            }
+            <div class="news-body">
+                <h3>${item.title}</h3>
+                <p>${item.description}</p>
+                <a href="/news.html?id=${docItem.id}" class="news-read-more">Читати далі →</a>
+            </div>
+        </article>
+        `;
+        
+        index++; 
+    });
 }
 
 loadNews();
