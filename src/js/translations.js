@@ -73,24 +73,100 @@ export const translations = {
     nav_team: "Склад",
     nav_contacts: "Контакти",
 
-
     // --- СТОРІНКА ПРОЄКТІВ ---
     proj_page_title: "Портфоліо проєктів | Рада молодих вчених",
     proj_header_title: "Портфоліо проєктів",
     proj_header_desc: "Ініціативи, дослідження та грантові програми, які ми реалізуємо для розвитку науки",
+    
+    // Фільтри та системні слова
+    proj_filter_all: "Усі проєкти",
+    proj_filter_grants: "Гранти",
+    proj_filter_conf: "Конференції",
+    proj_filter_social: "Соціальні",
+    proj_status_active: "Триває",
+    proj_status_done: "Завершено",
+    proj_cat_grants: "Гранти",
+    proj_cat_conf: "Конференції",
+    proj_cat_social: "Соціальні",
+    proj_read_more: "Детальніше &rarr;",
 
+    // Картки проєктів
+    proj1_title: 'Програма підтримки молодих дослідників "Науковий старт"',
+    proj1_desc: "Надання мікрогрантів на проведення первинних досліджень та закупівлю необхідного лабораторного обладнання для аспірантів.",
+    proj1_date: "2026 - 2027",
+    
+    proj2_title: 'Міжнародний симпозіум "Science Future"',
+    proj2_desc: "Організація та проведення масштабного симпозіуму, який об'єднав 300 вчених з 12 країн світу для обміну досвідом.",
+    proj2_date: "Травень 2025",
+    
+    proj3_title: 'Популяризація науки в школах "Science 4 Kids"',
+    proj3_desc: "Серія відкритих лекцій та практичних майстер-класів для школярів старших класів від молодих вчених нашого регіону.",
+    proj3_date: "2025 - 2026",
 
     // --- СТОРІНКА КОНКУРСІВ ---
     comp_page_title: "Конкурси | Рада молодих вчених",
     comp_header_title: "Конкурси",
     comp_header_desc: "Відкривайте нові можливості для визнання ваших наукових досягнень та розвитку потенціалу",
+    
+    // Системні слова
+    comp_type_prize: "Премія",
+    comp_type_hackathon: "Науковий Хакатон",
+    comp_type_scholarship: "Стипендія",
+    comp_label_deadline: "Дедлайн:",
+    comp_label_start: "Початок:",
+    comp_btn_apply: "Подати заявку &rarr;",
+    comp_btn_rules: "Умови &rarr;",
+    comp_btn_details: "Деталі &rarr;",
 
+    // Картки конкурсів
+    comp1_title: "Премія Ради за найкращий науковий огляд",
+    comp1_desc: "Конкурс для молодих вчених на написання найкращого огляду актуальної наукової проблеми.",
+    comp1_date: "30 Жовтня 2026",
 
-    // --- СТОРІНКА КОНКУРСІВ ---
-    comp_page_title: "Конкурси | Рада молодих вчених",
-    comp_header_title: "Конкурси",
-    comp_header_desc: "Відкривайте нові можливості для визнання ваших наукових досягнень та розвитку потенціалу",
+    comp2_title: 'Хакатон інноваційних проєктів "Science-to-Business"',
+    comp2_desc: "Презентація, експертна оцінка та захист прикладних наукових розробок у сфері DeepTech перед менторами.",
+    comp2_date: "15 Грудня 2026",
 
+    comp3_title: "Іменна стипендія для стажування за кордоном",
+    comp3_desc: "Підтримка короткострокових наукових стажувань та підвищення кваліфікації у провідних лабораторіях Європи.",
+    comp3_date: "Січень 2027",
+
+    // --- СТОРІНКА ГРАНТІВ ---
+    grant_page_title: "Гранти та стажування | Рада молодих вчених",
+    grant_header_title: "Гранти та стажування",
+    grant_header_desc: "Актуальні можливості для фінансування досліджень, мобільності та розвитку наукової кар'єри",
+
+    // Системні слова
+    grant_type_research: "Дослідницький Грант",
+    grant_type_internship: "Міжнародне стажування",
+    grant_type_travel: "Тревел-грант",
+    grant_label_budget: "Бюджет:",
+    grant_label_duration: "Тривалість:",
+    grant_label_location: "Локація:",
+    grant_label_applications: "Прийом заявок:",
+    grant_label_deadline: "Дедлайн:",
+    grant_label_next_wave: "Найближча хвиля:",
+    grant_btn_apply: "Подати заявку &rarr;",
+    grant_btn_rules: "Умови &rarr;",
+
+    // Картки грантів
+    grant1_title: "Грант на закупівлю лабораторного обладнання",
+    grant1_desc: "Мікрофінансування для молодих вчених на придбання реактивів та дрібного обладнання для поточних досліджень.",
+    grant1_val1: "До 50 000 грн",
+    grant1_val2: "6 місяців",
+    grant1_date: "20 Листопада 2026",
+
+    grant2_title: "Програма обміну з Варшавським Університетом",
+    grant2_desc: "Повністю фінансоване стажування на базі факультету точних наук. Покриває переліт, проживання та добові.",
+    grant2_val1: "Варшава, Польща",
+    grant2_val2: "3 місяці",
+    grant2_date: "01 Грудня 2026",
+
+    grant3_title: "Фінансування участі у міжнародних конференціях",
+    grant3_desc: "Компенсація організаційного внеску та транспортних витрат для молодих науковців, чиї тези прийняті до публікації.",
+    grant3_val1: "До 20 000 грн",
+    grant3_val2: "Постійно",
+    grant3_date: "10 Жовтня 2026",
 
     // --- СТОРІНКА ШКОЛИ ЛІДЕРА ---
     school_page_title: "Школа молодого лідера | Рада молодих вчених",
@@ -121,12 +197,10 @@ export const translations = {
     school_cta_desc: "Старт навчання:",
     school_cta_btn: "Подати заявку",
 
-
-    // --- СТОРІНКА ОДНІЄЇ НОВИНИ ---
-    article_page_title: "Новина | Рада молодих вчених",
-    article_header_title: "Новина",
-    article_header_desc: "Детальний перегляд публікації",
-
+    // --- СТОРІНКА НОВИН --- ВИПРАВЛЕНО КЛЮЧІ
+    news_page_title: "Новина | Рада молодих вчених",
+    news_header_title: "Новина",
+    news_header_desc: "Детальний перегляд публікації",
 
     // --- СТОРІНКА ПОВНОГО СКЛАДУ РАДИ ---
     team_page_title: "Повний склад | Рада молодих вчених",
@@ -135,7 +209,7 @@ export const translations = {
 
     // --- ФУТЕР ---
     footer_copyright: "© 2026 Рада молодих вчених. Усі права захищено.",
-    footer_dev_info: "Розроблено в рамках виробничої практики·"
+    footer_dev_info: "Розроблено в рамках виробничої практики"
   },
   
   en: {
@@ -212,18 +286,100 @@ export const translations = {
     nav_team: "Team",
     nav_contacts: "Contacts",
 
-
     // --- СТОРІНКА ПРОЄКТІВ ---
     proj_page_title: "Projects Portfolio | Council of Young Scientists",
     proj_header_title: "Projects Portfolio",
     proj_header_desc: "Initiatives, research, and grant programs we implement for the development of science",
 
+    // Фільтри та системні слова
+    proj_filter_all: "All projects",
+    proj_filter_grants: "Grants",
+    proj_filter_conf: "Conferences",
+    proj_filter_social: "Social",
+    proj_status_active: "Ongoing",
+    proj_status_done: "Completed",
+    proj_cat_grants: "Grants",
+    proj_cat_conf: "Conferences",
+    proj_cat_social: "Social",
+    proj_read_more: "Read more &rarr;",
+
+    // Картки проєктів
+    proj1_title: 'Young Researchers Support Program "Science Start"',
+    proj1_desc: "Providing micro-grants for primary research and purchasing necessary laboratory equipment for postgraduate students.",
+    proj1_date: "2026 - 2027",
+    
+    proj2_title: 'International Symposium "Science Future"',
+    proj2_desc: "Organizing and hosting a large-scale symposium that brought together 300 scientists from 12 countries to exchange experiences.",
+    proj2_date: "May 2025",
+    
+    proj3_title: 'Popularizing Science in Schools "Science 4 Kids"',
+    proj3_desc: "A series of open lectures and practical workshops for high school students by young scientists from our region.",
+    proj3_date: "2025 - 2026",
 
     // --- СТОРІНКА КОНКУРСІВ ---
     comp_page_title: "Competitions | Council of Young Scientists",
     comp_header_title: "Competitions",
     comp_header_desc: "Discover new opportunities for the recognition of your scientific achievements and potential development",
+    
+    // Системні слова
+    comp_type_prize: "Award",
+    comp_type_hackathon: "Science Hackathon",
+    comp_type_scholarship: "Scholarship",
+    comp_label_deadline: "Deadline:",
+    comp_label_start: "Starts:",
+    comp_btn_apply: "Apply now &rarr;",
+    comp_btn_rules: "Rules &rarr;",
+    comp_btn_details: "Details &rarr;",
 
+    // Картки конкурсів
+    comp1_title: "Council Award for the Best Scientific Review",
+    comp1_desc: "A competition for young scientists to write the best review of a current scientific problem.",
+    comp1_date: "October 30, 2026",
+
+    comp2_title: 'Innovative Projects Hackathon "Science-to-Business"',
+    comp2_desc: "Presentation, expert evaluation, and defense of applied scientific developments in DeepTech to mentors.",
+    comp2_date: "December 15, 2026",
+
+    comp3_title: "Named Scholarship for Internship Abroad",
+    comp3_desc: "Support for short-term scientific internships and advanced training in leading European laboratories.",
+    comp3_date: "January 2027",
+
+    // --- СТОРІНКА ГРАНТІВ ---
+    grant_page_title: "Grants and Internships | Council of Young Scientists",
+    grant_header_title: "Grants and Internships",
+    grant_header_desc: "Current opportunities for research funding, mobility, and scientific career development",
+
+    // Системні слова
+    grant_type_research: "Research Grant",
+    grant_type_internship: "International Internship",
+    grant_type_travel: "Travel Grant",
+    grant_label_budget: "Budget:",
+    grant_label_duration: "Duration:",
+    grant_label_location: "Location:",
+    grant_label_applications: "Applications:",
+    grant_label_deadline: "Deadline:",
+    grant_label_next_wave: "Next wave:",
+    grant_btn_apply: "Apply now &rarr;",
+    grant_btn_rules: "Rules &rarr;",
+
+    // Картки грантів
+    grant1_title: "Grant for the Purchase of Laboratory Equipment",
+    grant1_desc: "Micro-financing for young scientists to purchase reagents and small equipment for ongoing research.",
+    grant1_val1: "Up to 50,000 UAH",
+    grant1_val2: "6 months",
+    grant1_date: "November 20, 2026",
+
+    grant2_title: "Exchange Program with the University of Warsaw",
+    grant2_desc: "Fully funded internship at the Faculty of Exact Sciences. Covers flights, accommodation, and daily allowance.",
+    grant2_val1: "Warsaw, Poland",
+    grant2_val2: "3 months",
+    grant2_date: "December 01, 2026",
+
+    grant3_title: "Funding for Participation in International Conferences",
+    grant3_desc: "Compensation of the organizational fee and transport expenses for young scientists whose abstracts are accepted for publication.",
+    grant3_val1: "Up to 20,000 UAH",
+    grant3_val2: "Ongoing",
+    grant3_date: "October 10, 2026",
 
     // --- СТОРІНКА ШКОЛИ ЛІДЕРА ---
     school_page_title: "Young Leader School | Council of Young Scientists",
@@ -254,21 +410,18 @@ export const translations = {
     school_cta_desc: "Training starts:",
     school_cta_btn: "Apply now",
 
-
     // --- СТОРІНКА НОВИН ---
     news_page_title: "News Article | Council of Young Scientists",
     news_header_title: "News Article",
     news_header_desc: "Detailed view of the publication",
 
-
     // --- СТОРІНКА ПОВНОГО СКЛАДУ РАДИ ---
     team_page_title: "Full Composition | Council of Young Scientists",
     team_header_title: "Council Members",
     team_header_desc: "Bringing together the best young scientists for the development of science and innovation",
-
     
     // --- ФУТЕР ---
     footer_copyright: "© 2026 Council of Young Scientists. All rights reserved.",
-    footer_dev_info: "Developed as part of an academic internship·"
+    footer_dev_info: "Developed as part of an academic internship"
   }
 };

@@ -3,7 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-i18n="comp_page_title">Конкурси | Рада молодих вчених</title>
+  
+  <meta name="description" content="Гранти та стажування Ради молодих вчених. Актуальні можливості для фінансування досліджень, мобільності та розвитку наукової кар'єри." />
+  <meta property="og:title" content="Гранти та стажування | Рада молодих вчених" />
+  <meta property="og:description" content="Актуальні грантові програми, міжнародні стажування та тревел-гранти для молодих науковців." />
+  <meta property="og:image" content="/images/grants-og.jpg" />
+  <meta property="og:type" content="website" />
+
+  <title data-i18n="grant_page_title">Гранти та стажування | Рада молодих вчених</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/src/css/style.css">
 </head>
@@ -13,109 +23,106 @@
 
   <header class="page-header">
     <div class="page-header-content">
-      <h1 data-i18n="comp_header_title">Конкурси</h1>
-      <p data-i18n="comp_header_desc">Відкривайте нові можливості для визнання ваших наукових досягнень та розвитку потенціалу</p>
+      <h1 data-i18n="grant_header_title">Гранти та стажування</h1>
+      <p data-i18n="grant_header_desc">Актуальні можливості для фінансування досліджень, мобільності та розвитку наукової кар'єри</p>
     </div>
   </header>
 
   <main class="grant-page-container">
-
     <div class="grant-grid" id="grantContainer">
       
       <article class="grant-card">
         <div class="grant-header-graphic graphic-emerald">
-          <div class="grant-icon">💰</div>
+          <div class="grant-icon" aria-hidden="true">💰</div>
         </div>
         <div class="grant-body">
-          <span class="grant-type">Дослідницький Грант</span>
-          <h3><a href="#">Грант на закупівлю лабораторного обладнання</a></h3>
-          <p>Мікрофінансування для молодих вчених на придбання реактивів та дрібного обладнання для поточних досліджень.</p>
+          <span class="grant-type" data-i18n="grant_type_research">Дослідницький Грант</span>
+          <h3><a href="#" data-i18n="grant1_title">Грант на закупівлю лабораторного обладнання</a></h3>
+          <p data-i18n="grant1_desc">Мікрофінансування для молодих вчених на придбання реактивів та дрібного обладнання для поточних досліджень.</p>
           
           <div class="grant-details">
             <div class="detail-item">
-              <span class="detail-label">Бюджет:</span>
-              <span class="detail-value">До 50 000 грн</span>
+              <span class="detail-label" data-i18n="grant_label_budget">Бюджет:</span>
+              <span class="detail-value" data-i18n="grant1_val1">До 50 000 грн</span>
             </div>
             <div class="detail-item">
-              <span class="detail-label">Тривалість:</span>
-              <span class="detail-value">6 місяців</span>
+              <span class="detail-label" data-i18n="grant_label_duration">Тривалість:</span>
+              <span class="detail-value" data-i18n="grant1_val2">6 місяців</span>
             </div>
           </div>
         </div>
         <div class="grant-footer">
           <div class="grant-deadline">
-            <span class="deadline-label">Дедлайн:</span>
-            <span class="deadline-date">20 Листопада 2026</span> 
+            <span class="deadline-label" data-i18n="grant_label_deadline">Дедлайн:</span>
+            <span class="deadline-date" data-i18n="grant1_date">20 Листопада 2026</span> 
           </div>
-          <a href="#" class="btn-apply">Подати заявку &rarr;</a>
+          <a href="#" class="btn-apply" data-i18n="grant_btn_apply">Подати заявку &rarr;</a>
         </div>
       </article>
 
       <article class="grant-card">
         <div class="grant-header-graphic graphic-blue">
-          <div class="grant-icon">🌍</div>
+          <div class="grant-icon" aria-hidden="true">🌍</div>
         </div>
         <div class="grant-body">
-          <span class="grant-type">Міжнародне стажування</span>
-          <h3><a href="#">Програма обміну з Варшавським Університетом</a></h3>
-          <p>Повністю фінансоване стажування на базі факультету точних наук. Покриває переліт, проживання та добові.</p>
+          <span class="grant-type" data-i18n="grant_type_internship">Міжнародне стажування</span>
+          <h3><a href="#" data-i18n="grant2_title">Програма обміну з Варшавським Університетом</a></h3>
+          <p data-i18n="grant2_desc">Повністю фінансоване стажування на базі факультету точних наук. Покриває переліт, проживання та добові.</p>
           
           <div class="grant-details">
             <div class="detail-item">
-              <span class="detail-label">Локація:</span>
-              <span class="detail-value">Варшава, Польща</span>
+              <span class="detail-label" data-i18n="grant_label_location">Локація:</span>
+              <span class="detail-value" data-i18n="grant2_val1">Варшава, Польща</span>
             </div>
             <div class="detail-item">
-              <span class="detail-label">Тривалість:</span>
-              <span class="detail-value">3 місяці</span>
+              <span class="detail-label" data-i18n="grant_label_duration">Тривалість:</span>
+              <span class="detail-value" data-i18n="grant2_val2">3 місяці</span>
             </div>
           </div>
         </div>
         <div class="grant-footer">
           <div class="grant-deadline">
-            <span class="deadline-label">Дедлайн:</span>
-            <span class="deadline-date">01 Грудня 2026</span>
+            <span class="deadline-label" data-i18n="grant_label_deadline">Дедлайн:</span>
+            <span class="deadline-date" data-i18n="grant2_date">01 Грудня 2026</span>
           </div>
-          <a href="#" class="btn-apply">Подати заявку &rarr;</a>
+          <a href="#" class="btn-apply" data-i18n="grant_btn_apply">Подати заявку &rarr;</a>
         </div>
       </article>
 
       <article class="grant-card">
         <div class="grant-header-graphic graphic-teal">
-          <div class="grant-icon">✈️</div>
+          <div class="grant-icon" aria-hidden="true">✈️</div>
         </div>
         <div class="grant-body">
-          <span class="grant-type">Тревел-грант</span>
-          <h3><a href="#">Фінансування участі у міжнародних конференціях</a></h3>
-          <p>Компенсація організаційного внеску та транспортних витрат для молодих науковців, чиї тези прийняті до публікації.</p>
+          <span class="grant-type" data-i18n="grant_type_travel">Тревел-грант</span>
+          <h3><a href="#" data-i18n="grant3_title">Фінансування участі у міжнародних конференціях</a></h3>
+          <p data-i18n="grant3_desc">Компенсація організаційного внеску та транспортних витрат для молодих науковців, чиї тези прийняті до публікації.</p>
           
           <div class="grant-details">
             <div class="detail-item">
-              <span class="detail-label">Бюджет:</span>
-              <span class="detail-value">До 20 000 грн</span>
+              <span class="detail-label" data-i18n="grant_label_budget">Бюджет:</span>
+              <span class="detail-value" data-i18n="grant3_val1">До 20 000 грн</span>
             </div>
             <div class="detail-item">
-              <span class="detail-label">Прийом заявок:</span>
-              <span class="detail-value">Постійно</span>
+              <span class="detail-label" data-i18n="grant_label_applications">Прийом заявок:</span>
+              <span class="detail-value" data-i18n="grant3_val2">Постійно</span>
             </div>
           </div>
         </div>
         <div class="grant-footer">
           <div class="grant-deadline">
-            <span class="deadline-label">Найближча хвиля:</span>
-            <span class="deadline-date">10 Жовтня 2026</span>
+            <span class="deadline-label" data-i18n="grant_label_next_wave">Найближча хвиля:</span>
+            <span class="deadline-date" data-i18n="grant3_date">10 Жовтня 2026</span>
           </div>
-          <a href="#" class="read-rules">Умови &rarr;</a>
+          <a href="#" class="read-rules" data-i18n="grant_btn_rules">Умови &rarr;</a>
         </div>
       </article>
 
     </div>
   </main>
 
-<div id="footer"></div>
+  <div id="footer"></div>
 
-<script type="module" src="/src/js/main.js"></script>
-
-</script>
+  <script type="module" src="/src/js/main.js"></script>
 </body>
 </html>

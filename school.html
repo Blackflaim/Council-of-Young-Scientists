@@ -3,7 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="description" content="Школа молодого лідера від Ради молодих вчених. Інтенсивна програма розвитку soft-skills, управління проєктами та комунікацій для науковців." />
+  <meta property="og:title" content="Школа молодого лідера | Рада молодих вчених" />
+  <meta property="og:description" content="Навчіться перетворювати свої ідеї на успішні проєкти разом з нашими експертами." />
+  <meta property="og:image" content="/images/school-og.jpg" />
+  <meta property="og:type" content="website" />
+
   <title data-i18n="school_page_title">Школа молодого лідера | Рада молодих вчених</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/src/css/style.css">
 </head>
@@ -15,7 +25,7 @@
   <header class="page-header">
     <div class="page-header-content">
       <h1 data-i18n="school_header_title">Школа молодого лідера</h1>
-      <p data-i18n="school_header_desc">Інтенсивна программа розвитку soft-skills, управління проєктами та комунікацій для науковців</p>
+      <p data-i18n="school_header_desc">Інтенсивна програма розвитку soft-skills, управління проєктами та комунікацій для науковців</p>
     </div>
   </header>
 
@@ -44,7 +54,7 @@
       </div>
     </section>
 
-    <!-- Програма курсу (Модулі) -->
+    <!-- Програма курсу -->
     <section class="school-curriculum">
       <h2 class="section-title" data-i18n="school_curriculum_title">Програма курсу</h2>
       
@@ -52,7 +62,8 @@
         
         <!-- Модуль 1 -->
         <article class="module-card">
-          <div class="module-number">01</div>
+          <!-- ДОДАНО: aria-hidden="true", щоб скрінрідери ігнорували декоративну фонову цифру -->
+          <div class="module-number" aria-hidden="true">01</div>
           <div class="module-content">
             <span class="module-tag" data-i18n="school_mod1_tag">Soft Skills</span>
             <h3 data-i18n="school_mod1_title">Емоційний інтелект та Лідерство</h3>
@@ -62,7 +73,7 @@
 
         <!-- Модуль 2 -->
         <article class="module-card">
-          <div class="module-number">02</div>
+          <div class="module-number" aria-hidden="true">02</div>
           <div class="module-content">
             <span class="module-tag" data-i18n="school_mod2_tag">Менеджмент</span>
             <h3 data-i18n="school_mod2_title">Управління науковими проєктами</h3>
@@ -72,7 +83,7 @@
 
         <!-- Модуль 3 -->
         <article class="module-card">
-          <div class="module-number">03</div>
+          <div class="module-number" aria-hidden="true">03</div>
           <div class="module-content">
             <span class="module-tag" data-i18n="school_mod3_tag">Фандрейзинг</span>
             <h3 data-i18n="school_mod3_title">Грантовий райтинг</h3>
@@ -82,7 +93,7 @@
 
         <!-- Модуль 4 -->
         <article class="module-card">
-          <div class="module-number">04</div>
+          <div class="module-number" aria-hidden="true">04</div>
           <div class="module-content">
             <span class="module-tag" data-i18n="school_mod4_tag">PR та Медіа</span>
             <h3 data-i18n="school_mod4_title">Наукова комунікація</h3>
@@ -93,6 +104,7 @@
       </div>
     </section>
 
+    <!-- Блок Call-to-action -->
     <section class="school-cta">
       <div class="cta-content">
         <h2 data-i18n="school_cta_title">Відкрито набір!</h2>

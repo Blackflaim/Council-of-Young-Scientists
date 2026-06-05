@@ -21,57 +21,60 @@
   <main class="projects-page-container">
     
     <div class="project-filters">
-      <button class="filter-btn active">Усі проєкти</button>
-      <button class="filter-btn">Гранти</button>
-      <button class="filter-btn">Конференції</button>
-      <button class="filter-btn">Соціальні</button>
+      <button class="filter-btn active" data-i18n="proj_filter_all">Усі проєкти</button>
+      <button class="filter-btn" data-i18n="proj_filter_grants">Гранти</button>
+      <button class="filter-btn" data-i18n="proj_filter_conf">Конференції</button>
+      <button class="filter-btn" data-i18n="proj_filter_social">Соціальні</button>
     </div>
 
     <div class="projects-grid" id="projectsContainer">
       
+      <!-- Проєкт 1 -->
       <article class="project-card">
         <div class="project-img">
-          <div class="project-status status-active">Триває</div>
+          <div class="project-status status-active" data-i18n="proj_status_active">Триває</div>
           <img src="https://via.placeholder.com/600x400" alt="Проєкт 1">
         </div>
         <div class="project-content">
-          <span class="project-category">Гранти</span>
-          <h3><a href="#">Програма підтримки молодих дослідників "Науковий старт"</a></h3>
-          <p>Надання мікрогрантів на проведення первинних досліджень та закупівлю необхідного лабораторного обладнання для аспірантів.</p>
+          <span class="project-category" data-i18n="proj_cat_grants">Гранти</span>
+          <h3><a href="#" data-i18n="proj1_title">Програма підтримки молодих дослідників "Науковий старт"</a></h3>
+          <p data-i18n="proj1_desc">Надання мікрогрантів на проведення первинних досліджень та закупівлю необхідного лабораторного обладнання для аспірантів.</p>
           <div class="project-footer">
-            <span class="project-year">2026 - 2027</span>
-            <a href="#" class="read-more">Детальніше &rarr;</a>
+            <span class="project-year" data-i18n="proj1_date">2026 - 2027</span>
+            <a href="#" class="read-more" data-i18n="proj_read_more">Детальніше &rarr;</a>
           </div>
         </div>
       </article>
 
+      <!-- Проєкт 2 -->
       <article class="project-card">
         <div class="project-img">
-          <div class="project-status status-done">Завершено</div>
+          <div class="project-status status-done" data-i18n="proj_status_done">Завершено</div>
           <img src="https://via.placeholder.com/600x400" alt="Проєкт 2">
         </div>
         <div class="project-content">
-          <span class="project-category">Конференції</span>
-          <h3><a href="#">Міжнародний симпозіум "Science Future"</a></h3>
-          <p>Організація та проведення масштабного симпозіуму, який об'єднав 300 вчених з 12 країн світу для обміну досвідом.</p>
+          <span class="project-category" data-i18n="proj_cat_conf">Конференції</span>
+          <h3><a href="#" data-i18n="proj2_title">Міжнародний симпозіум "Science Future"</a></h3>
+          <p data-i18n="proj2_desc">Організація та проведення масштабного симпозіуму, який об'єднав 300 вчених з 12 країн світу для обміну досвідом.</p>
           <div class="project-footer">
-            <span class="project-year">Травень 2025</span>
-            <a href="#" class="read-more">Детальніше &rarr;</a>
+            <span class="project-year" data-i18n="proj2_date">Травень 2025</span>
+            <a href="#" class="read-more" data-i18n="proj_read_more">Детальніше &rarr;</a>
           </div>
         </div>
       </article>
 
+      <!-- Проєкт 3 -->
       <article class="project-card">
         <div class="project-img">
-          <div class="project-status status-active">Триває</div>
-          </div>
+          <div class="project-status status-active" data-i18n="proj_status_active">Триває</div>
+        </div>
         <div class="project-content">
-          <span class="project-category">Соціальні</span>
-          <h3><a href="#">Популяризація науки в школах "Science 4 Kids"</a></h3>
-          <p>Серія відкритих лекцій та практичних майстер-класів для школярів старших класів від молодих вчених нашого регіону.</p>
+          <span class="project-category" data-i18n="proj_cat_social">Соціальні</span>
+          <h3><a href="#" data-i18n="proj3_title">Популяризація науки в школах "Science 4 Kids"</a></h3>
+          <p data-i18n="proj3_desc">Серія відкритих лекцій та практичних майстер-класів для школярів старших класів від молодих вчених нашого регіону.</p>
           <div class="project-footer">
-            <span class="project-year">2025 - 2026</span>
-            <a href="#" class="read-more">Детальніше &rarr;</a>
+            <span class="project-year" data-i18n="proj3_date">2025 - 2026</span>
+            <a href="#" class="read-more" data-i18n="proj_read_more">Детальніше &rarr;</a>
           </div>
         </div>
       </article>

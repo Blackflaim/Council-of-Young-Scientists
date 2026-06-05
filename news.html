@@ -1,78 +1,47 @@
 <!DOCTYPE html>
 <html lang="uk">
-
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="description" content="Новини Ради молодих вчених. Останні події, анонси та досягнення нашої спільноти." />
+  <meta property="og:title" content="Новини | Рада молодих вчених" />
+  <meta property="og:description" content="Детальний перегляд публікацій та актуальних новин." />
+  <meta property="og:image" content="/images/news-og.jpg" />
+  <meta property="og:type" content="article" />
 
-<meta charset="UTF-8">
+  <title data-i18n="news_page_title">Новини | Рада молодих вчених</title>
 
-<meta
-name="viewport"
-content="width=device-width, initial-scale=1.0">
-
-<title data-i18n="news_page_title">Новина | Рада молодих вчених</title>
-
-<link rel="preconnect"
-href="https://fonts.googleapis.com">
-
-<link rel="preconnect"
-href="https://fonts.gstatic.com"
-crossorigin>
-
-<link
-href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Manrope:wght@300;400;500;600;700&display=swap"
-rel="stylesheet">
-
-<link
-rel="stylesheet"
-href="/src/css/style.css">
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/css/style.css">
 </head>
-
 <body>
 
-<div id="header"></div>
+  <div id="header"></div>
 
-<header class="page-header">
+  <header class="page-header">
+    <div class="page-header-content">
+      <h1 id="dynamic-page-title" data-i18n="news_header_title">Новина</h1>
+      <p id="dynamic-page-desc" data-i18n="news_header_desc">Детальний перегляд публікації</p>
+    </div>
+  </header>
 
-<div class="page-header-content">
-
-<h1 data-i18n="news_header_title">
-Новина
-</h1>
-
-<p data-i18n="news_header_desc">
-Детальний перегляд публікації
-</p>
-
-</div>
-
-</header>
-
-<main class="news-page-container">
-
+  <main class="news-page-container">
+    
     <div id="newsContainer" class="articles-grid"></div>
-
+    
     <div id="articleContainer"></div>
 
-</main>
+  </main>
 
-<div id="footer"></div>
+  <div id="footer"></div>
 
-<script
-type="module"
-src="/src/js/main.js">
-</script>
-
-<script
-type="module"
-src="/src/js/news-page.js">
-</script>
-
-<script
-type="module"
-src="/src/js/article.js">
-</script>
+  <script type="module" src="/src/js/main.js"></script>
+  
+  <script type="module" src="/src/js/news-page.js"></script>
+  <script type="module" src="/src/js/article.js"></script>
 
 </body>
-
 </html>

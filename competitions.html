@@ -3,7 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- ДОДАНО: Базові SEO-теги для пошукових систем та соціальних мереж -->
+  <meta name="description" content="Конкурси Ради молодих вчених. Відкривайте нові можливості для визнання ваших наукових досягнень та розвитку потенціалу." />
+  <meta property="og:title" content="Конкурси | Рада молодих вчених" />
+  <meta property="og:description" content="Конкурси, премії, хакатони та стипендії для молодих вчених." />
+  <meta property="og:image" content="/images/competitions-og.jpg" />
+  <meta property="og:type" content="website" />
+
   <title data-i18n="comp_page_title">Конкурси | Рада молодих вчених</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/src/css/style.css">
 </head>
@@ -11,6 +22,7 @@
 
   <div id="header"></div>
 
+  <!-- ── ШАПКА СТОРІНКИ ── -->
   <header class="page-header">
     <div class="page-header-content">
       <h1 data-i18n="comp_header_title">Конкурси</h1>
@@ -18,71 +30,69 @@
     </div>
   </header>
 
+  <!-- ── СПИСОК КОНКУРСІВ ── -->
   <main class="comp-page-container">
-
     <div class="comp-grid" id="compContainer">
       
       <article class="comp-card">
         <div class="comp-header-graphic">
-          <div class="comp-icon">🏆</div>
+          <div class="comp-icon" aria-hidden="true">🏆</div>
         </div>
         <div class="comp-body">
-          <span class="comp-type">Премія</span>
-          <h3><a href="#">Премія Ради за найкращий науковий огляд</a></h3>
-          <p>Конкурс для молодих вчених на написання найкращого огляду актуальної наукової проблеми.</p>
+          <span class="comp-type" data-i18n="comp_type_prize">Премія</span>
+          <h3><a href="#" data-i18n="comp1_title">Премія Ради за найкращий науковий огляд</a></h3>
+          <p data-i18n="comp1_desc">Конкурс для молодих вчених на написання найкращого огляду актуальної наукової проблеми.</p>
         </div>
         <div class="comp-footer">
           <div class="comp-deadline">
-            <span class="deadline-label">Дедлайн:</span>
-            <span class="deadline-date">30 Жовтня 2026</span> 
+            <span class="deadline-label" data-i18n="comp_label_deadline">Дедлайн:</span>
+            <span class="deadline-date" data-i18n="comp1_date">30 Жовтня 2026</span> 
           </div>
-          <a href="#" class="btn-apply">Подати заявку &rarr;</a>
+          <a href="#" class="btn-apply" data-i18n="comp_btn_apply">Подати заявку &rarr;</a>
         </div>
       </article>
 
       <article class="comp-card">
         <div class="comp-header-graphic graphic-purple">
-          <div class="comp-icon">💡</div>
+          <div class="comp-icon" aria-hidden="true">💡</div>
         </div>
         <div class="comp-body">
-          <span class="comp-type">Науковий Хакатон</span>
-          <h3><a href="#">Хакатон інноваційних проєктів "Science-to-Business"</a></h3>
-          <p>Презентація, експертна оцінка та захист прикладних наукових розробок у сфері DeepTech перед менторами.</p>
+          <span class="comp-type" data-i18n="comp_type_hackathon">Науковий Хакатон</span>
+          <h3><a href="#" data-i18n="comp2_title">Хакатон інноваційних проєктів "Science-to-Business"</a></h3>
+          <p data-i18n="comp2_desc">Презентація, експертна оцінка та захист прикладних наукових розробок у сфері DeepTech перед менторами.</p>
         </div>
         <div class="comp-footer">
           <div class="comp-deadline">
-            <span class="deadline-label">Дедлайн:</span>
-            <span class="deadline-date">15 Грудня 2026</span>
+            <span class="deadline-label" data-i18n="comp_label_deadline">Дедлайн:</span>
+            <span class="deadline-date" data-i18n="comp2_date">15 Грудня 2026</span>
           </div>
-          <a href="#" class="read-rules">Умови &rarr;</a>
+          <a href="#" class="read-rules" data-i18n="comp_btn_rules">Умови &rarr;</a>
         </div>
       </article>
 
       <article class="comp-card">
         <div class="comp-header-graphic graphic-amber">
-          <div class="comp-icon">📣</div>
+          <div class="comp-icon" aria-hidden="true">📣</div>
         </div>
         <div class="comp-body">
-          <span class="comp-type">Стипендія</span>
-          <h3><a href="#">Іменна стипендія для стажування за кордоном</a></h3>
-          <p>Підтримка короткострокових наукових стажувань та підвищення кваліфікації у провідних лабораторіях Європи.</p>
+          <span class="comp-type" data-i18n="comp_type_scholarship">Стипендія</span>
+          <h3><a href="#" data-i18n="comp3_title">Іменна стипендія для стажування за кордоном</a></h3>
+          <p data-i18n="comp3_desc">Підтримка короткострокових наукових стажувань та підвищення кваліфікації у провідних лабораторіях Європи.</p>
         </div>
         <div class="comp-footer">
           <div class="comp-deadline">
-            <span class="deadline-label">Початок:</span>
-            <span class="deadline-date">Січень 2027</span>
+            <span class="deadline-label" data-i18n="comp_label_start">Початок:</span>
+            <span class="deadline-date" data-i18n="comp3_date">Січень 2027</span>
           </div>
-          <a href="#" class="read-rules">Деталі &rarr;</a>
+          <a href="#" class="read-rules" data-i18n="comp_btn_details">Деталі &rarr;</a>
         </div>
       </article>
 
     </div>
   </main>
 
-<div id="footer"></div>
+  <div id="footer"></div>
 
   <script type="module" src="/src/js/main.js"></script>
->
-</script>
 </body>
 </html>

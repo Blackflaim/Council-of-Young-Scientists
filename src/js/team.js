@@ -1,34 +1,51 @@
 import { team } from "./teamData.js";
 
+//Отримуємо поточну мову (ua або en), як ми це робили в main.js
+const currentLang = localStorage.getItem("site_lang") || "ua";
+
 function renderPreview(member) {
+  // Захист даних: якщо перекладу поточною мовою немає, пробуємо взяти українську версію
+  const name = member.name?.[currentLang] || member.name?.ua || 'Ім\'я не вказано';
+  const degree = member.degree?.[currentLang] || member.degree?.ua || '';
+  const badge = member.badge?.[currentLang] || member.badge?.ua || '';
+  // Якщо фото немає, ставимо заглушку
+  const imageSrc = member.image || '/icons/default-avatar.png';
+
   return `
     <div class="team-card">
       <div class="team-photo">
-        <img src="${member.image}" alt="${member.name}">
+        <img src="${imageSrc}" alt="${name}">
       </div>
-      <h4>${member.name}</h4>
-      <p>${member.degree}</p>
-      <span class="role">${member.badge}</span>
+      <h4>${name}</h4>
+      <p>${degree}</p>
+      <span class="role">${badge}</span>
     </div>
   `;
 }
 
 function renderFull(member) {
+  const name = member.name?.[currentLang] || member.name?.ua || 'Ім\'я не вказано';
+  const degree = member.degree?.[currentLang] || member.degree?.ua || '';
+  const badge = member.badge?.[currentLang] || member.badge?.ua || '';
+  const institution = member.institution?.[currentLang] || member.institution?.ua || '';
+  const desc = member.description?.[currentLang] || member.description?.ua || '';
+  const imageSrc = member.image || '/icons/default-avatar.png';
+
   return `
     <div class="team-card ${member.role || ''}">
       <div class="team-badge">
-        ${member.badge}
+        ${badge}
       </div>
       <div class="team-photo">
-        <img src="${member.image}" alt="${member.name}">
+        <img src="${imageSrc}" alt="${name}">
       </div>
       <div class="team-info">
-        <h3>${member.name}</h3>
-        <p class="team-degree">${member.degree}</p>
+        <h3>${name}</h3>
+        <p class="team-degree">${degree}</p>
         <div class="team-tags">
-          <span class="tag">${member.institution}</span>
+          <span class="tag">${institution}</span>
         </div>
-        <p>${member.description || ''}</p>
+        ${desc ? `<p>${desc}</p>` : ''}
       </div>
     </div>
   `;
@@ -37,10 +54,13 @@ function renderFull(member) {
 const previewContainer = document.getElementById("teamPreview");
 const fullContainer = document.getElementById("teamContainer");
 
-if(previewContainer) {
-  previewContainer.innerHTML = team.slice(0, 5).map(renderPreview).join('');
-}
+// Додано перевірку, чи team існує і чи є масивом, щоб методи .slice() та .map() не викинули критичну помилку
+if (team && Array.isArray(team)) {
+  if(previewContainer) {
+    previewContainer.innerHTML = team.slice(0, 5).map(renderPreview).join('');
+  }
 
-if(fullContainer) {
-  fullContainer.innerHTML = team.map(renderFull).join('');
+  if(fullContainer) {
+    fullContainer.innerHTML = team.map(renderFull).join('');
+  }
 }

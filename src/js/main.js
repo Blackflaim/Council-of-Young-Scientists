@@ -1,5 +1,15 @@
 'use strict';
 
+loadComponent(
+    "header",
+    "/src/components/header.html"
+);
+
+loadComponent(
+    "footer",
+    "/src/components/footer.html"
+);
+
 document.addEventListener('DOMContentLoaded', () => 
 {
   const hamburger = document.getElementById('hamburger');
@@ -213,16 +223,6 @@ initComponents();
 /* ============================================================
    ПІДКЛЮЧЕННЯ БАЗИ ДАНИХ
    ============================================================ */
-loadComponent(
-    "header",
-    "/src/components/header.html"
-);
-
-loadComponent(
-    "footer",
-    "/src/components/footer.html"
-);
-
 import { db }
 from "./firebase.js";
 
