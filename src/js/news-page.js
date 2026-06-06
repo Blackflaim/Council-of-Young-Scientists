@@ -42,13 +42,21 @@ async function loadAllNews() {
         const htmlString = snapshot.docs.map(docItem => {
             const news = docItem.data();
             
-            const imageHtml = (news.image && news.image !== "none")
-                ? `<img src="${news.image}" alt="${news.title}">`
-                : `<div class="news-img"><div class="news-img-placeholder">📰</div></div>`;
+            let imageHtml = '';
+            if (news.image && news.image !== "none") {
+                imageHtml = `<img src="${news.image}" alt="${news.title}" class="news-cover">`;
+            } else {
+                imageHtml = `<div class="news-img-placeholder">📰</div>`;
+            }
+
+            const dateStr = news.date || "06.06.2026";
 
             return `
-            <article class="news-card">
-                ${imageHtml}
+            <article class="news-card" onclick="window.location.href='/news.html?id=${docItem.id}'">
+                <div class="news-img">
+                    ${imageHtml}
+                    <div class="news-date">${dateStr}</div>
+                </div>
                 <div class="news-body">
                     <h3>${news.title}</h3>
                     <p>${news.description || 'Детальна інформація...'}</p>
