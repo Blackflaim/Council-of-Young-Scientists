@@ -5,15 +5,21 @@ const container = document.getElementById("newsContainer");
 const params = new URLSearchParams(window.location.search);
 const id = params.get('id');
 
-// Знаходимо заголовки сторінки
+// Знаходимо елементи шапки
+const pageHeader = document.querySelector('.page-header');
 const pageTitle = document.getElementById("dynamic-page-title");
 const pageDesc = document.getElementById("dynamic-page-desc");
 
 async function loadAllNews() {
-    // Якщо контейнера немає, або є ID (ми на сторінці однієї новини) — зупиняємось
+    // Якщо є ID (ми на сторінці однієї новини) — зупиняємось
     if (!container || id) return;
 
-    // Змінюємо заголовок для сторінки ВСІХ новин
+    // 👇 НОВИЙ КОД: Переконуємося, що шапка видима для списку новин
+    if (pageHeader) {
+        pageHeader.style.display = 'block';
+    }
+
+    // Встановлюємо текст заголовків для сторінки ВСІХ новин
     if (pageTitle) {
         pageTitle.removeAttribute("data-i18n");
         pageTitle.innerHTML = "Новини";
@@ -24,14 +30,12 @@ async function loadAllNews() {
     }
 
     try {
-        // Показуємо стан завантаження, поки чекаємо дані з бази
         container.innerHTML = '<p class="loading-text" style="grid-column: 1 / -1; text-align: center;">Завантаження новин...</p>';
 
         const snapshot = await getDocs(collection(db, "news"));
         
-        // Перевіряємо, чи взагалі є новини в базі
         if (snapshot.empty) {
-            container.innerHTML = '<p style="grid-column: 1 / -1; text-align: center;">Наразі новин немає. Загляніть сюди пізніше!</p>';
+            container.innerHTML = '<p style="grid-column: 1 / -1; text-align: center;">Наразі новин немає.</p>';
             return;
         }
 
@@ -52,18 +56,13 @@ async function loadAllNews() {
                 </div>
             </article>
             `;
-        }).join(''); // Об'єднуємо масив рядків в один суцільний текст
+        }).join('');
 
-        // Вставляємо готовий HTML у DOM
         container.innerHTML = htmlString;
 
     } catch (error) {
         console.error("Помилка завантаження новин:", error);
-        container.innerHTML = `
-            <div style="grid-column: 1 / -1; text-align: center; color: #d32f2f;">
-                <p>Не вдалося завантажити новини. Спробуйте оновити сторінку.</p>
-            </div>
-        `;
+        container.innerHTML = `<div style="grid-column: 1 / -1; text-align: center; color: #d32f2f;"><p>Не вдалося завантажити новини.</p></div>`;
     }
 }
 

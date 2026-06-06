@@ -198,8 +198,8 @@ export const translations = {
     school_cta_btn: "Подати заявку",
 
     // --- СТОРІНКА НОВИН --- ВИПРАВЛЕНО КЛЮЧІ
-    news_page_title: "Новина | Рада молодих вчених",
-    news_header_title: "Новина",
+    news_page_title: "Новини | Рада молодих вчених",
+    news_header_title: "Новини",
     news_header_desc: "Детальний перегляд публікації",
 
     // --- СТОРІНКА ПОВНОГО СКЛАДУ РАДИ ---

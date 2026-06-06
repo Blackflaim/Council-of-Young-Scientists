@@ -7,33 +7,26 @@ const id = params.get('id');
 const container = document.getElementById("articleContainer");
 const newsContainer = document.getElementById("newsContainer");
 
-// Знаходимо заголовки сторінки
-const pageTitle = document.getElementById("dynamic-page-title");
-const pageDesc = document.getElementById("dynamic-page-desc");
+// Знаходимо всю верхню синю шапку сторінки
+const pageHeader = document.querySelector('.page-header');
 
 async function loadArticle() {
   // Якщо ID немає — ми на сторінці ВСІХ новин. Скрипт зупиняється.
   if (!id) return;
 
-  // Якщо ID є — ми на сторінці ОДНІЄЇ новини.
-  // 1. Змінюємо заголовок (забираємо переклад, щоб не перебивав)
-  if (pageTitle) {
-      pageTitle.removeAttribute("data-i18n");
-      pageTitle.innerHTML = "Новина";
-  }
-  if (pageDesc) {
-      pageDesc.removeAttribute("data-i18n");
-      pageDesc.innerHTML = "Детальний перегляд публікації";
+  // 👇 НОВИЙ КОД: Ховаємо всю синю верхню шапку
+  if (pageHeader) {
+    pageHeader.style.display = 'none';
   }
 
-  // 2. ФІЗИЧНО знищуємо контейнер усіх новин, щоб CSS не зміг його показати
+  // ФІЗИЧНО знищуємо контейнер усіх новин, щоб CSS не зміг його показати
   if (newsContainer) {
     newsContainer.innerHTML = ''; 
     newsContainer.style.display = 'none';
   }
 
   try {
-    container.innerHTML = '<p class="loading-text" style="text-align:center;">Завантаження статті...</p>';
+    container.innerHTML = '<p class="loading-text" style="text-align:center; padding: 40px;">Завантаження статті...</p>';
 
     const reference = doc(db, "news", id);
     const snapshot = await getDoc(reference);
@@ -51,16 +44,18 @@ async function loadArticle() {
     const article = snapshot.data();
 
     container.innerHTML = `
-      <article class="article-page">
-        <h1>${article.title}</h1>
+      <article class="article-page" style="padding-top: 40px;"> 
+        <h1 style="font-family: 'Playfair Display', serif; font-size: 38px; font-weight: 700; margin-bottom: 24px;">${article.title}</h1>
         ${article.image && article.image !== "none" ? `<img class="article-image" src="${article.image}" alt="${article.title}">` : ''}
-        <div class="article-content" style="margin-top: 20px;">
+        <div class="article-content" style="margin-top: 30px;">
           ${article.content || '<p>Немає тексту новини.</p>'}
         </div>
-        <div style="margin-top: 40px; border-top: 1px solid #e8ecf0; padding-top: 20px;">
-          <a href="/news.html" class="btn-outline btn-dark">&larr; До всіх новин</a>
+        
+        <div style="margin-top: 40px; border-top: 1px solid #e8ecf0; padding-top: 20px; margin-bottom: 60px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 15px;">
+          <a href="/index.html#news" class="btn-outline btn-dark">&larr; На головну</a>
+          <a href="/news.html" class="btn-outline btn-dark">До всіх новин &rarr;</a>
         </div>
-      </article>
+        </article>
     `;
 
   } catch (error) {

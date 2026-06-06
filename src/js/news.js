@@ -1,43 +1,75 @@
 import { db } from "./firebase.js";
-import { collection, getDocs, query, limit } from "firebase/firestore"; // Не забудь додати query та limit сюди
+import { collection, getDocs, query, limit} from "firebase/firestore";
 
 const container = document.getElementById("newsContainer");
 const newsCollection = collection(db, "news");
 
-async function loadNews() {
-    if(!container) return;
+async function loadNewsPreview() {
+    if (!container) return;
 
-    container.innerHTML = '';
+    try {
+        // Завантажуємо рівно 5 новин
+        const q = query(newsCollection, limit(5));
+        const snapshot = await getDocs(q);
 
-    // Створюємо запит: взяти колекцію "news", але завантажити 4 штуки
-    const q = query(newsCollection, limit(5));
-    const snapshot = await getDocs(q);
+        if (snapshot.empty) {
+            container.innerHTML = '<p style="text-align:center;">Новин поки немає.</p>';
+            return;
+        }
 
-    let index = 0; 
+        let htmlString = '';
+        let index = 0;
 
-    snapshot.forEach(docItem => {
-        const item = docItem.data();
-        
-        // Перша новина (index === 0) отримує клас featured
-        const featuredClass = index === 0 ? "featured" : ""; 
+        snapshot.forEach(docItem => {
+            const item = docItem.data();
+            
+            const isFeatured = index === 0;
+            const featuredClass = isFeatured ? " featured" : "";
 
-        container.innerHTML += `
-        <article class="news-card ${featuredClass}">
-            ${
-                item.image && item.image !== "none"
-                ? `<div class="news-img"><img src="${item.image}" alt="${item.title}"></div>`
-                : ''
+            let imageHtml = '';
+            if (item.image && item.image !== "none") {
+                imageHtml = `<img src="${item.image}" alt="${item.title}" class="news-cover">`;
+            } else {
+                imageHtml = `<div class="news-img-placeholder">📰</div>`;
             }
-            <div class="news-body">
-                <h3>${item.title}</h3>
-                <p>${item.description}</p>
-                <a href="/news.html?id=${docItem.id}" class="news-read-more">Читати далі →</a>
+
+            // Оверлей тільки для головної картки
+            const overlayHtml = isFeatured ? `<div class="news-img-overlay"></div>` : '';
+
+            // Опис тільки для головної картки
+            const descriptionHtml = isFeatured && item.description 
+                ? `<p>${item.description}</p>` 
+                : '';
+
+            // Безпечна дата (якщо в базі немає дати, ставимо заглушку)
+            const dateStr = item.date || "06.06.2026";
+
+            // Формуємо фінальну картку
+            htmlString += `
+            <div class="news-card${featuredClass}" onclick="window.location.href='/news.html?id=${docItem.id}'">
+                <div class="news-img">
+                    ${imageHtml}
+                    ${overlayHtml}
+                    <div class="news-date">${dateStr}</div>
+                </div>
+                <div class="news-body">
+                    <h3>${item.title}</h3>
+                    ${descriptionHtml}
+                    <a href="/news.html?id=${docItem.id}" class="news-read-more">Читати далі &rarr;</a>
+                </div>
             </div>
-        </article>
-        `;
-        
-        index++; 
-    });
+            `;
+
+            index++;
+        });
+
+        // Вставляємо все в контейнер і гарантуємо наявність класу сітки
+        container.innerHTML = htmlString;
+        container.classList.add("news-grid");
+
+    } catch (error) {
+        console.error("Помилка завантаження прев'ю новин:", error);
+    }
 }
 
-loadNews();
+loadNewsPreview();

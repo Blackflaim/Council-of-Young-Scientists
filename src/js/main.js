@@ -112,6 +112,14 @@ function initActiveSection() {
             if (window.scrollY >= section.offsetTop - 150) current = section.getAttribute('id');
         });
 
+        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) 
+        {
+            if (sections.length > 0) 
+            {
+                current = sections[sections.length - 1].getAttribute('id');
+            }
+        }
+
         navLinks.forEach(link => {
             link.classList.remove('active-link');
             if (current && link.getAttribute('href').includes(current)) {
