@@ -2,21 +2,32 @@
 import { translations } from './translations.js';
 import { db } from "./firebase.js";
 
+import headerHtml from '../components/header.html?raw';
+import footerHtml from '../components/footer.html?raw';
 // Глобальні змінні
 let currentLang = localStorage.getItem("site_lang") || "ua";
 
-/**
- * Завантажує зовнішні HTML-компоненти (Header/Footer)
- */
-async function loadComponent(id, file) {
+async function initComponents() {
     try {
-        const response = await fetch(file);
-        if (!response.ok) throw new Error(`Could not load ${file}`);
-        const html = await response.text();
-        const element = document.getElementById(id);
-        if (element) element.innerHTML = html;
+        // 2. Просто вставляємо готовий текст у блоки, fetch більше НЕ потрібен!
+        const headerEl = document.getElementById("header");
+        const footerEl = document.getElementById("footer");
+        
+        if (headerEl) headerEl.innerHTML = headerHtml;
+        if (footerEl) footerEl.innerHTML = footerHtml;
+        
+        // 3. Ініціалізуємо інтерфейс
+        translatePage(currentLang);
+        initLanguageUI();
+        initNavbarListeners();
+        initScrollReveal();
+        initActiveSection();
+        initSpotlight();
+        initNavbarScroll();
+        
+        console.log("Firebase connected", db);
     } catch (err) {
-        console.error("Component load error:", err);
+        console.error("Component initialization error:", err);
     }
 }
 
@@ -39,25 +50,6 @@ window.setLanguage = function(lang) {
     location.reload(); 
 };
 
-/**
- * Ініціалізація компонентів та логіки
- */
-async function initComponents() {
-    // 1. Завантажуємо компоненти за твоїм шляхом
-    await loadComponent("header", "/src/components/header.html"); 
-    await loadComponent("footer", "/src/components/footer.html");
-    
-    // 2. Ініціалізуємо інтерфейс
-    translatePage(currentLang);
-    initLanguageUI();
-    initNavbarListeners();
-    initScrollReveal();
-    initActiveSection();
-    initSpotlight();
-    
-    console.log("Firebase connected", db);
-}
-
 // Ініціалізація UI елементів
 function initLanguageUI() {
     const activeBtn = document.querySelector(`.nav-lang button[data-lang="${currentLang}"]`);
@@ -77,14 +69,14 @@ function initNavbarListeners() {
 }
 
 // Ефект тіні навігації при скролі
-(function initNavbarScroll() {
+function initNavbarScroll() {
     window.addEventListener('scroll', () => {
         const nav = document.getElementById('navbar');
         if (nav) {
             nav.style.boxShadow = window.scrollY > 40 ? '0 4px 30px rgba(0,0,0,0.4)' : 'none';
         }
     });
-}());
+}
 
 // Анімація появи елементів при скролі
 function initScrollReveal() {
