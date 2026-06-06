@@ -21,7 +21,7 @@ async function loadComponent(id, file) {
 }
 
 /**
- * Примітивна система локалізації
+ * система локалізації
  */
 function translatePage(lang) {
     const elements = document.querySelectorAll("[data-i18n]");
