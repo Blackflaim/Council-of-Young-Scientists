@@ -28,6 +28,15 @@ body
   background: var(--white);
   color: var(--text);
   overflow-x: hidden; /*Запобігає появі горизонтальної прокрутки*/
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Мінімальна висота = 100% висоти екрана (Viewport Height) */
+  margin: 0;
+}
+
+main 
+{
+  flex: 1;
 }
 
 /*── Типографіка ──*/
