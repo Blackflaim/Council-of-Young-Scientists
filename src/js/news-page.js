@@ -5,9 +5,23 @@ const container = document.getElementById("newsContainer");
 const params = new URLSearchParams(window.location.search);
 const id = params.get('id');
 
+// Знаходимо заголовки сторінки
+const pageTitle = document.getElementById("dynamic-page-title");
+const pageDesc = document.getElementById("dynamic-page-desc");
+
 async function loadAllNews() {
-    // Якщо контейнера немає, або ми знаходимося на сторінці конкретної новини, зупиняємо скрипт
+    // Якщо контейнера немає, або є ID (ми на сторінці однієї новини) — зупиняємось
     if (!container || id) return;
+
+    // Змінюємо заголовок для сторінки ВСІХ новин
+    if (pageTitle) {
+        pageTitle.removeAttribute("data-i18n");
+        pageTitle.innerHTML = "Новини";
+    }
+    if (pageDesc) {
+        pageDesc.removeAttribute("data-i18n");
+        pageDesc.innerHTML = "Актуальні події, анонси та досягнення";
+    }
 
     try {
         // Показуємо стан завантаження, поки чекаємо дані з бази
