@@ -18,12 +18,12 @@ const statusMsg = document.getElementById('statusMessage');
 
 // --- 1. АВТОРИЗАЦІЯ ---
 loginBtn.addEventListener('click', () => {
-    // Vite автоматично підставить сюди значення під час запуску або збірки
     if (passInput.value === import.meta.env.VITE_ADMIN_PASSWORD) { 
         loginScreen.style.display = 'none';
         adminPanel.style.display = 'block';
     } else {
-        alert('Неправильний пароль!');
+        // 👇 Змінюємо цей рядок
+        alert(`Помилка! Ви ввели: "${passInput.value}". А сервер очікує: "${import.meta.env.VITE_ADMIN_PASSWORD}"`);
     }
 });
 
