@@ -11,7 +11,8 @@ export default defineConfig({
         grants: resolve(__dirname, 'grants.html'),
         news: resolve(__dirname, 'news.html'),
         team: resolve(__dirname, 'team.html'),
-        competitions: resolve(__dirname, "competitions.html")
+        competitions: resolve(__dirname, "competitions.html"),
+        admin: resolve(__dirname, 'admin.html')
       }
     }
   }
