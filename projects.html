@@ -3,87 +3,73 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-i18n="proj_page_title">Портфоліо проєктів | Рада молодих вчених</title>
+  
+  <meta name="description" content="Харків — місто наукових відкриттів. Проєкти та ініціативи Ради молодих вчених." />
+  <title data-i18n="proj_page_title">Науковий Харків | Рада молодих вчених</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/src/css/style.css">
 </head>
 <body>
 
+  <!-- Навігація -->
   <div id="header"></div>
 
-  <header class="page-header">
+  <!-- Головний банер сторінки -->
+  <header class="page-header" style="background: linear-gradient(to bottom, var(--navy), #1a365d);">
     <div class="page-header-content">
-      <h1 data-i18n="proj_header_title">Портфоліо проєктів</h1>
-      <p data-i18n="proj_header_desc">Ініціативи, дослідження та грантові програми, які ми реалізуємо для розвитку науки</p>
+      <h1 data-i18n="proj_header_title" style="font-size: clamp(32px, 5vw, 48px); margin-bottom: 20px;">
+        Харків — місто наукових відкриттів!
+      </h1>
+      <p data-i18n="proj_header_desc" style="font-size: 18px; max-width: 800px; margin: 0 auto; line-height: 1.6;">
+        «НЕЗЛАМНИЙ ХАРКІВ» — це наша наукова столиця України, це наша наукова університетська альма-матер, це наш символ стійкості у приєднанні до міжнародної наукової спільноти!
+      </p>
     </div>
   </header>
 
   <main class="projects-page-container">
-    
-    <div class="project-filters">
-      <button class="filter-btn active" data-i18n="proj_filter_all">Усі проєкти</button>
-      <button class="filter-btn" data-i18n="proj_filter_grants">Гранти</button>
-      <button class="filter-btn" data-i18n="proj_filter_conf">Конференції</button>
-      <button class="filter-btn" data-i18n="proj_filter_social">Соціальні</button>
-    </div>
 
+    <!-- Сітка ініціатив -->
     <div class="projects-grid" id="projectsContainer">
-      
-      <!-- Проєкт 1 -->
-      <article class="project-card">
-        <div class="project-img">
-          <div class="project-status status-active" data-i18n="proj_status_active">Триває</div>
-          <img src="https://via.placeholder.com/600x400" alt="Проєкт 1">
-        </div>
-        <div class="project-content">
-          <span class="project-category" data-i18n="proj_cat_grants">Гранти</span>
-          <h3><a href="#" data-i18n="proj1_title">Програма підтримки молодих дослідників "Науковий старт"</a></h3>
-          <p data-i18n="proj1_desc">Надання мікрогрантів на проведення первинних досліджень та закупівлю необхідного лабораторного обладнання для аспірантів.</p>
-          <div class="project-footer">
-            <span class="project-year" data-i18n="proj1_date">2026 - 2027</span>
-            <a href="#" class="read-more" data-i18n="proj_read_more">Детальніше &rarr;</a>
-          </div>
-        </div>
-      </article>
 
-      <!-- Проєкт 2 -->
-      <article class="project-card">
+      <div class="project-card">
         <div class="project-img">
-          <div class="project-status status-done" data-i18n="proj_status_done">Завершено</div>
-          <img src="https://via.placeholder.com/600x400" alt="Проєкт 2">
+          <img src="/icons/kscience.png" alt="Ukrainian Science Channel" style="object-fit: cover;">
+          <span class="project-status status-active" data-i18n="proj_status_active">Актуально</span>
         </div>
         <div class="project-content">
-          <span class="project-category" data-i18n="proj_cat_conf">Конференції</span>
-          <h3><a href="#" data-i18n="proj2_title">Міжнародний симпозіум "Science Future"</a></h3>
-          <p data-i18n="proj2_desc">Організація та проведення масштабного симпозіуму, який об'єднав 300 вчених з 12 країн світу для обміну досвідом.</p>
-          <div class="project-footer">
-            <span class="project-year" data-i18n="proj2_date">Травень 2025</span>
-            <a href="#" class="read-more" data-i18n="proj_read_more">Детальніше &rarr;</a>
-          </div>
+          <span class="project-category" data-i18n="proj_cat_official">Офіційний канал</span>
+          <h3><a href="https://t.me/Kharkiv_scientific_discoveries" target="_blank" data-i18n="proj_card1_title">Ukrainian Science Channel</a></h3>
+          <p data-i18n="proj_card1_desc">З метою популяризації науки серед молоді та презентації кращих здобутків науковців Харківщини створено новий Тelegram-канал від Ради молодих вчених при Харківській обласній військовій адміністрації!</p>
         </div>
-      </article>
+        <div class="project-footer" style="padding: 20px 24px;">
+          <a href="https://t.me/Kharkiv_scientific_discoveries" class="btn-primary" target="_blank" style="width: 100%; text-align: center;" data-i18n="proj_btn_telegram">Долучитись у Telegram</a>
+        </div>
+      </div>
 
-      <!-- Проєкт 3 -->
-      <article class="project-card">
+      <div class="project-card">
         <div class="project-img">
-          <div class="project-status status-active" data-i18n="proj_status_active">Триває</div>
+          <img src="/icons/ukrainiansciencechannel.jpg" alt="Development Opportunities" style="object-fit: cover;">
+          <span class="project-status status-active" data-i18n="proj_status_active">Актуально</span>
         </div>
         <div class="project-content">
-          <span class="project-category" data-i18n="proj_cat_social">Соціальні</span>
-          <h3><a href="#" data-i18n="proj3_title">Популяризація науки в школах "Science 4 Kids"</a></h3>
-          <p data-i18n="proj3_desc">Серія відкритих лекцій та практичних майстер-класів для школярів старших класів від молодих вчених нашого регіону.</p>
-          <div class="project-footer">
-            <span class="project-year" data-i18n="proj3_date">2025 - 2026</span>
-            <a href="#" class="read-more" data-i18n="proj_read_more">Детальніше &rarr;</a>
-          </div>
+          <span class="project-category" data-i18n="proj_cat_resources">Корисні ресурси</span>
+          <h3><a href="https://t.me/Development_opportunities" target="_blank" data-i18n="proj_card2_title">Development Opportunities</a></h3>
+          <p data-i18n="proj_card2_desc">На цьому каналі ви знайдете корисну добірку наукових конференцій міжнародного, всеукраїнського та регіонального рівнів, а також інформацію щодо публікації статей та участь в освітніх вебінарах.</p>
         </div>
-      </article>
+        <div class="project-footer" style="padding: 20px 24px;">
+          <a href="https://t.me/Development_opportunities" class="btn-primary" target="_blank" style="width: 100%; text-align: center;" data-i18n="proj_btn_telegram">Долучитись у Telegram</a>
+        </div>
+      </div>
 
     </div>
   </main>
 
-<div id="footer"></div>
+  <div id="footer"></div>
 
-<script type="module" src="/src/js/main.js"></script>
+  <!-- Підключення скриптів -->
+  <script type="module" src="/src/js/main.js"></script>
 </body>
 </html>

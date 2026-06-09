@@ -4,13 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <meta name="description" content="Школа молодого лідера від Ради молодих вчених. Інтенсивна програма розвитку soft-skills, управління проєктами та комунікацій для науковців." />
-  <meta property="og:title" content="Школа молодого лідера | Рада молодих вчених" />
-  <meta property="og:description" content="Навчіться перетворювати свої ідеї на успішні проєкти разом з нашими експертами." />
-  <meta property="og:image" content="/images/school-og.jpg" />
-  <meta property="og:type" content="website" />
-
-  <title data-i18n="school_page_title">Школа молодого лідера | Рада молодих вчених</title>
+  <meta name="description" content="Мовні курси та Telegram-канали для молодих науковців." />
+  <title data-i18n="lang_page_title">Мовні канали | Рада молодих вчених</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -21,102 +16,144 @@
 
   <div id="header"></div>
 
-  <!-- ── ШАПКА СТОРІНКИ ── -->
-  <header class="page-header">
+  <!-- Головний банер сторінки -->
+  <header class="page-header" style="background: linear-gradient(to bottom, var(--navy), #1a365d);">
     <div class="page-header-content">
-      <h1 data-i18n="school_header_title">Школа молодого лідера</h1>
-      <p data-i18n="school_header_desc">Інтенсивна програма розвитку soft-skills, управління проєктами та комунікацій для науковців</p>
+      <h1 data-i18n="lang_header_title" style="font-size: clamp(32px, 5vw, 48px); margin-bottom: 20px;">
+        Мовні канали
+      </h1>
+      <p data-i18n="lang_header_desc" style="font-size: 18px; max-width: 800px; margin: 0 auto; line-height: 1.6;">
+        Добірка найкращих Telegram-каналів для вивчення та вдосконалення української та іноземних мов. Підписуйтесь та покращуйте свої знання щодня!
+      </p>
     </div>
   </header>
 
-  <!-- ── ОСНОВНИЙ КОНТЕНТ ── -->
-  <main class="school-page-container">
+  <main class="comp-page-container">
+    
+    <div class="comp-grid" id="langContainer" style="margin-bottom: 60px;">
 
-    <!-- Блок "Про школу" зі статистикою -->
-    <section class="school-intro">
-      <div class="school-intro-text">
-        <h2 data-i18n="school_intro_title">Що таке Школа лідера?</h2>
-        <p data-i18n="school_intro_desc">Це унікальний освітній простір, де молоді науковці вчаться перетворювати свої ідеї на успішні проєкти. Ми об'єднуємо найкращих експертів з менеджменту, фандрейзингу та ораторського мистецтва, щоб дати вам практичні інструменти для кар'єрного стрибка.</p>
-      </div>
-      <div class="school-stats">
-        <div class="stat-item">
-          <span class="stat-number" data-i18n="school_stat1_num">5</span>
-          <span class="stat-label" data-i18n="school_stat1_label">Тижнів інтенсиву</span>
+      <!-- ================= УКРАЇНСЬКА ================= -->
+      <div class="comp-card">
+        <div class="comp-img">
+          <img src="/icons/ukrmova.jpg" alt="Ukrainian" style="background: #ca8a04;">
         </div>
-        <div class="stat-item">
-          <span class="stat-number" data-i18n="school_stat2_num">12</span>
-          <span class="stat-label" data-i18n="school_stat2_label">Експертів-практиків</span>
+        <div class="comp-body">
+          <span class="comp-type" data-i18n="lang_subs_65k">65 500+ підписників</span>
+          <h3 data-i18n="lang_ukr1_title">Українська мова 🇺🇦</h3>
+          <p data-i18n="lang_ukr1_desc">Найбільший канал з вивчення української мови. Покращуй знання мови разом з нами!</p>
         </div>
-        <div class="stat-item">
-          <span class="stat-number" data-i18n="school_stat3_num">100+</span>
-          <span class="stat-label" data-i18n="school_stat3_label">Випускників</span>
+        <div class="comp-footer">
+          <a href="https://t.me/tvoyamova" target="_blank" class="btn-apply" data-i18n="lang_btn_tg">Перейти в Telegram &rarr;</a>
         </div>
       </div>
-    </section>
 
-    <!-- Програма курсу -->
-    <section class="school-curriculum">
-      <h2 class="section-title" data-i18n="school_curriculum_title">Програма курсу</h2>
-      
-      <div class="modules-grid">
-        
-        <!-- Модуль 1 -->
-        <article class="module-card">
-          <!-- ДОДАНО: aria-hidden="true", щоб скрінрідери ігнорували декоративну фонову цифру -->
-          <div class="module-number" aria-hidden="true">01</div>
-          <div class="module-content">
-            <span class="module-tag" data-i18n="school_mod1_tag">Soft Skills</span>
-            <h3 data-i18n="school_mod1_title">Емоційний інтелект та Лідерство</h3>
-            <p data-i18n="school_mod1_desc">Як будувати довіру в команді дослідників, вирішувати конфлікти та мотивувати колег на результат.</p>
-          </div>
-        </article>
-
-        <!-- Модуль 2 -->
-        <article class="module-card">
-          <div class="module-number" aria-hidden="true">02</div>
-          <div class="module-content">
-            <span class="module-tag" data-i18n="school_mod2_tag">Менеджмент</span>
-            <h3 data-i18n="school_mod2_title">Управління науковими проєктами</h3>
-            <p data-i18n="school_mod2_desc">Основи Agile та Scrum у науці. Планування бюджету, ресурсів та тайм-менеджмент.</p>
-          </div>
-        </article>
-
-        <!-- Модуль 3 -->
-        <article class="module-card">
-          <div class="module-number" aria-hidden="true">03</div>
-          <div class="module-content">
-            <span class="module-tag" data-i18n="school_mod3_tag">Фандрейзинг</span>
-            <h3 data-i18n="school_mod3_title">Грантовий райтинг</h3>
-            <p data-i18n="school_mod3_desc">Як правильно написати заявку на грант, щоб отримати фінансування від європейських фондів.</p>
-          </div>
-        </article>
-
-        <!-- Модуль 4 -->
-        <article class="module-card">
-          <div class="module-number" aria-hidden="true">04</div>
-          <div class="module-content">
-            <span class="module-tag" data-i18n="school_mod4_tag">PR та Медіа</span>
-            <h3 data-i18n="school_mod4_title">Наукова комунікація</h3>
-            <p data-i18n="school_mod4_desc">Презентація результатів досліджень для бізнесу та ЗМІ. Основи сторітеллінгу та публічних виступів.</p>
-          </div>
-        </article>
-
+      <div class="comp-card">
+        <div class="comp-img">
+          <img src="/icons/movaspark.jpg" alt="Ukrainian" style="background: #ca8a04;">
+        </div>
+        <div class="comp-body">
+          <span class="comp-type" data-i18n="lang_subs_31k">31 600+ підписників</span>
+          <h3 data-i18n="lang_ukr2_title">Балакаємо українською MovaSpark</h3>
+          <p data-i18n="lang_ukr2_desc">Мова – це доля нашого народу, і вона залежить від того, як ревно ми всі плекатимемо її. 🇺🇦</p>
+        </div>
+        <div class="comp-footer">
+          <a href="https://t.me/speakinua" target="_blank" class="btn-apply" data-i18n="lang_btn_tg">Перейти в Telegram &rarr;</a>
+        </div>
       </div>
-    </section>
 
-    <!-- Блок Call-to-action -->
-    <section class="school-cta">
-      <div class="cta-content">
-        <h2 data-i18n="school_cta_title">Відкрито набір!</h2>
-        <p data-i18n="school_cta_desc">Старт навчання:</p>
+      <!-- ================= АНГЛІЙСЬКА ================= -->
+      <div class="comp-card">
+        <div class="comp-img">
+          <img src="/icons/anglfor.jpg" alt="English" style="background: #1e3a8a;">
+        </div>
+        <div class="comp-body">
+          <span class="comp-type" data-i18n="lang_subs_34k">34 600+ підписників</span>
+          <h3 data-i18n="lang_eng1_title">Англійська для кар'єри</h3>
+          <p data-i18n="lang_eng1_desc">Професійна англійська для кар'єри!</p>
+        </div>
+        <div class="comp-footer">
+          <a href="https://t.me/zapas_slvEN" target="_blank" class="btn-apply" data-i18n="lang_btn_tg">Перейти в Telegram &rarr;</a>
+        </div>
       </div>
-      <a href="#" class="btn-cta" data-i18n="school_cta_btn">Подати заявку</a>
-    </section>
 
+      <div class="comp-card">
+        <div class="comp-img">
+          <img src="/icons/eng.jpg" alt="English" style="background: #1e3a8a;">
+        </div>
+        <div class="comp-body">
+          <span class="comp-type" data-i18n="lang_subs_33k">33 200+ підписників</span>
+          <h3 data-i18n="lang_eng2_title">Англійська мова 🇬🇧</h3>
+          <p data-i18n="lang_eng2_desc">Вивчай англійську мову щодня. Покращуй знання мови разом з нами.</p>
+        </div>
+        <div class="comp-footer">
+          <a href="https://t.me/englua" target="_blank" class="btn-apply" data-i18n="lang_btn_tg">Перейти в Telegram &rarr;</a>
+        </div>
+      </div>
+
+
+      <!-- ================= НІМЕЦЬКА ================= -->
+      <div class="comp-card">
+        <div class="comp-img">
+          <img src="/icons/nemeasy.jpg" alt="German" style="background: #b45309;">
+        </div>
+        <div class="comp-body">
+          <span class="comp-type" data-i18n="lang_subs_16k">16 500+ підписників</span>
+          <h3 data-i18n="lang_ger1_title">Німецька Легко!</h3>
+          <p data-i18n="lang_ger1_desc">Німецька легко. І це не вигадки.</p>
+        </div>
+        <div class="comp-footer">
+          <a href="https://t.me/deutschonlineua" target="_blank" class="btn-apply" data-i18n="lang_btn_tg">Перейти в Telegram &rarr;</a>
+        </div>
+      </div>
+
+      <div class="comp-card">
+        <div class="comp-img">
+          <img src="/icons/german.jpg" alt="German" style="background: #b45309;">
+        </div>
+        <div class="comp-body">
+          <span class="comp-type" data-i18n="lang_subs_13k">13 700+ підписників</span>
+          <h3 data-i18n="lang_ger2_title">німецька 🔥WOW DEUTSCH</h3>
+          <p data-i18n="lang_ger2_desc">Німецька мова з 0 до С1.2 разом з Лілією Хоньків. Курси та групи для дорослих і дітей.</p>
+        </div>
+        <div class="comp-footer">
+          <a href="https://t.me/wow_deutsch" target="_blank" class="btn-apply" data-i18n="lang_btn_tg">Перейти в Telegram &rarr;</a>
+        </div>
+      </div>
+
+
+      <!-- ================= ПОЛЬСЬКА ================= -->
+      <div class="comp-card">
+        <div class="comp-img">
+          <img src="/icons/polskazlub.jpg" alt="Polish" style="background: #be123c;">
+        </div>
+        <div class="comp-body">
+          <span class="comp-type" data-i18n="lang_subs_14k">14 800+ підписників</span>
+          <h3 data-i18n="lang_pol1_title">Польська 🇵🇱❤️ з любовʼю</h3>
+          <p data-i18n="lang_pol1_desc">Тут знайдеш інформацію про всі курси. Cześć, tu Kateryna Chorzewskі, філолог польської, PhD 👋</p>
+        </div>
+        <div class="comp-footer">
+          <a href="https://t.me/polskiwithlove" target="_blank" class="btn-apply" data-i18n="lang_btn_tg">Перейти в Telegram &rarr;</a>
+        </div>
+      </div>
+
+      <div class="comp-card">
+        <div class="comp-img">
+          <img src="/icons/polskazboz.jpg" alt="Polish" style="background: #be123c;">
+        </div>
+        <div class="comp-body">
+          <span class="comp-type" data-i18n="lang_subs_4k">4 100+ підписників</span>
+          <h3 data-i18n="lang_pol2_title">Польська з Баженою</h3>
+          <p data-i18n="lang_pol2_desc">Вчимо мову разом. За всіма питаннями та деталями — переходьте у наш канал.</p>
+        </div>
+        <div class="comp-footer">
+          <a href="https://t.me/polskastudy" target="_blank" class="btn-apply" data-i18n="lang_btn_tg">Перейти в Telegram &rarr;</a>
+        </div>
+      </div>
+
+    </div>
   </main>
 
-<div id="footer"></div>
-
-<script type="module" src="/src/js/main.js"></script>
+  <div id="footer"></div>
+  <script type="module" src="/src/js/main.js"></script>
 </body>
 </html>

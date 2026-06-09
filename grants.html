@@ -4,13 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <meta name="description" content="Гранти та стажування Ради молодих вчених. Актуальні можливості для фінансування досліджень, мобільності та розвитку наукової кар'єри." />
-  <meta property="og:title" content="Гранти та стажування | Рада молодих вчених" />
-  <meta property="og:description" content="Актуальні грантові програми, міжнародні стажування та тревел-гранти для молодих науковців." />
-  <meta property="og:image" content="/images/grants-og.jpg" />
-  <meta property="og:type" content="website" />
-
-  <title data-i18n="grant_page_title">Гранти та стажування | Рада молодих вчених</title>
+  <meta name="description" content="Міжнародні програми, гранти та стажування для молодих вчених." />
+  <title data-i18n="grant_page_title">Міжнародні програми | Рада молодих вчених</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,104 +14,115 @@
 </head>
 <body>
 
+  <!-- Навігація -->
   <div id="header"></div>
 
-  <header class="page-header">
+  <!-- Головний банер сторінки -->
+  <header class="page-header" style="background: linear-gradient(to bottom, var(--navy), #1a365d);">
     <div class="page-header-content">
-      <h1 data-i18n="grant_header_title">Гранти та стажування</h1>
-      <p data-i18n="grant_header_desc">Актуальні можливості для фінансування досліджень, мобільності та розвитку наукової кар'єри</p>
+      <h1 data-i18n="grant_header_title" style="font-size: clamp(32px, 5vw, 48px); margin-bottom: 20px;">
+        Міжнародні програми
+      </h1>
+      <p data-i18n="grant_header_desc" style="font-size: 18px; max-width: 800px; margin: 0 auto; line-height: 1.6;">
+        Можливості для фінансування досліджень, академічної мобільності та розвитку наукової кар'єри за кордоном
+      </p>
     </div>
   </header>
 
+  <!-- Секція з картками грантів -->
   <main class="grant-page-container">
-    <div class="grant-grid" id="grantContainer">
-      
-      <article class="grant-card">
-        <div class="grant-header-graphic graphic-emerald">
-          <div class="grant-icon" aria-hidden="true">💰</div>
-        </div>
-        <div class="grant-body">
-          <span class="grant-type" data-i18n="grant_type_research">Дослідницький Грант</span>
-          <h3><a href="#" data-i18n="grant1_title">Грант на закупівлю лабораторного обладнання</a></h3>
-          <p data-i18n="grant1_desc">Мікрофінансування для молодих вчених на придбання реактивів та дрібного обладнання для поточних досліджень.</p>
-          
-          <div class="grant-details">
-            <div class="detail-item">
-              <span class="detail-label" data-i18n="grant_label_budget">Бюджет:</span>
-              <span class="detail-value" data-i18n="grant1_val1">До 50 000 грн</span>
-            </div>
-            <div class="detail-item">
-              <span class="detail-label" data-i18n="grant_label_duration">Тривалість:</span>
-              <span class="detail-value" data-i18n="grant1_val2">6 місяців</span>
-            </div>
-          </div>
-        </div>
-        <div class="grant-footer">
-          <div class="grant-deadline">
-            <span class="deadline-label" data-i18n="grant_label_deadline">Дедлайн:</span>
-            <span class="deadline-date" data-i18n="grant1_date">20 Листопада 2026</span> 
-          </div>
-          <a href="#" class="btn-apply" data-i18n="grant_btn_apply">Подати заявку &rarr;</a>
-        </div>
-      </article>
+    
+    <div class="grant-grid" id="grantsContainer">
 
-      <article class="grant-card">
-        <div class="grant-header-graphic graphic-blue">
-          <div class="grant-icon" aria-hidden="true">🌍</div>
+      <!-- Картка 1: Erasmus+ -->
+      <div class="grant-card">
+        <div class="grant-img">
+          <img src="/icons/erasmus.jpg" alt="Erasmus+" style="width: 100%; height: 100%; object-fit: cover;">
         </div>
         <div class="grant-body">
-          <span class="grant-type" data-i18n="grant_type_internship">Міжнародне стажування</span>
-          <h3><a href="#" data-i18n="grant2_title">Програма обміну з Варшавським Університетом</a></h3>
-          <p data-i18n="grant2_desc">Повністю фінансоване стажування на базі факультету точних наук. Покриває переліт, проживання та добові.</p>
-          
-          <div class="grant-details">
-            <div class="detail-item">
-              <span class="detail-label" data-i18n="grant_label_location">Локація:</span>
-              <span class="detail-value" data-i18n="grant2_val1">Варшава, Польща</span>
-            </div>
-            <div class="detail-item">
-              <span class="detail-label" data-i18n="grant_label_duration">Тривалість:</span>
-              <span class="detail-value" data-i18n="grant2_val2">3 місяці</span>
-            </div>
-          </div>
+          <span class="grant-type" data-i18n="grant_type_eu">Програма ЄС</span>
+          <h3><a href="https://erasmusplus.org.ua/" target="_blank" data-i18n="grant1_title">Erasmus+ UA</a></h3>
+          <p data-i18n="grant1_desc">Підтримка впровадження і поширення інформації про можливості та проєкти Програми ЄС у сферах вищої освіти, професійного розвитку, молоді та спорту в Україні.</p>
         </div>
         <div class="grant-footer">
-          <div class="grant-deadline">
-            <span class="deadline-label" data-i18n="grant_label_deadline">Дедлайн:</span>
-            <span class="deadline-date" data-i18n="grant2_date">01 Грудня 2026</span>
-          </div>
-          <a href="#" class="btn-apply" data-i18n="grant_btn_apply">Подати заявку &rarr;</a>
+          <a href="https://erasmusplus.org.ua/" class="btn-primary" style="width: 100%; text-align: center;" target="_blank" data-i18n="grant_btn_website">Офіційний сайт &rarr;</a>
         </div>
-      </article>
+      </div>
 
-      <article class="grant-card">
-        <div class="grant-header-graphic graphic-teal">
-          <div class="grant-icon" aria-hidden="true">✈️</div>
+      <!-- Картка 2: Horizon Europe -->
+      <div class="grant-card">
+        <div class="grant-img">
+          <img src="/icons/horizon.png" alt="Horizon Europe" style="width: 100%; height: 100%; object-fit: cover;">
         </div>
         <div class="grant-body">
-          <span class="grant-type" data-i18n="grant_type_travel">Тревел-грант</span>
-          <h3><a href="#" data-i18n="grant3_title">Фінансування участі у міжнародних конференціях</a></h3>
-          <p data-i18n="grant3_desc">Компенсація організаційного внеску та транспортних витрат для молодих науковців, чиї тези прийняті до публікації.</p>
-          
-          <div class="grant-details">
-            <div class="detail-item">
-              <span class="detail-label" data-i18n="grant_label_budget">Бюджет:</span>
-              <span class="detail-value" data-i18n="grant3_val1">До 20 000 грн</span>
-            </div>
-            <div class="detail-item">
-              <span class="detail-label" data-i18n="grant_label_applications">Прийом заявок:</span>
-              <span class="detail-value" data-i18n="grant3_val2">Постійно</span>
-            </div>
-          </div>
+          <span class="grant-type" data-i18n="grant_type_eu">Програма ЄС</span>
+          <h3><a href="https://research-and-innovation.ec.europa.eu/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-europe_en" target="_blank" data-i18n="grant2_title">Horizon Europe</a></h3>
+          <p data-i18n="grant2_desc">Ключова програма ЄС для фінансування досліджень та інновацій до 2027 року. Дізнавайтесь як отримати фінансування, структуру програми, місії та європейські партнерства.</p>
         </div>
         <div class="grant-footer">
-          <div class="grant-deadline">
-            <span class="deadline-label" data-i18n="grant_label_next_wave">Найближча хвиля:</span>
-            <span class="deadline-date" data-i18n="grant3_date">10 Жовтня 2026</span>
-          </div>
-          <a href="#" class="read-rules" data-i18n="grant_btn_rules">Умови &rarr;</a>
+          <a href="https://research-and-innovation.ec.europa.eu/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-europe_en" class="btn-primary" style="width: 100%; text-align: center;" target="_blank" data-i18n="grant_btn_website">Офіційний сайт &rarr;</a>
         </div>
-      </article>
+      </div>
+
+      <!-- Картка 3: DAAD Ukraine -->
+      <div class="grant-card">
+        <div class="grant-img">
+          <img src="/icons/daad.png" alt="DAAD Ukraine" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="grant-body">
+          <span class="grant-type" data-i18n="grant_type_germany">Програма Німеччини</span>
+          <h3><a href="https://www.daad-ukraine.org/uk/" target="_blank" data-i18n="grant3_title">DAAD Ukraine</a></h3>
+          <p data-i18n="grant3_desc">Можливості розпочати або продовжити академічну діяльність у Німеччині для аспірантів, постдоків та досвідчених науковців. Огляд різноманітних пропозицій допомоги.</p>
+        </div>
+        <div class="grant-footer">
+          <a href="https://www.daad-ukraine.org/uk/" class="btn-primary" style="width: 100%; text-align: center;" target="_blank" data-i18n="grant_btn_website">Офіційний сайт &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Картка 4: Marie Skłodowska-Curie Actions -->
+      <div class="grant-card">
+        <div class="grant-img">
+          <img src="/icons/msca.png" alt="Marie Skłodowska-Curie Actions" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="grant-body">
+          <span class="grant-type" data-i18n="grant_type_eu">Програма ЄС</span>
+          <h3><a href="https://marie-sklodowska-curie-actions.ec.europa.eu/" target="_blank" data-i18n="grant4_title">Marie Skłodowska-Curie Actions</a></h3>
+          <p data-i18n="grant4_desc">Базова програма Європейського Союзу для докторської освіти та постдокторської підготовки. Підтримка досконалості в дослідженнях та інноваціях.</p>
+        </div>
+        <div class="grant-footer">
+          <a href="https://marie-sklodowska-curie-actions.ec.europa.eu/" class="btn-primary" style="width: 100%; text-align: center;" target="_blank" data-i18n="grant_btn_website">Офіційний сайт &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Картка 5: The Humboldt Foundation -->
+      <div class="grant-card">
+        <div class="grant-img">
+          <img src="/icons/humboldt.jpg" alt="The Humboldt Foundation" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="grant-body">
+          <span class="grant-type" data-i18n="grant_type_germany">Програма Німеччини</span>
+          <h3><a href="https://www.humboldt-foundation.de/en/" target="_blank" data-i18n="grant5_title">The Humboldt Foundation</a></h3>
+          <p data-i18n="grant5_desc">Спонсорування вчених і науковців для зміцнення Німеччини як науково-дослідного центру. Активне сприяння міжнародному взаєморозумінню та науковому прогресу.</p>
+        </div>
+        <div class="grant-footer">
+          <a href="https://www.humboldt-foundation.de/en/" class="btn-primary" style="width: 100%; text-align: center;" target="_blank" data-i18n="grant_btn_website">Офіційний сайт &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Картка 6: Fulbright Ukraine -->
+      <div class="grant-card">
+        <div class="grant-img">
+          <img src="/icons/fulbright.jpg" alt="Fulbright Ukraine" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="grant-body">
+          <span class="grant-type" data-i18n="grant_type_usa">Програма США</span>
+          <h3><a href="https://fulbright.org.ua/uk/" target="_blank" data-i18n="grant6_title">Fulbright Ukraine</a></h3>
+          <p data-i18n="grant6_desc">Програма уряду США. З 1992 року понад 1100 українців навчалися та проводили дослідження у США. Підтримка міжнародної освіти, взаємодії та взаєморозуміння.</p>
+        </div>
+        <div class="grant-footer">
+          <a href="https://fulbright.org.ua/uk/" class="btn-primary" style="width: 100%; text-align: center;" target="_blank" data-i18n="grant_btn_website">Офіційний сайт &rarr;</a>
+        </div>
+      </div>
 
     </div>
   </main>

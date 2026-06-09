@@ -11,7 +11,7 @@ export const translations = {
     about_label: "Про організацію",
     about_title: "Що ми робимо",
     about_desc: "Рада молодих вчених — об'єднання науковців, що підтримує розвиток молодих дослідників, організовує заходи та сприяє науковій кар'єрі.",
-    about_btn_portfolio: "Портфоліо проєктів",
+    about_btn_portfolio: "НАШІ ПРОЄКТИ",
     about_card1_title: "Навчаємо",
     about_card1_desc: "Школа молодого лідера в науці",
     about_card2_title: "Розробляємо",
@@ -23,17 +23,17 @@ export const translations = {
     about_card5_title: "Шукаємо",
     about_card5_desc: "Талановитих та амбітних молодих вчених",
     about_card6_title: "Об'єднуємо",
-    about_card6_desc: "Понад <strong>1800</strong> молодих вчених регіону",
+    about_card6_desc: "Понад <strong>100</strong> молодих вчених регіону",
     
     programs_label: "Діяльність",
     programs_title: "Програми Ради",
     prog1_title: "Конкурси",
     prog1_desc: "Кращий молодий вчений · Краща рада молодих вчених · Молоді вчені — Дніпропетровщині",
     prog_btn_more: "Детальніше →",
-    prog2_title: "Гранти та стажування",
-    prog2_desc: "Актуальні грантові майданчики та можливості для стажування молодих науковців",
-    prog3_title: "Школа молодого лідера",
-    prog3_desc: "Програма розвитку лідерських якостей та наукової кар'єри молодих дослідників",
+    prog2_title: "Міжнародні програми",
+    prog2_desc: "Актуальні міжнародні програми, гранти та можливості для стажування молодих науковців.",
+    prog3_title: "Мовні канали",
+    prog3_desc: "Добірка найкращих Telegram-каналів для вивчення іноземних та української мов.",
     
     news_label: "Актуально",
     news_title: "Новини",
@@ -73,100 +73,76 @@ export const translations = {
     nav_team: "Склад",
     nav_contacts: "Контакти",
 
-    // --- СТОРІНКА ПРОЄКТІВ ---
-    proj_page_title: "Портфоліо проєктів | Рада молодих вчених",
-    proj_header_title: "Портфоліо проєктів",
-    proj_header_desc: "Ініціативи, дослідження та грантові програми, які ми реалізуємо для розвитку науки",
+    // --- СТОРІНКА: НАУКОВИЙ ХАРКІВ (projects.html) ---
+    proj_page_title: "Науковий Харків | Рада молодих вчених",
+    proj_header_title: "Харків — місто наукових відкриттів!",
+    proj_header_desc: "«НЕЗЛАМНИЙ ХАРКІВ» — це наша наукова столиця України, це наша наукова університетська альма-матер, це наш символ стійкості у приєднанні до міжнародної наукової спільноти!",
     
-    // Фільтри та системні слова
-    proj_filter_all: "Усі проєкти",
-    proj_filter_grants: "Гранти",
-    proj_filter_conf: "Конференції",
-    proj_filter_social: "Соціальні",
-    proj_status_active: "Триває",
-    proj_status_done: "Завершено",
-    proj_cat_grants: "Гранти",
-    proj_cat_conf: "Конференції",
-    proj_cat_social: "Соціальні",
-    proj_read_more: "Детальніше &rarr;",
+    proj_filter_all: "Усі ініціативи",
+    proj_filter_social: "Соціальні мережі",
+    proj_status_active: "Актуально",
+    proj_cat_official: "Офіційний канал",
+    proj_cat_resources: "Корисні ресурси",
+    proj_btn_telegram: "Долучитись у Telegram",
 
-    // Картки проєктів
-    proj1_title: 'Програма підтримки молодих дослідників "Науковий старт"',
-    proj1_desc: "Надання мікрогрантів на проведення первинних досліджень та закупівлю необхідного лабораторного обладнання для аспірантів.",
-    proj1_date: "2026 - 2027",
+    proj_card1_title: "Ukrainian Science Channel",
+    proj_card1_desc: "З метою популяризації науки серед молоді та презентації кращих здобутків науковців Харківщини створено новий Тelegram-канал від Ради молодих вчених при Харківській обласній військовій адміністрації!",
     
-    proj2_title: 'Міжнародний симпозіум "Science Future"',
-    proj2_desc: "Організація та проведення масштабного симпозіуму, який об'єднав 300 вчених з 12 країн світу для обміну досвідом.",
-    proj2_date: "Травень 2025",
+    proj_card2_title: "Development Opportunities",
+    proj_card2_desc: "На цьому каналі ви знайдете корисну добірку наукових конференцій міжнародного, всеукраїнського та регіонального рівнів, а також інформацію щодо публікації статей та участь в освітніх вебінарах.",
+
+    // --- СТОРІНКА КОНФЕРЕНЦІЙ ---
+    comp_page_title: "Конференції та Публікації | Рада молодих вчених",
+    comp_header_title: "Конференції та Публікації",
+    comp_header_desc: "Анонси наукових заходів міжнародного та всеукраїнського рівнів, а також корисні матеріали щодо публікацій статей у наукових журналах.",
     
-    proj3_title: 'Популяризація науки в школах "Science 4 Kids"',
-    proj3_desc: "Серія відкритих лекцій та практичних майстер-класів для школярів старших класів від молодих вчених нашого регіону.",
-    proj3_date: "2025 - 2026",
-
-    // --- СТОРІНКА КОНКУРСІВ ---
-    comp_page_title: "Конкурси | Рада молодих вчених",
-    comp_header_title: "Конкурси",
-    comp_header_desc: "Відкривайте нові можливості для визнання ваших наукових досягнень та розвитку потенціалу",
+    comp_type_channel: "Telegram-канал",
+    comp_type_international: "Міжнародна конференція",
+    comp_type_practice: "Науково-практична конференція",
+    comp_type_internet: "Інтернет-конференція",
     
-    // Системні слова
-    comp_type_prize: "Премія",
-    comp_type_hackathon: "Науковий Хакатон",
-    comp_type_scholarship: "Стипендія",
-    comp_label_deadline: "Дедлайн:",
-    comp_label_start: "Початок:",
-    comp_btn_apply: "Подати заявку &rarr;",
-    comp_btn_rules: "Умови &rarr;",
-    comp_btn_details: "Деталі &rarr;",
+    comp_btn_join: "Долучитися &rarr;",
+    comp_btn_details: "Детальніше &rarr;",
 
-    // Картки конкурсів
-    comp1_title: "Премія Ради за найкращий науковий огляд",
-    comp1_desc: "Конкурс для молодих вчених на написання найкращого огляду актуальної наукової проблеми.",
-    comp1_date: "30 Жовтня 2026",
+    comp1_title: "Development Opportunities",
+    comp1_desc: "Корисна добірка наукових конференцій міжнародного, всеукраїнського та регіонального рівнів, а також інформація щодо публікацій та участі в освітніх вебінарах.",
 
-    comp2_title: 'Хакатон інноваційних проєктів "Science-to-Business"',
-    comp2_desc: "Презентація, експертна оцінка та захист прикладних наукових розробок у сфері DeepTech перед менторами.",
-    comp2_date: "15 Грудня 2026",
+    comp2_title: "Травневі студії: історія та міжнародні відносини в інформаційному протистоянні",
+    comp2_desc: "V Міжнародна наукова конференція. Запрошуємо науковців до обговорення актуальних історичних та міжнародних питань.",
 
-    comp3_title: "Іменна стипендія для стажування за кордоном",
-    comp3_desc: "Підтримка короткострокових наукових стажувань та підвищення кваліфікації у провідних лабораторіях Європи.",
-    comp3_date: "Січень 2027",
+    comp3_title: "Академічна доброчесність. Виклики сучасності",
+    comp3_desc: "Міжнародна науково-практична конференція студентів та молодих учених щодо питань етики та доброчесності у сучасній науці.",
+
+    comp4_title: "Інноваційне підприємництво: стан та перспективи розвитку",
+    comp4_desc: "VІІІ Міжнародна науково-практична інтернет-конференція для економістів, управлінців та молодих підприємців.",
 
     // --- СТОРІНКА ГРАНТІВ ---
-    grant_page_title: "Гранти та стажування | Рада молодих вчених",
-    grant_header_title: "Гранти та стажування",
-    grant_header_desc: "Актуальні можливості для фінансування досліджень, мобільності та розвитку наукової кар'єри",
+    grant_page_title: "Міжнародні програми | Рада молодих вчених",
+    grant_header_title: "Міжнародні програми",
+    grant_header_desc: "Можливості для фінансування досліджень, академічної мобільності та розвитку наукової кар'єри за кордоном",
 
-    // Системні слова
-    grant_type_research: "Дослідницький Грант",
-    grant_type_internship: "Міжнародне стажування",
-    grant_type_travel: "Тревел-грант",
-    grant_label_budget: "Бюджет:",
-    grant_label_duration: "Тривалість:",
-    grant_label_location: "Локація:",
-    grant_label_applications: "Прийом заявок:",
-    grant_label_deadline: "Дедлайн:",
-    grant_label_next_wave: "Найближча хвиля:",
-    grant_btn_apply: "Подати заявку &rarr;",
-    grant_btn_rules: "Умови &rarr;",
+    grant_type_eu: "Програма ЄС",
+    grant_type_germany: "Програма Німеччини",
+    grant_type_usa: "Програма США",
+    grant_btn_website: "Офіційний сайт &rarr;",
 
-    // Картки грантів
-    grant1_title: "Грант на закупівлю лабораторного обладнання",
-    grant1_desc: "Мікрофінансування для молодих вчених на придбання реактивів та дрібного обладнання для поточних досліджень.",
-    grant1_val1: "До 50 000 грн",
-    grant1_val2: "6 місяців",
-    grant1_date: "20 Листопада 2026",
+    grant1_title: "Erasmus+ UA",
+    grant1_desc: "Підтримка впровадження і поширення інформації про можливості та проєкти Програми ЄС у сферах вищої освіти, професійного розвитку, молоді та спорту в Україні.",
 
-    grant2_title: "Програма обміну з Варшавським Університетом",
-    grant2_desc: "Повністю фінансоване стажування на базі факультету точних наук. Покриває переліт, проживання та добові.",
-    grant2_val1: "Варшава, Польща",
-    grant2_val2: "3 місяці",
-    grant2_date: "01 Грудня 2026",
+    grant2_title: "Horizon Europe",
+    grant2_desc: "Ключова програма ЄС для фінансування досліджень та інновацій до 2027 року. Дізнавайтесь як отримати фінансування, структуру програми, місії та європейські партнерства.",
 
-    grant3_title: "Фінансування участі у міжнародних конференціях",
-    grant3_desc: "Компенсація організаційного внеску та транспортних витрат для молодих науковців, чиї тези прийняті до публікації.",
-    grant3_val1: "До 20 000 грн",
-    grant3_val2: "Постійно",
-    grant3_date: "10 Жовтня 2026",
+    grant3_title: "DAAD Ukraine",
+    grant3_desc: "Можливості розпочати або продовжити академічну діяльність у Німеччині для аспірантів, постдоків та досвідчених науковців. Огляд різноманітних пропозицій допомоги.",
+
+    grant4_title: "Marie Skłodowska-Curie Actions",
+    grant4_desc: "Базова програма Європейського Союзу для докторської освіти та постдокторської підготовки. Підтримка досконалості в дослідженнях та інноваціях.",
+
+    grant5_title: "The Humboldt Foundation",
+    grant5_desc: "Спонсорування вчених і науковців для зміцнення Німеччини як науково-дослідного центру. Активне сприяння міжнародному взаєморозумінню та науковому прогресу.",
+
+    grant6_title: "Fulbright Ukraine",
+    grant6_desc: "Програма уряду США. З 1992 року понад 1100 українців навчалися та проводили дослідження у США. Підтримка міжнародної освіти, взаємодії та взаєморозуміння.",
 
     // --- СТОРІНКА ШКОЛИ ЛІДЕРА ---
     school_page_title: "Школа молодого лідера | Рада молодих вчених",
@@ -197,7 +173,7 @@ export const translations = {
     school_cta_desc: "Старт навчання:",
     school_cta_btn: "Подати заявку",
 
-    // --- СТОРІНКА НОВИН --- ВИПРАВЛЕНО КЛЮЧІ
+    // --- СТОРІНКА НОВИН --- 
     news_page_title: "Новини | Рада молодих вчених",
     news_header_title: "Новини",
     news_header_desc: "Детальний перегляд публікації",
@@ -209,7 +185,43 @@ export const translations = {
 
     // --- ФУТЕР ---
     footer_copyright: "© 2026 Рада молодих вчених. Усі права захищено.",
-    footer_dev_info: "Розроблено в рамках виробничої практики"
+    footer_dev_info: "Розроблено в рамках виробничої практики",
+
+    // --- СТОРІНКА МОВНИХ КАНАЛІВ (school.html) ---
+    lang_page_title: "Мовні канали | Рада молодих вчених",
+    lang_header_title: "Мовні канали",
+    lang_header_desc: "Добірка найкращих Telegram-каналів для вивчення та вдосконалення іноземних та української мов. Підписуйтесь та покращуйте свої знання щодня!",
+    
+    lang_btn_tg: "Перейти в Telegram &rarr;",
+    
+    lang_subs_65k: "65 500+ підписників",
+    lang_subs_34k: "34 600+ підписників",
+    lang_subs_33k: "33 200+ підписників",
+    lang_subs_31k: "31 600+ підписників",
+    lang_subs_16k: "16 500+ підписників",
+    lang_subs_14k: "14 800+ підписників",
+    lang_subs_13k: "13 700+ підписників",
+    lang_subs_4k: "4 100+ підписників",
+
+    lang_eng1_title: "Англійська для кар'єри",
+    lang_eng1_desc: "Професійна англійська для кар'єри!",
+    lang_eng2_title: "Англійська мова 🇬🇧",
+    lang_eng2_desc: "Вивчай англійську мову щодня. Покращуй знання мови разом з нами.",
+
+    lang_ger1_title: "Німецька Легко!",
+    lang_ger1_desc: "Німецька легко. І це не вигадки.",
+    lang_ger2_title: "німецька 🔥WOW DEUTSCH",
+    lang_ger2_desc: "Німецька мова з 0 до С1.2 разом з Лілією Хоньків. Курси та групи для дорослих і дітей.",
+
+    lang_pol1_title: "Польська 🇵🇱❤️ з любовʼю",
+    lang_pol1_desc: "Тут знайдеш інформацію про всі курси. Cześć, tu Kateryna Chorzewskі, філолог польської, PhD 👋",
+    lang_pol2_title: "Польська з Баженою",
+    lang_pol2_desc: "Вчимо мову разом. За всіма питаннями та деталями — переходьте у наш канал.",
+
+    lang_ukr1_title: "Українська мова 🇺🇦",
+    lang_ukr1_desc: "Найбільший канал з вивчення української мови. Покращуй знання мови разом з нами!",
+    lang_ukr2_title: "Балакаємо українською MovaSpark",
+    lang_ukr2_desc: "Мова – це доля нашого народу, і вона залежить від того, як ревно ми всі плекатимемо її. 🇺🇦",
   },
   
   en: {
@@ -224,7 +236,7 @@ export const translations = {
     about_label: "About us",
     about_title: "What we do",
     about_desc: "The Council of Young Scientists is an association of researchers that supports the development of young scientists, organizes events, and promotes scientific careers.",
-    about_btn_portfolio: "Projects portfolio",
+    about_btn_portfolio: "OUR PROJECTS",
     about_card1_title: "We teach",
     about_card1_desc: "School of the Young Leader in Science",
     about_card2_title: "We organize",
@@ -236,17 +248,17 @@ export const translations = {
     about_card5_title: "We seek",
     about_card5_desc: "Talented and ambitious young scientists",
     about_card6_title: "We unite",
-    about_card6_desc: "Over <strong>1800</strong> young scientists in the region",
+    about_card6_desc: "Over <strong>100</strong> young scientists in the region",
     
     programs_label: "Activities",
     programs_title: "Council Programs",
     prog1_title: "Competitions",
     prog1_desc: "Best Young Scientist · Best Council of Young Scientists · Young Scientists to the Dnipropetrovsk Region",
     prog_btn_more: "Read more →",
-    prog2_title: "Grants and Internships",
-    prog2_desc: "Current grant platforms and internship opportunities for young researchers",
-    prog3_title: "School of the Young Leader",
-    prog3_desc: "Program for developing leadership skills and scientific careers of young researchers",
+    prog2_title: "International Programs",
+    prog2_desc: "Current international programs, grants, and internship opportunities for young scientists.",
+    prog3_title: "Language Channels",
+    prog3_desc: "A selection of the best Telegram channels for learning foreign languages and Ukrainian.",
     
     news_label: "Relevant",
     news_title: "News",
@@ -286,100 +298,76 @@ export const translations = {
     nav_team: "Team",
     nav_contacts: "Contacts",
 
-    // --- СТОРІНКА ПРОЄКТІВ ---
-    proj_page_title: "Projects Portfolio | Council of Young Scientists",
-    proj_header_title: "Projects Portfolio",
-    proj_header_desc: "Initiatives, research, and grant programs we implement for the development of science",
-
-    // Фільтри та системні слова
-    proj_filter_all: "All projects",
-    proj_filter_grants: "Grants",
-    proj_filter_conf: "Conferences",
-    proj_filter_social: "Social",
-    proj_status_active: "Ongoing",
-    proj_status_done: "Completed",
-    proj_cat_grants: "Grants",
-    proj_cat_conf: "Conferences",
-    proj_cat_social: "Social",
-    proj_read_more: "Read more &rarr;",
-
-    // Картки проєктів
-    proj1_title: 'Young Researchers Support Program "Science Start"',
-    proj1_desc: "Providing micro-grants for primary research and purchasing necessary laboratory equipment for postgraduate students.",
-    proj1_date: "2026 - 2027",
+    // --- СТОРІНКА: НАУКОВИЙ ХАРКІВ (projects.html) ---
+    proj_page_title: "Scientific Kharkiv | Council of Young Scientists",
+    proj_header_title: "Kharkiv is a city for scientific discoveries!",
+    proj_header_desc: "«UNBREAKABLE KHARKIV» is our scientific capital of Ukraine, our scientific university alma mater, our symbol of resilience in joining the international scientific community!",
     
-    proj2_title: 'International Symposium "Science Future"',
-    proj2_desc: "Organizing and hosting a large-scale symposium that brought together 300 scientists from 12 countries to exchange experiences.",
-    proj2_date: "May 2025",
+    proj_filter_all: "All initiatives",
+    proj_filter_social: "Social media",
+    proj_status_active: "Active",
+    proj_cat_official: "Official channel",
+    proj_cat_resources: "Useful resources",
+    proj_btn_telegram: "Join on Telegram",
+
+    proj_card1_title: "Ukrainian Science Channel",
+    proj_card1_desc: "To popularize science among the youth and present the best achievements of Kharkiv region scientists, a new Telegram channel has been created by the Council of Young Scientists at the Kharkiv Regional Military Administration!",
     
-    proj3_title: 'Popularizing Science in Schools "Science 4 Kids"',
-    proj3_desc: "A series of open lectures and practical workshops for high school students by young scientists from our region.",
-    proj3_date: "2025 - 2026",
+    proj_card2_title: "Development Opportunities",
+    proj_card2_desc: "On this channel, you will find a useful selection of scientific conferences at the international, national, and regional levels, as well as information on publishing articles and participating in educational webinars.",
 
-    // --- СТОРІНКА КОНКУРСІВ ---
-    comp_page_title: "Competitions | Council of Young Scientists",
-    comp_header_title: "Competitions",
-    comp_header_desc: "Discover new opportunities for the recognition of your scientific achievements and potential development",
+    // --- СТОРІНКА КОНФЕРЕНЦІЙ ---
+    comp_page_title: "Conferences and Publications | Council of Young Scientists",
+    comp_header_title: "Conferences and Publications",
+    comp_header_desc: "Announcements of scientific events at international and national levels, as well as useful materials for publishing articles in scientific journals.",
     
-    // Системні слова
-    comp_type_prize: "Award",
-    comp_type_hackathon: "Science Hackathon",
-    comp_type_scholarship: "Scholarship",
-    comp_label_deadline: "Deadline:",
-    comp_label_start: "Starts:",
-    comp_btn_apply: "Apply now &rarr;",
-    comp_btn_rules: "Rules &rarr;",
-    comp_btn_details: "Details &rarr;",
+    comp_type_channel: "Telegram Channel",
+    comp_type_international: "International Conference",
+    comp_type_practice: "Scientific and Practical Conference",
+    comp_type_internet: "Internet Conference",
+    
+    comp_btn_join: "Join &rarr;",
+    comp_btn_details: "Read more &rarr;",
 
-    // Картки конкурсів
-    comp1_title: "Council Award for the Best Scientific Review",
-    comp1_desc: "A competition for young scientists to write the best review of a current scientific problem.",
-    comp1_date: "October 30, 2026",
+    comp1_title: "Development Opportunities",
+    comp1_desc: "A useful selection of scientific conferences at the international, national, and regional levels, as well as information on publications and educational webinars.",
 
-    comp2_title: 'Innovative Projects Hackathon "Science-to-Business"',
-    comp2_desc: "Presentation, expert evaluation, and defense of applied scientific developments in DeepTech to mentors.",
-    comp2_date: "December 15, 2026",
+    comp2_title: "May Studies: History and International Relations in Information Confrontation",
+    comp2_desc: "V International Scientific Conference. We invite scientists to discuss current historical and international issues.",
 
-    comp3_title: "Named Scholarship for Internship Abroad",
-    comp3_desc: "Support for short-term scientific internships and advanced training in leading European laboratories.",
-    comp3_date: "January 2027",
+    comp3_title: "Academic Integrity. Challenges of Our Time",
+    comp3_desc: "International scientific and practical conference for students and young scientists on ethics and integrity in modern science.",
+
+    comp4_title: "Innovative Entrepreneurship: State and Prospects of Development",
+    comp4_desc: "VIII International Scientific and Practical Internet Conference for economists, managers, and young entrepreneurs.",
 
     // --- СТОРІНКА ГРАНТІВ ---
-    grant_page_title: "Grants and Internships | Council of Young Scientists",
-    grant_header_title: "Grants and Internships",
-    grant_header_desc: "Current opportunities for research funding, mobility, and scientific career development",
+    grant_page_title: "International Programs | Council of Young Scientists",
+    grant_header_title: "International Programs",
+    grant_header_desc: "Opportunities for research funding, academic mobility, and scientific career development abroad",
 
-    // Системні слова
-    grant_type_research: "Research Grant",
-    grant_type_internship: "International Internship",
-    grant_type_travel: "Travel Grant",
-    grant_label_budget: "Budget:",
-    grant_label_duration: "Duration:",
-    grant_label_location: "Location:",
-    grant_label_applications: "Applications:",
-    grant_label_deadline: "Deadline:",
-    grant_label_next_wave: "Next wave:",
-    grant_btn_apply: "Apply now &rarr;",
-    grant_btn_rules: "Rules &rarr;",
+    grant_type_eu: "EU Program",
+    grant_type_germany: "German Program",
+    grant_type_usa: "US Program",
+    grant_btn_website: "Official Website &rarr;",
 
-    // Картки грантів
-    grant1_title: "Grant for the Purchase of Laboratory Equipment",
-    grant1_desc: "Micro-financing for young scientists to purchase reagents and small equipment for ongoing research.",
-    grant1_val1: "Up to 50,000 UAH",
-    grant1_val2: "6 months",
-    grant1_date: "November 20, 2026",
+    grant1_title: "Erasmus+ UA",
+    grant1_desc: "Support for the implementation and dissemination of information about EU Program opportunities and projects in the fields of higher education, professional development, youth, and sports in Ukraine.",
 
-    grant2_title: "Exchange Program with the University of Warsaw",
-    grant2_desc: "Fully funded internship at the Faculty of Exact Sciences. Covers flights, accommodation, and daily allowance.",
-    grant2_val1: "Warsaw, Poland",
-    grant2_val2: "3 months",
-    grant2_date: "December 01, 2026",
+    grant2_title: "Horizon Europe",
+    grant2_desc: "The key EU funding program for research and innovation until 2027. Learn how to get funding, program structure, missions, and European partnerships.",
 
-    grant3_title: "Funding for Participation in International Conferences",
-    grant3_desc: "Compensation of the organizational fee and transport expenses for young scientists whose abstracts are accepted for publication.",
-    grant3_val1: "Up to 20,000 UAH",
-    grant3_val2: "Ongoing",
-    grant3_date: "October 10, 2026",
+    grant3_title: "DAAD Ukraine",
+    grant3_desc: "Opportunities to start or continue academic activities in Germany for PhD students, postdocs, and experienced scientists. Overview of various support offers.",
+
+    grant4_title: "Marie Skłodowska-Curie Actions",
+    grant4_desc: "The European Union's flagship program for doctoral education and postdoctoral training. Supporting excellence in research and innovation.",
+
+    grant5_title: "The Humboldt Foundation",
+    grant5_desc: "Sponsoring scientists and scholars to strengthen Germany as a research hub. Active promotion of international understanding and scientific progress.",
+
+    grant6_title: "Fulbright Ukraine",
+    grant6_desc: "A US government program. Since 1992, over 1,100 Ukrainians have studied and conducted research in the USA. Supporting international education, interaction, and mutual understanding.",
 
     // --- СТОРІНКА ШКОЛИ ЛІДЕРА ---
     school_page_title: "Young Leader School | Council of Young Scientists",
@@ -422,6 +410,42 @@ export const translations = {
     
     // --- ФУТЕР ---
     footer_copyright: "© 2026 Council of Young Scientists. All rights reserved.",
-    footer_dev_info: "Developed as part of an academic internship"
+    footer_dev_info: "Developed as part of an academic internship",
+
+    // --- СТОРІНКА МОВНИХ КАНАЛІВ (school.html) ---
+    lang_page_title: "Language Channels | Council of Young Scientists",
+    lang_header_title: "Language Channels",
+    lang_header_desc: "A selection of the best Telegram channels for learning and improving foreign languages and Ukrainian. Subscribe and improve your skills every day!",
+    
+    lang_btn_tg: "Go to Telegram &rarr;",
+    
+    lang_subs_65k: "65,500+ subscribers",
+    lang_subs_34k: "34,600+ subscribers",
+    lang_subs_33k: "33,200+ subscribers",
+    lang_subs_31k: "31,600+ subscribers",
+    lang_subs_16k: "16,500+ subscribers",
+    lang_subs_14k: "14,800+ subscribers",
+    lang_subs_13k: "13,700+ subscribers",
+    lang_subs_4k: "4,100+ subscribers",
+
+    lang_eng1_title: "English for Career",
+    lang_eng1_desc: "Professional English for your career!",
+    lang_eng2_title: "English Language 🇬🇧",
+    lang_eng2_desc: "Learn English every day. Improve your language skills with us.",
+
+    lang_ger1_title: "German Easy!",
+    lang_ger1_desc: "German is easy. And that's not a myth.",
+    lang_ger2_title: "German 🔥WOW DEUTSCH",
+    lang_ger2_desc: "German language from 0 to C1.2 with Lilia Khonkiv. Courses and groups for adults and children.",
+
+    lang_pol1_title: "Polish 🇵🇱❤️ with Love",
+    lang_pol1_desc: "Here you will find info about all courses. Cześć, this is Kateryna Chorzewski, Polish philologist, PhD 👋",
+    lang_pol2_title: "Polish with Bazhena",
+    lang_pol2_desc: "Let's learn the language together. For all questions and details — go to our channel.",
+
+    lang_ukr1_title: "Ukrainian Language 🇺🇦",
+    lang_ukr1_desc: "The largest channel for learning the Ukrainian language. Improve your language skills with us!",
+    lang_ukr2_title: "Speaking Ukrainian MovaSpark",
+    lang_ukr2_desc: "Language is the destiny of our people, and it depends on how zealously we all cherish it. 🇺🇦",
   }
 };

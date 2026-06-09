@@ -1,6 +1,6 @@
 import { team } from "./teamData.js";
 
-//Отримуємо поточну мову (ua або en), як ми це робили в main.js
+//Отримуємо поточну мову (ua або en)
 const currentLang = localStorage.getItem("site_lang") || "ua";
 
 function renderPreview(member) {
@@ -24,6 +24,7 @@ function renderPreview(member) {
 }
 
 function renderFull(member) {
+  // Захист даних для багатомовності
   const name = member.name?.[currentLang] || member.name?.ua || 'Ім\'я не вказано';
   const degree = member.degree?.[currentLang] || member.degree?.ua || '';
   const badge = member.badge?.[currentLang] || member.badge?.ua || '';
@@ -31,6 +32,7 @@ function renderFull(member) {
   const desc = member.description?.[currentLang] || member.description?.ua || '';
   const imageSrc = member.image || '/icons/default-avatar.png';
 
+  // Повертаємо класи team-card та team-photo для круглих аватарок
   return `
     <div class="team-card ${member.role || ''}">
       <div class="team-badge">

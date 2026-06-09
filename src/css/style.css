@@ -967,12 +967,38 @@ footer a   { color: var(--gold); text-decoration: none; }
   animation: pageFadeIn 0.8s 0.2s ease-out both;
 }
 
-/*Сітка карток команди: адаптивно від 280px*/
 .full-team-grid 
 {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 30px;
+}
+
+@media (max-width: 1200px) 
+{
+  .full-team-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 900px) 
+{
+  .full-team-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) 
+{
+  .full-team-grid { grid-template-columns: 1fr; }
+}
+
+#mainProgramsGrid 
+{
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width: 768px) 
+{
+  #mainProgramsGrid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .member-card 
@@ -1638,6 +1664,30 @@ footer a   { color: var(--gold); text-decoration: none; }
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
+/* Контейнер для фотографії конференції */
+.comp-img 
+{
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background: #e8ecf0;
+}
+
+/* Налаштування самої картинки та плавності */
+.comp-img img 
+{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+/* Ефект збільшення при наведенні */
+.comp-card:hover .comp-img img 
+{
+  transform: scale(1.05);
+}
+
 /*Графічний заголовок картки замість фото*/
 .comp-header-graphic 
 {
@@ -1899,6 +1949,26 @@ footer a   { color: var(--gold); text-decoration: none; }
   color: var(--navy);
 }
 
+.grant-img 
+{
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background: #e8ecf0;
+}
+.grant-img img 
+{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.grant-card:hover .grant-img img 
+{
+  transform: scale(1.05);
+}
+
 /*============================================================
    СТОРІНКА: ШКОЛА МОЛОДОГО ЛІДЕРА
    ============================================================*/
@@ -2101,4 +2171,108 @@ footer a   { color: var(--gold); text-decoration: none; }
   background: #fff;
   transform: translateY(-2px);
   box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+}
+
+/* =========================================
+   АКОРДЕОН ДЛЯ ПУБЛІКАЦІЙ
+   ========================================= */
+.accordion-container 
+{
+  max-width: 900px;
+  margin: 0 auto 60px;
+}
+
+/* Приховуємо стандартний трикутник браузера */
+.custom-accordion summary::-webkit-details-marker 
+{
+  display: none;
+}
+
+.custom-accordion 
+{
+  border-bottom: 1px solid var(--gray-light);
+  margin-bottom: 10px;
+}
+
+.custom-accordion summary 
+{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  cursor: pointer;
+  list-style: none; /* Приховуємо стандартний маркер */
+}
+
+/* Заголовок акордеона */
+.custom-accordion summary h3 
+{
+  margin: 0;
+  font-size: 20px;
+  color: var(--navy);
+  font-family: 'Playfair Display', serif;
+  padding-right: 20px;
+}
+
+/* Стрілочка */
+.accordion-arrow 
+{
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease;
+  color: #555;
+  flex-shrink: 0;
+}
+
+/* Обертання стрілочки, коли відкрито */
+.custom-accordion[open] .accordion-arrow 
+{
+  transform: rotate(180deg);
+}
+
+/* Контент всередині */
+.accordion-content 
+{
+  padding: 0 0 24px 0;
+  color: #333;
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+.accordion-content ul 
+{
+  padding-left: 20px;
+  margin-bottom: 16px;
+}
+
+.accordion-content li 
+{
+  margin-bottom: 8px;
+}
+
+.sources-box 
+{
+  background: var(--cream);
+  padding: 16px;
+  border-radius: 8px;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+/* =========================================
+   СІТКА ДЛЯ МОВНИХ КАНАЛІВ
+   ========================================= */
+#langContainer 
+{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+@media (max-width: 768px) 
+{
+  #langContainer 
+  {
+    grid-template-columns: 1fr;
+  }
 }
