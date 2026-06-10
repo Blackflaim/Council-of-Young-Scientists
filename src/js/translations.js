@@ -2,6 +2,7 @@ export const translations = {
   ua: {
     // --- index.html ---
     page_title: "Рада молодих вчених",
+    page_title_down: "Університети · Харків",
     hero_badge: "Рада молодих вчених",
     hero_title: "Молоді вчені —<br><em>майбутнє</em> науки",
     hero_subtitle: "Молоді вчені — безцінний інтелект,<br>без якого немає майбутнього України",
@@ -227,6 +228,7 @@ export const translations = {
   en: {
     // --- index.html ---
     page_title: "Council of Young Scientists",
+    page_title_down: "University · Kharkiv",
     hero_badge: "Council of Young Scientists",
     hero_title: "Young scientists —<br><em>the future</em> of science",
     hero_subtitle: "Young scientists are invaluable intellect,<br>without which Ukraine has no future",
