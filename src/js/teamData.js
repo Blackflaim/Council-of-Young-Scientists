@@ -153,7 +153,7 @@ export const team = [
     name: { ua: "Кирило ДЕГТЯРЬОВ", en: "Kyrylo DEHTIAROV" },
     badge: { ua: "Член ради", en: "Member of the Council" },
     role: "member",
-    degree: { ua: "кандидат технічних наук", en: "Candidate of technical sciences" },
+    degree: { ua: "кандидат технічних наук", en: "Candidate of Technical Sciences" },
     institution: { 
       ua: "Інститут енергетичних машин і систем ім. А.М. Підгорного НАН України", 
       en: "Anatolii Pidhorny Institute of power machines and systems of National Academy of Sciences of Ukraine" 

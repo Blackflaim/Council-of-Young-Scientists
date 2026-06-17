@@ -1,10 +1,10 @@
 import { team } from "./teamData.js";
 
-// Отримуємо поточну мову (ua або en)
+// Отримуємо поточну мову
 const currentLang = localStorage.getItem("site_lang") || "ua";
 
-// Допоміжна функція: замінює перший пробіл на <br>, щоб ім'я завжди було у 2 рядки
-function formatName(nameString) {
+function formatName(nameString) 
+{
   if (!nameString) return 'Ім\'я не вказано';
   return nameString.replace(' ', '<br>');
 }
@@ -68,7 +68,8 @@ const previewContainer = document.getElementById("teamPreview");
 const fullContainer = document.getElementById("teamContainer");
 
 // Перевірка, чи team існує
-if (team && Array.isArray(team)) {
+if (team && Array.isArray(team)) 
+{
   if(previewContainer) {
     previewContainer.innerHTML = team.slice(0, 5).map(renderPreview).join('');
   }
