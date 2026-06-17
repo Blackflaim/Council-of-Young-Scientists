@@ -16,6 +16,36 @@ const adminNewsList = document.getElementById('adminNewsList');
 const form = document.getElementById('addNewsForm');
 const statusMsg = document.getElementById('statusMessage');
 
+// --- ФУНКЦІЯ ПЕРЕТВОРЕННЯ ПОСИЛАНЬ ---
+function formatVideoUrl(url) 
+{
+    if (!url) return "";
+
+    // Перевірка на YouTube
+    if (url.includes("youtube.com/watch?v=")) 
+    {
+        return `https://www.youtube.com/embed/${url.split("v=")[1].split("&")[0]}`;
+    } 
+    else if (url.includes("youtu.be/")) 
+    {
+        return `https://www.youtube.com/embed/${url.split("youtu.be/")[1].split("?")[0]}`;
+    } 
+    else if (url.includes("youtube.com/embed/")) 
+    {
+        return url;
+    }
+    
+    // 2. Перевірка на Facebook
+    if (url.includes("facebook.com")) {
+        // Фейсбук вимагає специфічний формат: /plugins/video.php?href=[ОРИГІНАЛЬНЕ_ПОСИЛАННЯ]
+        const encodedUrl = encodeURIComponent(url);
+        return `https://www.facebook.com/plugins/video.php?href=${encodedUrl}&show_text=false`;
+    }
+
+    // Якщо це якась інша платформа, просто повертаємо як є
+    return url;
+}
+
 // --- 1. АВТОРИЗАЦІЯ ---
 loginBtn.addEventListener('click', () => {
     if (passInput.value === import.meta.env.VITE_ADMIN_PASSWORD) { 
@@ -162,6 +192,7 @@ form.addEventListener('submit', async (event) => {
             description_en: document.getElementById('description_en').value.trim(),
             content_en: document.getElementById('content_en').value.trim(),
             image: finalImageUrl,
+            video: formatVideoUrl(document.getElementById('videoUrl').value.trim()),
             date: autoDate,
             createdAt: Date.now() 
         };

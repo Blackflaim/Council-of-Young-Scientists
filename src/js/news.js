@@ -38,7 +38,7 @@ async function loadNewsPreview() {
                 imageHtml = `<div class="news-img-placeholder">📰</div>`;
             }
 
-            const overlayHtml = isFeatured ? `<div class="news-img-overlay"></div>` : '';
+            const overlayHtml = '';
             const descriptionHtml = isFeatured && displayDesc ? `<p>${displayDesc}</p>` : '';
             const dateStr = item.date || "06.06.2026";
             const readMoreText = currentLang === 'en' ? 'Read more' : 'Читати далі';

@@ -456,7 +456,7 @@ section { padding: 100px 5%; }
 .news-card img
 {
     width:100%;
-    height:260px;
+    height:100%;
     object-fit:cover; /*Обрізає зображення, якщо воно не відповідає пропорціям*/
     display:block;
 }
@@ -642,11 +642,24 @@ section { padding: 100px 5%; }
   border: 3px solid var(--gold-light);
 }
 
-.team-photo {
+.team-photo 
+{
+  position: relative;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+  padding-top: 40px;
+  display: flex;
+  justify-content: center;
+  flex: 0 0 auto;
+}
+
+.team-title-wrap 
+{
+  min-height: 140px; 
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .team-card h4 
@@ -1123,22 +1136,13 @@ footer a   { color: var(--gold); text-decoration: none; }
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-.team-photo 
-{
-  position: relative;
-  width: 100%;
-  padding-top: 40px;
-  display: flex;
-  justify-content: center;
-}
-
 .team-photo img 
 {
   width: 140px; 
   height: 140px;
   border-radius: 50%;
   object-fit: cover;
-  object-position: top center; /*Центруємо фотографію по верхній частині (зазвичай обличчя)*/
+  object-position: top center; /*Центруємо фотографію по верхній частині*/
   box-shadow: 0 8px 24px rgba(13, 27, 42, 0.12);
   transition: transform 0.5s ease;
 }
@@ -1400,12 +1404,13 @@ footer a   { color: var(--gold); text-decoration: none; }
 
 .article-image
 {
-    width:100%;
-    max-height:500px; /*Захист від занадто високих вертикальних зображень*/
-    object-fit:cover;
-    border-radius:12px;
-    display:block;
-    margin:0 auto 40px;
+    width: 100%;
+    max-height: 600px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 12px;
+    display: block;
+    margin: 0 auto 40px;
 }
 
 .article-content

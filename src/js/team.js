@@ -32,7 +32,6 @@ function renderFull(member) {
   const desc = member.description?.[currentLang] || member.description?.ua || '';
   const imageSrc = member.image || '/icons/default-avatar.png';
 
-  // Повертаємо класи team-card та team-photo для круглих аватарок
   return `
     <div class="team-card ${member.role || ''}">
       <div class="team-badge">
@@ -42,12 +41,15 @@ function renderFull(member) {
         <img src="${imageSrc}" alt="${name}">
       </div>
       <div class="team-info">
-        <h3>${name}</h3>
-        <p class="team-degree">${degree}</p>
+        <div class="team-title-wrap">
+          <h3>${name}</h3>
+          ${degree ? `<p class="team-degree">${degree}</p>` : ''}
+        </div>
+        
         <div class="team-tags">
           <span class="tag">${institution}</span>
         </div>
-        ${desc ? `<p>${desc}</p>` : ''}
+        ${desc ? `<p class="team-desc">${desc}</p>` : ''}
       </div>
     </div>
   `;

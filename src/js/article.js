@@ -10,7 +10,8 @@ const pageHeader = document.querySelector('.page-header');
 
 const currentLang = localStorage.getItem("site_lang") || "ua";
 
-async function loadArticle() {
+async function loadArticle() 
+{
     // Якщо ID немає — зупиняємось
     if (!id) return;
 
@@ -43,10 +44,19 @@ async function loadArticle() {
 
         const article = snapshot.data();
 
-        // Логіка перекладу
         const displayTitle = (currentLang === 'en' && article.title_en) ? article.title_en : article.title;
         const displayContent = (currentLang === 'en' && article.content_en) ? article.content_en : article.content;
         
+        let videoHtml = '';
+        if (article.video && article.video.trim() !== "") 
+        {
+            videoHtml = `
+                <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin: 30px 0; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                    <iframe src="${article.video}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" allowfullscreen></iframe>
+                </div>
+            `;
+        }
+
         const btnHomeText = currentLang === 'en' ? '&larr; Back to Home' : '&larr; На головну';
         const btnAllNewsText = currentLang === 'en' ? 'All News &rarr;' : 'До всіх новин &rarr;';
         const emptyContentText = currentLang === 'en' ? '<p>No content available.</p>' : '<p>Немає тексту новини.</p>';
@@ -54,7 +64,11 @@ async function loadArticle() {
         container.innerHTML = `
             <article class="article-page" style="padding-top: 40px;"> 
                 <h1 style="font-family: 'Playfair Display', serif; font-size: 38px; font-weight: 700; margin-bottom: 24px;">${displayTitle}</h1>
+                
                 ${article.image && article.image !== "none" ? `<img class="article-image" src="${article.image}" alt="${displayTitle}">` : ''}
+                
+                ${videoHtml}
+                
                 <div class="article-content" style="margin-top: 30px;">
                     ${displayContent || emptyContentText}
                 </div>

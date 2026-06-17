@@ -72,7 +72,13 @@
                     <input type="text" id="image" placeholder="https://...">
                 </div>
 
-                <button type="submit" class="btn-primary" style="width: 100%;">Опублікувати новину</button>
+                <div class="form-group">
+                    <label>Посилання на відео з YouTube (Embed URL) <span class="lang-badge">Опціонально</span></label>
+                    <input type="text" id="videoUrl" placeholder="Напр: https://www.youtube.com/embed/dQw4w9WgXcQ">
+                    <small style="display: block; margin-top: 5px; color: #666; font-size: 12px;">Увага: вставляйте саме Embed URL, а не звичайне посилання на сторінку.</small>
+                </div>
+
+                <button type="submit" class="btn-primary" style="width: 100%; margin-top: 20px;">Опублікувати новину</button>
                 <p id="statusMessage" style="text-align: center; margin-top: 15px; font-weight: bold;"></p>
             </form>
         </div>
