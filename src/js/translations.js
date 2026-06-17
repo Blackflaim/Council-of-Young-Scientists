@@ -82,7 +82,6 @@ export const translations = {
     proj_filter_all: "Усі ініціативи",
     proj_filter_social: "Соціальні мережі",
     proj_status_active: "Актуально",
-    proj_cat_official: "Офіційний канал",
     proj_cat_resources: "Корисні ресурси",
     proj_btn_telegram: "Долучитись у Telegram",
 
