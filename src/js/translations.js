@@ -87,7 +87,7 @@ export const translations = {
     proj_btn_telegram: "Долучитись у Telegram",
 
     proj_card1_title: "Ukrainian Science Channel",
-    proj_card1_desc: "З метою популяризації науки серед молоді та презентації кращих здобутків науковців Харківщини створено новий Тelegram-канал від Ради молодих вчених при Харківській обласній військовій адміністрації!",
+    proj_card1_desc: "З метою популяризації науки серед молоді та презентації кращих здобутків науковців Харківщини створено новий Тelegram-канал!",
     
     proj_card2_title: "Development Opportunities",
     proj_card2_desc: "На цьому каналі ви знайдете корисну добірку наукових конференцій міжнародного, всеукраїнського та регіонального рівнів, а також інформацію щодо публікації статей та участь в освітніх вебінарах.",
@@ -313,7 +313,7 @@ export const translations = {
     proj_btn_telegram: "Join on Telegram",
 
     proj_card1_title: "Ukrainian Science Channel",
-    proj_card1_desc: "To popularize science among the youth and present the best achievements of Kharkiv region scientists, a new Telegram channel has been created by the Council of Young Scientists at the Kharkiv Regional Military Administration!",
+    proj_card1_desc: "To popularize science among the youth and present the best achievements of Kharkiv region scientists, a new Telegram channel has been created!",
     
     proj_card2_title: "Development Opportunities",
     proj_card2_desc: "On this channel, you will find a useful selection of scientific conferences at the international, national, and regional levels, as well as information on publishing articles and participating in educational webinars.",
