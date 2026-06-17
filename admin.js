@@ -42,7 +42,6 @@ function formatVideoUrl(url)
         return `https://www.facebook.com/plugins/video.php?href=${encodedUrl}&show_text=false`;
     }
 
-    // Якщо це якась інша платформа, просто повертаємо як є
     return url;
 }
 

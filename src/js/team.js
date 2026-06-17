@@ -1,22 +1,29 @@
 import { team } from "./teamData.js";
 
-//Отримуємо поточну мову (ua або en)
+// Отримуємо поточну мову (ua або en)
 const currentLang = localStorage.getItem("site_lang") || "ua";
 
+// Допоміжна функція: замінює перший пробіл на <br>, щоб ім'я завжди було у 2 рядки
+function formatName(nameString) {
+  if (!nameString) return 'Ім\'я не вказано';
+  return nameString.replace(' ', '<br>');
+}
+
 function renderPreview(member) {
-  // Захист даних: якщо перекладу поточною мовою немає, пробуємо взяти українську версію
-  const name = member.name?.[currentLang] || member.name?.ua || 'Ім\'я не вказано';
+  // Захист даних
+  const rawName = member.name?.[currentLang] || member.name?.ua || '';
+  const name = formatName(rawName); // Застосовуємо розбиття на 2 рядки
+  
   const degree = member.degree?.[currentLang] || member.degree?.ua || '';
   const badge = member.badge?.[currentLang] || member.badge?.ua || '';
-  // Якщо фото немає, ставимо заглушку
   const imageSrc = member.image || '/icons/default-avatar.png';
 
   return `
     <div class="team-card">
       <div class="team-photo">
-        <img src="${imageSrc}" alt="${name}">
+        <img src="${imageSrc}" alt="${rawName}">
       </div>
-      <h4>${name}</h4>
+      <h4 style="text-align: center; line-height: 1.3;">${name}</h4>
       <p>${degree}</p>
       <span class="role">${badge}</span>
     </div>
@@ -25,7 +32,9 @@ function renderPreview(member) {
 
 function renderFull(member) {
   // Захист даних для багатомовності
-  const name = member.name?.[currentLang] || member.name?.ua || 'Ім\'я не вказано';
+  const rawName = member.name?.[currentLang] || member.name?.ua || '';
+  const name = formatName(rawName); // Застосовуємо розбиття на 2 рядки
+  
   const degree = member.degree?.[currentLang] || member.degree?.ua || '';
   const badge = member.badge?.[currentLang] || member.badge?.ua || '';
   const institution = member.institution?.[currentLang] || member.institution?.ua || '';
@@ -38,11 +47,11 @@ function renderFull(member) {
         ${badge}
       </div>
       <div class="team-photo">
-        <img src="${imageSrc}" alt="${name}">
+        <img src="${imageSrc}" alt="${rawName}">
       </div>
       <div class="team-info">
         <div class="team-title-wrap">
-          <h3>${name}</h3>
+          <h3 style="text-align: center; line-height: 1.2;">${name}</h3>
           ${degree ? `<p class="team-degree">${degree}</p>` : ''}
         </div>
         
@@ -58,7 +67,7 @@ function renderFull(member) {
 const previewContainer = document.getElementById("teamPreview");
 const fullContainer = document.getElementById("teamContainer");
 
-// Додано перевірку, чи team існує і чи є масивом, щоб методи .slice() та .map() не викинули критичну помилку
+// Перевірка, чи team існує
 if (team && Array.isArray(team)) {
   if(previewContainer) {
     previewContainer.innerHTML = team.slice(0, 5).map(renderPreview).join('');

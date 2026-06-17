@@ -3,7 +3,7 @@ export const team = [
     name: { ua: "Богдан ЛЯШЕНКО", en: "Bohdan LIASHENKO" },
     badge: { ua: "Голова ради", en: "Head of the Council" },
     role: "leadership",
-    degree: { ua: "доктор філософії з психології", en: "PhD in Psychology" },
+    degree: { ua: "доктор філософії", en: "PhD" },
     institution: { 
       ua: "Національний технічний університет «Харківський політехнічний iнститут»", 
       en: 'National Technical University "Kharkiv Polytechnic Institute"' 
@@ -18,7 +18,7 @@ export const team = [
     name: { ua: "Дарина ВЕРШИНІНА", en: "Daryna VERSHYNINA" },
     badge: { ua: "Перший заступник Голови ради", en: "First Deputy Head of the Council" },
     role: "leadership",
-    degree: { ua: "доктор філософії з галузі Економіка", en: "PhD in Economics" },
+    degree: { ua: "доктор філософії", en: "PhD" },
     institution: { 
       ua: "Харківський національний університет міського господарства імені О. М. Бекетова", 
       en: "O. M. Beketov National University of Urban Economy in Kharkiv" 
@@ -93,7 +93,7 @@ export const team = [
     name: { ua: "Олена БОРЗИК", en: "Olena BORZYK" },
     badge: { ua: "Член ради", en: "Member of the Council" },
     role: "member",
-    degree: { ua: "доктор філософії зі спеціальності 011 Освітні, педагогічні науки, доцент", en: "Doctor of Philosophy in the specialty 011 Educational and Pedagogical Sciences, Associate Professor" },
+    degree: { ua: "доктор філософії, доцент", en: "PhD, Associate Professor" },
     institution: { 
       ua: "Комунальний заклад «Харківська гуманітарно-педагогічна академія» Харківської обласної ради", 
       en: "Municipal Establishment “Kharkiv Humanitarian-Pedagogical Academy” of Kharkiv Regional Council" 
@@ -243,7 +243,7 @@ export const team = [
     name: { ua: "Тетяна КОПТЄВА", en: "Tetiana KOPTIEVA" },
     badge: { ua: "Член ради", en: "Member of the Council" },
     role: "member",
-    degree: { ua: "доктор філософії з галузі знань 10 Природничі науки спеціальності 103 Науки про Землю, доцент", en: "PhD in Earth Sciences, Associate Professor" },
+    degree: { ua: "доктор філософії, доцент", en: "PhD, Associate Professor" },
     institution: { 
       ua: "Харківський національний педагогічний університет імені Г.С. Сковороди", 
       en: "H. S. Skovoroda Kharkiv National Pedagogical University" 
@@ -315,7 +315,7 @@ export const team = [
     image: "/icons/noimg.jpg"
   },
   {
-    name: { ua: "Олеся ПЛЄХОВА", en: "Olesia PLIEKHOVA" },
+    name: { ua: "Алеся НАРТОВА", en: "Alesia NARTOVA" },
     badge: { ua: "Член ради", en: "Member of the Council" },
     role: "member",
     degree: { ua: "", en: "" },
@@ -324,10 +324,10 @@ export const team = [
       en: "Kharkiv National Medical University" 
     },
     description: { 
-      ua: "асистент кафедри акушерства, гінекології, дитячої гінекології та медичної генетики", 
-      en: "Assistant at the Department of Obstetrics, Gynecology, Pediatric Gynecology and Medical Genetics" 
+      ua: "лікар-інтерн кафедри неврології", 
+      en: "Intern doctor at the Department of Neurology" 
     },
-    image: "/icons/noimg.jpg"
+    image: "/icons/alenar.jpeg"
   },
   {
     name: { ua: "Михайло ПУЗИРЬОВ", en: "Mykhailo PUZYROV" },
@@ -448,35 +448,5 @@ export const team = [
       en: "Director of the Center for Strategic Development and Public Positioning" 
     },
     image: "/icons/olshe.png"
-  },
-  {
-    name: { ua: "Поліна ПІСКЛОВА", en: "Polina PISKLOVA" },
-    badge: { ua: "Член ради", en: "Member of the Council" },
-    role: "member",
-    degree: { ua: "доктор філософії", en: "PhD" },
-    institution: { 
-      ua: "Інститут сцинтиляційних матеріалів НАН України", 
-      en: "Institute for Scintillation Materials of NAS of Ukraine" 
-    },
-    description: { 
-      ua: "в.о. молодшого наукового співробітника відділу наноструктурних матеріалів імені Ю.В.Малюкіна", 
-      en: "Acting Junior Researcher, Yu.V.Malyukin Department of Nanostructured Materials" 
-    },
-    image: "/icons/polpis.jpg"
-  },
-  {
-    name: { ua: "Алеся НАРТОВА", en: "Alesia NARTOVA" },
-    badge: { ua: "Член ради", en: "Member of the Council" },
-    role: "member",
-    degree: { ua: "", en: "" },
-    institution: { 
-      ua: "Харківський національний медичний університет", 
-      en: "Kharkiv National Medical University" 
-    },
-    description: { 
-      ua: "лікар-інтерн кафедри неврології", 
-      en: "Intern doctor at the Department of Neurology" 
-    },
-    image: "/icons/alenar.jpeg"
   }
 ];
